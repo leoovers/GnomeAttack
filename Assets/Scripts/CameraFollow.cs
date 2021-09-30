@@ -38,7 +38,7 @@ public class CameraFollow : MonoBehaviour
         }
         
 
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 toggleFreeLook = !toggleFreeLook;
             }
