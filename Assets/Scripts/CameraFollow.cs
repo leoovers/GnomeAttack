@@ -24,8 +24,14 @@ public class CameraFollow : MonoBehaviour
         cameraXvalue = moveCameraSlider.value;
     }
     // Update is called once per frame
+    
     void FixedUpdate()
     {   
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            toggleFreeLook = !toggleFreeLook;
+        }
+
         if (!toggleFreeLook){
             moveCamera.gameObject.SetActive(false);
             this.transform.position = new Vector3(followTransform.position.x + 6,
@@ -36,11 +42,5 @@ public class CameraFollow : MonoBehaviour
             this.transform.position = new Vector3(cameraXvalue,
             followTransform.position.y + 1, this.transform.position.z);
         }
-        
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                toggleFreeLook = !toggleFreeLook;
-            }
     }
 }
