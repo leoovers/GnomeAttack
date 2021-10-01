@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour {
 	{
 		if (colInfo.relativeVelocity.magnitude > health & colInfo.gameObject.tag == "Player")
 		{
+			colInfo.gameObject.GetComponent<Renderer>().enabled = false;
 			Die();
 		}
 	}

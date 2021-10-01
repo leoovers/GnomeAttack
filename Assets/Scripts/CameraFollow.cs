@@ -35,12 +35,12 @@ public class CameraFollow : MonoBehaviour
         if (!toggleFreeLook){
             moveCamera.gameObject.SetActive(false);
             this.transform.position = new Vector3(followTransform.position.x + 6,
-            followTransform.position.y + 1, this.transform.position.z);
+            followTransform.position.y + 1.5f, this.transform.position.z);
         }
         else{
             moveCamera.gameObject.SetActive(true);
             this.transform.position = new Vector3(cameraXvalue,
-            followTransform.position.y + 1, this.transform.position.z);
+            followTransform.position.y + 1.5f, this.transform.position.z);
         }
     }
 }
