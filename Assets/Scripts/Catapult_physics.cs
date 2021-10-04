@@ -21,6 +21,8 @@ public class Catapult_physics : MonoBehaviour
     private Rigidbody2D nGnomeRigid;
     private GameObject newGnome;
     private bool launched = false;
+    private bool sliderStopped = false;
+    private int numberOfGnomes;
 
     void Start()
     {
@@ -34,6 +36,7 @@ public class Catapult_physics : MonoBehaviour
         powerslider.onValueChanged.AddListener(delegate { thrustValueUpdate(); });
 
         m_Thrust = 1f;
+        numberOfGnomes = 3;
 
         arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
         newGnome = Instantiate(normalGnome, spawnPoint.transform.position, Quaternion.identity);
@@ -61,7 +64,12 @@ public class Catapult_physics : MonoBehaviour
         m_Thrust = powerslider.value;
     }
 
-    void FixedUpdate()
+    void onSliderStop()
+    {
+        Debug.Log ("Slider stopped");
+    }
+
+    void Update()
     {   
         if (!launched)
         {
@@ -77,6 +85,18 @@ public class Catapult_physics : MonoBehaviour
             {
                 TaskOnClick_plus();
             }
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                sliderStopped = true;
+                onSliderStop();
+            }
+            else
+            {
+                if (!sliderStopped)
+                {
+                    powerslider.value = Mathf.PingPong(Time.time * 20, 40);  // Add time multiplier to add slider speed
+                } 
+            }
         }
         //angleText3 = GetComponent<TextMeshProUGUI>();
         angleText.text = angle.ToString() + "°";
@@ -89,6 +109,7 @@ public class Catapult_physics : MonoBehaviour
         nGnomeRigid = newGnome.GetComponent<Rigidbody2D>();
         nGnomeRigid.AddForce(dir * m_Thrust, ForceMode2D.Impulse);
         launched = true;
+        numberOfGnomes--;
         StartCoroutine(Launch());
     }
 
@@ -101,9 +122,18 @@ public class Catapult_physics : MonoBehaviour
 
 		yield return new WaitForSeconds(6f);
 
-        newGnome = Instantiate(normalGnome, spawnPoint.transform.position, Quaternion.identity);
-        camFollowScript.followTransform = newGnome.transform;
+        if (numberOfGnomes > 0)
+        {
+            newGnome = Instantiate(normalGnome, spawnPoint.transform.position, Quaternion.identity);
+            camFollowScript.followTransform = newGnome.transform;
+        }
+        else
+        {
+            Debug.Log ("Out of gnomes!");
+        }
+
         launched = false;
+        sliderStopped = false;
 
 		// if (nextBall != null)
 		// {
