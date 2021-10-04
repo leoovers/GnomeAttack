@@ -15,7 +15,7 @@ public class Catapult_physics : MonoBehaviour
     public GameObject normalGnome;
     public GameObject arrow;
     public GameObject spawnPoint;
-    public float m_Thrust;
+    public float thrust;
     public int angle = 60;
 
     private Rigidbody2D nGnomeRigid;
@@ -26,16 +26,16 @@ public class Catapult_physics : MonoBehaviour
 
     void Start()
     {
-        Button p_btn = plus_button.GetComponent<Button>(); //Grabs the plus button component
-	    p_btn.onClick.AddListener(TaskOnClick_plus); //Adds a listner on the button
+        Button p_btn = plus_button.GetComponent<Button>();  //Grabs the plus button component
+	    p_btn.onClick.AddListener(TaskOnClick_plus);  //Adds a listener on the button
 
-        Button m_btn = minus_button.GetComponent<Button>(); //Grabs the minus button component
-	    m_btn.onClick.AddListener(TaskOnClick_minus); //Adds a listner on the button
+        Button m_btn = minus_button.GetComponent<Button>();  //Grabs the minus button component
+	    m_btn.onClick.AddListener(TaskOnClick_minus);  //Adds a listener on the button
 
         powerslider = powerslider.GetComponent<Slider>();
         powerslider.onValueChanged.AddListener(delegate { thrustValueUpdate(); });
 
-        m_Thrust = 1f;
+        thrust = 1f;
         numberOfGnomes = 3;
 
         arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
@@ -61,7 +61,7 @@ public class Catapult_physics : MonoBehaviour
 
     void thrustValueUpdate()
     {
-        m_Thrust = powerslider.value;
+        thrust = powerslider.value;
     }
 
     void onSliderStop()
@@ -85,6 +85,7 @@ public class Catapult_physics : MonoBehaviour
             {
                 TaskOnClick_plus();
             }
+
             if (Input.GetKey(KeyCode.LeftControl))
             {
                 sliderStopped = true;
@@ -98,16 +99,17 @@ public class Catapult_physics : MonoBehaviour
                 } 
             }
         }
-        //angleText3 = GetComponent<TextMeshProUGUI>();
+
         angleText.text = angle.ToString() + "°";
-        powerText.text = Math.Round((m_Thrust / 40 * 100), 1).ToString() + " %";  
+        powerText.text = Math.Round((thrust / 40 * 100), 1).ToString() + " %";  
     }
 
     void onLaunch()
     {
         Vector2 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
         nGnomeRigid = newGnome.GetComponent<Rigidbody2D>();
-        nGnomeRigid.AddForce(dir * m_Thrust, ForceMode2D.Impulse);
+        nGnomeRigid.AddForce(dir * thrust, ForceMode2D.Impulse);
+        camFollowScript.xOffset = 3;
         launched = true;
         numberOfGnomes--;
         StartCoroutine(Launch());
@@ -115,34 +117,21 @@ public class Catapult_physics : MonoBehaviour
 
     IEnumerator Launch ()
 	{
-		// yield return new WaitForSeconds(releaseTime);
-
-		// GetComponent<SpringJoint2D>().enabled = false;
-		// this.enabled = false;
-
 		yield return new WaitForSeconds(6f);
 
         if (numberOfGnomes > 0)
         {
             newGnome = Instantiate(normalGnome, spawnPoint.transform.position, Quaternion.identity);
             camFollowScript.followTransform = newGnome.transform;
+            camFollowScript.xOffset = 6;
+            sliderStopped = false;
+            launched = false;
         }
         else
         {
             Debug.Log ("Out of gnomes!");
         }
 
-        launched = false;
-        sliderStopped = false;
-
-		// if (nextBall != null)
-		// {
-		// 	nextBall.SetActive(true);
-		// } else
-		// {
-		// 	Enemy.EnemiesAlive = 0;
-		// 	SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-		// }
-	
+        
 	}
 }

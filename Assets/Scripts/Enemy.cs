@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour {
 	IEnumerator Victory ()
 	{
 		Debug.Log ("Level Completed!");
-		yield return new WaitForSeconds(.4f);
+		yield return new WaitForSeconds(2f);
 		Debug.Log ("Waited");
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 	}

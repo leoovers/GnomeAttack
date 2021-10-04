@@ -9,7 +9,11 @@ public class CameraFollow : MonoBehaviour
     public Slider moveCamera;
     public float cameraXvalue;
     public bool toggleFreeLook;
+    public float xOffset;
+    public float yOffset;
     private Slider moveCameraSlider;
+    public float smoothTime = 0.01F;
+    private Vector3 velocity = Vector3.zero;
 
     void Start()
     {
@@ -17,6 +21,8 @@ public class CameraFollow : MonoBehaviour
         moveCameraSlider.onValueChanged.AddListener(delegate { cameraUpdate(); });
 
         toggleFreeLook = false;
+        xOffset = 6;
+        yOffset = 1.5f;
     }
 
     void cameraUpdate()
@@ -34,13 +40,12 @@ public class CameraFollow : MonoBehaviour
 
         if (!toggleFreeLook){
             moveCamera.gameObject.SetActive(false);
-            this.transform.position = new Vector3(followTransform.position.x + 6,
-            followTransform.position.y + 1.5f, this.transform.position.z);
+            this.transform.position = Vector3.SmoothDamp(this.transform.position, new Vector3(followTransform.position.x + xOffset, followTransform.position.y + yOffset, -10), ref velocity, smoothTime);
         }
         else{
             moveCamera.gameObject.SetActive(true);
             this.transform.position = new Vector3(cameraXvalue,
-            followTransform.position.y + 1.5f, this.transform.position.z);
+            followTransform.position.y + yOffset, this.transform.position.z);
         }
     }
 }
