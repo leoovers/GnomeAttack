@@ -12,7 +12,7 @@ public class Catapult_physics : MonoBehaviour
     public Slider powerslider;
     public Text angleText;
     public Text powerText;
-    public GameObject normalGnome;
+    public GameObject stickyGnome;
     public GameObject arrow;
     public GameObject spawnPoint;
     public float thrust;
@@ -39,7 +39,7 @@ public class Catapult_physics : MonoBehaviour
         numberOfGnomes = 3;
 
         arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
-        newGnome = Instantiate(normalGnome, spawnPoint.transform.position, Quaternion.identity);
+        newGnome = Instantiate(stickyGnome, spawnPoint.transform.position, Quaternion.identity);
         camFollowScript.followTransform = newGnome.transform;
     }
 
@@ -121,7 +121,7 @@ public class Catapult_physics : MonoBehaviour
 
         if (numberOfGnomes > 0)
         {
-            newGnome = Instantiate(normalGnome, spawnPoint.transform.position, Quaternion.identity);
+            newGnome = Instantiate(stickyGnome, spawnPoint.transform.position, Quaternion.identity);
             camFollowScript.followTransform = newGnome.transform;
             camFollowScript.xOffset = 6;
             sliderStopped = false;
@@ -131,7 +131,5 @@ public class Catapult_physics : MonoBehaviour
         {
             Debug.Log ("Out of gnomes!");
         }
-
-        
-	}
+        }
 }

@@ -14,7 +14,10 @@ public class stickyGnome : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D colInfo)
 	{
-        Destroy(rigid);
+        if(colInfo.gameObject.tag == "Stickable")
+        {
+            Destroy(rigid);
+        }
     }
 
     // Update is called once per frame
