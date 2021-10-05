@@ -12,7 +12,10 @@ public class heavyGnome : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D colInfo)
 	{
-        Destroy(colInfo.gameObject);
+        if (colInfo.gameObject.tag == "Destructable")
+        {
+            Destroy(colInfo.gameObject);
+        }
     }
 
     // Update is called once per frame
