@@ -18,7 +18,7 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         moveCameraSlider = moveCamera.GetComponent<Slider>();
-        moveCameraSlider.onValueChanged.AddListener(delegate { cameraUpdate(); });
+        moveCameraSlider.onValueChanged.AddListener(delegate { cameraUpdate(); });  // Add listener for the slider
 
         toggleFreeLook = false;
         xOffset = 6;
@@ -27,10 +27,10 @@ public class CameraFollow : MonoBehaviour
 
     void cameraUpdate()
     {
-        cameraXvalue = moveCameraSlider.value;
+        cameraXvalue = moveCameraSlider.value;  // Move camera along X axis when slider is moved
     }
+
     // Update is called once per frame
-    
     void Update()
     {   
         if (Input.GetKeyDown(KeyCode.F))
@@ -40,7 +40,8 @@ public class CameraFollow : MonoBehaviour
 
         if (!toggleFreeLook){
             moveCamera.gameObject.SetActive(false);
-            this.transform.position = Vector3.SmoothDamp(this.transform.position, new Vector3(followTransform.position.x + xOffset, followTransform.position.y + yOffset, -10), ref velocity, smoothTime);
+            this.transform.position = Vector3.SmoothDamp(this.transform.position, new Vector3(followTransform.position.x + xOffset,
+            followTransform.position.y + yOffset, -10), ref velocity, smoothTime);
         }
         else{
             moveCamera.gameObject.SetActive(true);

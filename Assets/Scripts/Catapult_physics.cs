@@ -6,17 +6,17 @@ using TMPro;
 
 public class Catapult_physics : MonoBehaviour
 {
-    public CameraFollow camFollowScript;
-    public Button plus_button;
-    public Button minus_button;
-    public Slider powerslider;
-    public Text angleText;
+    public CameraFollow camFollowScript;  // Script attached to Main Camera
+    public Button plus_button;  //  UI button for angle plus
+    public Button minus_button;  // UI button for angle minus
+    public Slider powerslider;  // UI slider for launch power control
+    public Text angleText;  // UI text for angle in degrees
     public Text powerText;
-    public GameObject stickyGnome;
-    public GameObject arrow;
-    public GameObject spawnPoint;
-    public float thrust;
-    public int angle = 60;
+    public GameObject normalGnome;  // Prefab for spawning a new gnome
+    public GameObject arrow;  // Object that indicates launch angle
+    public GameObject spawnPoint;  // Empty object that indicates position for spawning gnomes
+    public float thrust;  // Amount of force applied in launch
+    public int angle = 60;  // Angle in degrees
 
     private Rigidbody2D nGnomeRigid;
     private GameObject newGnome;
@@ -26,21 +26,21 @@ public class Catapult_physics : MonoBehaviour
 
     void Start()
     {
-        Button p_btn = plus_button.GetComponent<Button>();  //Grabs the plus button component
-	    p_btn.onClick.AddListener(TaskOnClick_plus);  //Adds a listener on the button
+        Button p_btn = plus_button.GetComponent<Button>();  // Grabs the plus button component
+	    p_btn.onClick.AddListener(TaskOnClick_plus);  // Adds a listener on the button
 
-        Button m_btn = minus_button.GetComponent<Button>();  //Grabs the minus button component
-	    m_btn.onClick.AddListener(TaskOnClick_minus);  //Adds a listener on the button
+        Button m_btn = minus_button.GetComponent<Button>();  // Grabs the minus button component
+	    m_btn.onClick.AddListener(TaskOnClick_minus);  // Adds a listener on the button
 
         powerslider = powerslider.GetComponent<Slider>();
-        powerslider.onValueChanged.AddListener(delegate { thrustValueUpdate(); });
+        powerslider.onValueChanged.AddListener(delegate { thrustValueUpdate(); }); // Adds a listener on the slider
 
         thrust = 1f;
         numberOfGnomes = 3;
 
-        arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
-        newGnome = Instantiate(stickyGnome, spawnPoint.transform.position, Quaternion.identity);
-        camFollowScript.followTransform = newGnome.transform;
+        arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);  // Turn arrow in default angle
+        newGnome = Instantiate(normalGnome, spawnPoint.transform.position, Quaternion.identity);  // Spawn new gnome based on a prefab
+        camFollowScript.followTransform = newGnome.transform;  // Make the spawned gnome the new camera target
     }
 
     void TaskOnClick_plus(){
@@ -85,19 +85,10 @@ public class Catapult_physics : MonoBehaviour
             {
                 TaskOnClick_plus();
             }
-
-            if (Input.GetKey(KeyCode.LeftControl))
+            if (!sliderStopped)
             {
-                sliderStopped = true;
-                onSliderStop();
-            }
-            else
-            {
-                if (!sliderStopped)
-                {
-                    powerslider.value = Mathf.PingPong(Time.time * 20, 40);  // Add time multiplier to add slider speed
-                } 
-            }
+                powerslider.value = Mathf.PingPong(Time.time * 20, 40);  // Add time multiplier to add slider speed
+            } 
         }
 
         angleText.text = angle.ToString() + "°";
@@ -109,7 +100,7 @@ public class Catapult_physics : MonoBehaviour
         Vector2 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
         nGnomeRigid = newGnome.GetComponent<Rigidbody2D>();
         nGnomeRigid.AddForce(dir * thrust, ForceMode2D.Impulse);
-        camFollowScript.xOffset = 3;
+        camFollowScript.xOffset = 3;  // Center the camera a bit more on launch
         launched = true;
         numberOfGnomes--;
         StartCoroutine(Launch());
@@ -117,13 +108,13 @@ public class Catapult_physics : MonoBehaviour
 
     IEnumerator Launch ()
 	{
-		yield return new WaitForSeconds(6f);
+		yield return new WaitForSeconds(6f);  // Time before new gnome is spawned after launch
 
         if (numberOfGnomes > 0)
         {
-            newGnome = Instantiate(stickyGnome, spawnPoint.transform.position, Quaternion.identity);
+            newGnome = Instantiate(normalGnome, spawnPoint.transform.position, Quaternion.identity);
             camFollowScript.followTransform = newGnome.transform;
-            camFollowScript.xOffset = 6;
+            camFollowScript.xOffset = 6;  // Camera X axis offset before launch
             sliderStopped = false;
             launched = false;
         }
