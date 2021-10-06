@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour {
 	public float health = 1f;
 
 	public static int EnemiesAlive = 0;
+	public GameObject Panel;
 
 	void Start ()
 	{
@@ -38,10 +39,13 @@ public class Enemy : MonoBehaviour {
 
 	IEnumerator Victory ()
 	{
+		Panel.SetActive(true);
 		Debug.Log ("Level Completed!");
 		yield return new WaitForSeconds(2f);
+		
 		Debug.Log ("Waited");
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		
 	}
 
 
