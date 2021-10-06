@@ -87,7 +87,7 @@ public class Catapult_physics : MonoBehaviour
             }
             if (!sliderStopped)
             {
-                powerslider.value = Mathf.PingPong(Time.time * 20, 40);  // Add time multiplier to add slider speed
+                powerslider.value = Mathf.PingPong(Time.time * 30, 40);  // Add time multiplier to add slider speed
             } 
         }
 
