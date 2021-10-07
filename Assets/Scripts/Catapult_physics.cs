@@ -11,7 +11,7 @@ public class Catapult_physics : MonoBehaviour
     public Button minus_button;  // UI button for angle minus
     public Slider powerslider;  // UI slider for launch power control
     public Text angleText;  // UI text for angle in degrees
-    // public Text powerText;
+    public GameObject lossPanel;
     public GameObject normalGnome;  // Prefab for spawning a new gnome
     public GameObject arrow;  // Object that indicates launch angle
     public GameObject spawnPoint;  // Empty object that indicates position for spawning gnomes
@@ -87,7 +87,7 @@ public class Catapult_physics : MonoBehaviour
             }
             if (!sliderStopped)
             {
-                powerslider.value = Mathf.PingPong(Time.time * 30, 40);  // Add time multiplier to add slider speed
+                powerslider.value = (Mathf.Cos(Time.time * 2) + 1) * 20;  // Add time multiplier to add slider speed
             } 
         }
 
@@ -120,6 +120,7 @@ public class Catapult_physics : MonoBehaviour
         }
         else
         {
+            lossPanel.SetActive(true);
             Debug.Log ("Out of gnomes!");
         }
         }

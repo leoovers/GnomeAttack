@@ -45,11 +45,4 @@ public class Enemy : MonoBehaviour {
 		//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		
 	}
-
-
-	// void Reset ()
-	// {
-		
-	// }
-
 }
