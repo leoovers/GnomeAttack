@@ -18,7 +18,6 @@ public class Catapult_physics : MonoBehaviour
     public float thrust;  // Amount of force applied in launch
     public int angle = 60;  // Angle in degrees
 
-    private Rigidbody2D nGnomeRigid;
     private GameObject newGnome;
     private bool launched = false;
     private bool sliderStopped = false;
@@ -98,7 +97,8 @@ public class Catapult_physics : MonoBehaviour
     void onLaunch()
     {
         Vector2 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
-        nGnomeRigid = newGnome.GetComponent<Rigidbody2D>();
+        
+        Rigidbody2D nGnomeRigid = newGnome.GetComponent<Rigidbody2D>();
         nGnomeRigid.AddForce(dir * thrust, ForceMode2D.Impulse);
         camFollowScript.xOffset = 3;  // Center the camera a bit more on launch
         launched = true;
