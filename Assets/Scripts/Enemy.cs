@@ -29,17 +29,15 @@ public class Enemy : MonoBehaviour {
 	void Die ()
 	{
 		Instantiate(deathEffect, transform.position, Quaternion.identity);
-
+		Panel.SetActive(true);
 		EnemiesAlive--;
 		if (EnemiesAlive <= 0){
 			Destroy(gameObject);
-			StartCoroutine(Victory());
 		}
 	}
 
 	IEnumerator Victory ()
 	{
-		Panel.SetActive(true);
 		Debug.Log ("Level Completed!");
 		yield return new WaitForSeconds(2f);
 		

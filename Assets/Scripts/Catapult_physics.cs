@@ -11,7 +11,7 @@ public class Catapult_physics : MonoBehaviour
     public Button minus_button;  // UI button for angle minus
     public Slider powerslider;  // UI slider for launch power control
     public Text angleText;  // UI text for angle in degrees
-    public Text powerText;
+    // public Text powerText;
     public GameObject normalGnome;  // Prefab for spawning a new gnome
     public GameObject arrow;  // Object that indicates launch angle
     public GameObject spawnPoint;  // Empty object that indicates position for spawning gnomes
@@ -92,7 +92,7 @@ public class Catapult_physics : MonoBehaviour
         }
 
         angleText.text = angle.ToString() + "°";
-        powerText.text = Math.Round((thrust / 40 * 100), 1).ToString() + " %";  
+        // powerText.text = Math.Round((thrust / 40 * 100), 1).ToString() + " %";  
     }
 
     void onLaunch()

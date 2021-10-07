@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.16470589}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -646,7 +646,7 @@ MonoBehaviour:
   levelHolder: {fileID: 742381175}
   levelIcon: {fileID: 1114800113816810457, guid: a9578d2b968184846add1a69c1f210ef, type: 3}
   thisCanvas: {fileID: 177710032}
-  numberOfLevels: 50
+  numberOfLevels: 4
   iconSpacing: {x: 60, y: 50}
 --- !u!1001 &1210380759
 PrefabInstance:
@@ -685,11 +685,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3771325294096625892, guid: 2339391cd072d1a4db5df2e4427195db, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 161.948
+      value: 130.8672
       objectReference: {fileID: 0}
     - target: {fileID: 3771325294096625892, guid: 2339391cd072d1a4db5df2e4427195db, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 61.0428
+      value: 46.4165
       objectReference: {fileID: 0}
     - target: {fileID: 3771325294096625892, guid: 2339391cd072d1a4db5df2e4427195db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -721,11 +721,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3771325294096625892, guid: 2339391cd072d1a4db5df2e4427195db, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -277.9483
+      value: -317.3
       objectReference: {fileID: 0}
     - target: {fileID: 3771325294096625892, guid: 2339391cd072d1a4db5df2e4427195db, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -206.94832
+      value: -193.5
       objectReference: {fileID: 0}
     - target: {fileID: 3771325294096625892, guid: 2339391cd072d1a4db5df2e4427195db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -974,8 +974,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 210.74724}
-  m_SizeDelta: {x: 434.0037, y: 81.2051}
+  m_AnchoredPosition: {x: 0.000010041, y: 175.9}
+  m_SizeDelta: {x: 279.5141, y: 74.8061}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1949730984
 MonoBehaviour:
@@ -1024,8 +1024,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 75
-  m_fontSizeBase: 75
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
