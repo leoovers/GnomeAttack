@@ -6,7 +6,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
 	public GameObject deathEffect;
-
+	public Catapult_physics mainScript;
 	public float health = 1f;
 
 	public static int EnemiesAlive = 0;
@@ -29,20 +29,17 @@ public class Enemy : MonoBehaviour {
 	void Die ()
 	{
 		Instantiate(deathEffect, transform.position, Quaternion.identity);
-		Panel.SetActive(true);
 		EnemiesAlive--;
-		if (EnemiesAlive <= 0){
-			Destroy(gameObject);
-		}
+		if (EnemiesAlive <= 0)
+		{
+			mainScript.levelWon = true;
+			StartCoroutine(Win());
+		}	
 	}
 
-	IEnumerator Victory ()
+	IEnumerator Win ()
 	{
-		Debug.Log ("Level Completed!");
-		yield return new WaitForSeconds(2f);
-		
-		Debug.Log ("Waited");
-		//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-		
-	}
+		yield return new WaitForSeconds(1f);
+        Panel.SetActive(true);
+    }
 }
