@@ -17,6 +17,7 @@ public class Catapult_physics : MonoBehaviour
     public GameObject spawnPoint;  // Empty object that indicates position for spawning gnomes
     public float thrust;  // Amount of force applied in launch
     public int angle = 60;  // Angle in degrees
+    public bool levelWon = false;
 
     private GameObject newGnome;
     private bool launched = false;
@@ -110,7 +111,7 @@ public class Catapult_physics : MonoBehaviour
 	{
 		yield return new WaitForSeconds(6f);  // Time before new gnome is spawned after launch
 
-        if (numberOfGnomes > 0)
+        if (numberOfGnomes > 0 & !levelWon)
         {
             newGnome = Instantiate(normalGnome, spawnPoint.transform.position, Quaternion.identity);
             camFollowScript.followTransform = newGnome.transform;
@@ -120,8 +121,11 @@ public class Catapult_physics : MonoBehaviour
         }
         else
         {
-            lossPanel.SetActive(true);
-            Debug.Log ("Out of gnomes!");
+            if (!levelWon)
+            {
+                lossPanel.SetActive(true);
+                Debug.Log ("Out of gnomes!");
+            }
         }
         }
 }

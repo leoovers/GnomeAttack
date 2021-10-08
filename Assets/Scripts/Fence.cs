@@ -6,7 +6,9 @@ public class Fence : MonoBehaviour
 {
     public GameObject winPanel;
     public GameObject deathEffect;
+    public Catapult_physics mainScript;
     private Animator m_Anim;
+
     void Start()
     {
         m_Anim = GetComponent<Animator>();
@@ -18,6 +20,8 @@ public class Fence : MonoBehaviour
         {
             print("aitadmg1");
             m_Anim.SetTrigger("Hit");
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            mainScript.levelWon = true;
             StartCoroutine(Win());
         }
 
@@ -25,8 +29,7 @@ public class Fence : MonoBehaviour
 
     IEnumerator Win ()
 	{
-		yield return new WaitForSeconds(1f);  // Time before new gnome is spawned after launch
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
+		yield return new WaitForSeconds(1f);
         winPanel.SetActive(true);
     
     }

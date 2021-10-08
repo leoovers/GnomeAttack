@@ -2896,6 +2896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winPanel: {fileID: 1280251835}
   deathEffect: {fileID: 1556191461808218, guid: ed202c5395c2d57849c21a0b03d98867, type: 3}
+  mainScript: {fileID: 1085555204513386732}
 --- !u!61 &1617691904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4083,3 +4084,14 @@ PrefabInstance:
       objectReference: {fileID: 519420030}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f2bfad2465749c41a4ca3edd12910a7, type: 3}
+--- !u!114 &1085555204513386732 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1085555202924393103, guid: 6f2bfad2465749c41a4ca3edd12910a7, type: 3}
+  m_PrefabInstance: {fileID: 1085555204513386731}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845b568d455ea8193890eb4a02df2617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
