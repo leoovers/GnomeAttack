@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class CameraFollow : MonoBehaviour
 {
@@ -36,6 +37,15 @@ public class CameraFollow : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             toggleFreeLook = !toggleFreeLook;
+            if (toggleFreeLook)
+            {
+                moveCamera.Select();
+            }
+            else
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+            }
+            
         }
 
         if (!toggleFreeLook){
