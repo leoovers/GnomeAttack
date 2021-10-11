@@ -20,6 +20,8 @@ public class Catapult_physics : MonoBehaviour
     public bool levelWon = false;
 
     private GameObject newGnome;
+    private AudioSource nGnomeAudio;
+    public AudioClip grunt;
     private bool launched = false;
     private bool sliderStopped = false;
     private int numberOfGnomes;
@@ -40,6 +42,7 @@ public class Catapult_physics : MonoBehaviour
 
         arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);  // Turn arrow in default angle
         newGnome = Instantiate(normalGnome, spawnPoint.transform.position, Quaternion.identity);  // Spawn new gnome based on a prefab
+        nGnomeAudio = newGnome.GetComponent<AudioSource>();
         camFollowScript.followTransform = newGnome.transform;  // Make the spawned gnome the new camera target
     }
 
@@ -101,6 +104,7 @@ public class Catapult_physics : MonoBehaviour
         
         Rigidbody2D nGnomeRigid = newGnome.GetComponent<Rigidbody2D>();
         nGnomeRigid.AddForce(dir * thrust, ForceMode2D.Impulse);
+        nGnomeAudio.PlayOneShot(grunt, 0.5f);
         camFollowScript.xOffset = 3;  // Center the camera a bit more on launch
         launched = true;
         numberOfGnomes--;
@@ -112,8 +116,10 @@ public class Catapult_physics : MonoBehaviour
 		yield return new WaitForSeconds(6f);  // Time before new gnome is spawned after launch
 
         if (numberOfGnomes > 0 & !levelWon)
-        {
+        {   
+            Destroy(nGnomeAudio);
             newGnome = Instantiate(normalGnome, spawnPoint.transform.position, Quaternion.identity);
+            nGnomeAudio = newGnome.GetComponent<AudioSource>();
             camFollowScript.followTransform = newGnome.transform;
             camFollowScript.xOffset = 6;  // Camera X axis offset before launch
             sliderStopped = false;
