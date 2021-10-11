@@ -4913,7 +4913,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crashEffect: {fileID: 2005487848922546467, guid: 1ef5948679f8f6a4e9ce3c2be2eb86f4, type: 3}
-  explosionAudio: {fileID: 8300000, guid: d1698dd553af8ef4d887bc83b9687173, type: 3}
+  explosionAudio:
+  - {fileID: 8300000, guid: d1698dd553af8ef4d887bc83b9687173, type: 3}
+  - {fileID: 8300000, guid: 8524588a69a4f3e40bb597b6221138f1, type: 3}
+  - {fileID: 8300000, guid: d4aee29185389894b9cc0d8873904a49, type: 3}
 --- !u!82 &-8413706398350972581
 AudioSource:
   m_ObjectHideFlags: 0
