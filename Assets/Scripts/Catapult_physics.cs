@@ -21,7 +21,7 @@ public class Catapult_physics : MonoBehaviour
 
     private GameObject newGnome;
     private AudioSource nGnomeAudio;
-    public AudioClip grunt;
+    public AudioClip[] grunt;
     private bool launched = false;
     private bool sliderStopped = false;
     private int numberOfGnomes;
@@ -72,6 +72,15 @@ public class Catapult_physics : MonoBehaviour
         Debug.Log ("Slider stopped");
     }
 
+    public void PlayGrunt()
+    {
+        System.Random rnd = new System.Random();
+        int rand = rnd.Next(0, grunt.Length);
+        Debug.Log(rand);
+        nGnomeAudio.clip = grunt[rand];
+        nGnomeAudio.Play();
+    }
+
     void Update()
     {   
         if (!launched)
@@ -104,7 +113,7 @@ public class Catapult_physics : MonoBehaviour
         
         Rigidbody2D nGnomeRigid = newGnome.GetComponent<Rigidbody2D>();
         nGnomeRigid.AddForce(dir * thrust, ForceMode2D.Impulse);
-        nGnomeAudio.PlayOneShot(grunt, 0.5f);
+        PlayGrunt();
         camFollowScript.xOffset = 3;  // Center the camera a bit more on launch
         launched = true;
         numberOfGnomes--;
