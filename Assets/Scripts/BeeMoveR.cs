@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeeMove : MonoBehaviour
+public class BeeMoveR : MonoBehaviour
 {
     private Vector3 posA;
 
@@ -10,7 +10,7 @@ public class BeeMove : MonoBehaviour
 
     private Vector3 nexPos;
 
-    bool facingRight = false;
+    bool facingRight = true;
 
 
     [SerializeField]
@@ -59,5 +59,4 @@ public class BeeMove : MonoBehaviour
         facingRight = !facingRight;
         childTransform.Rotate(0f, 180f, 0f);
     }
-
 }
