@@ -21,8 +21,7 @@ public class nextLevel : MonoBehaviour
         currScene = SceneManager.GetActiveScene();
         currSceneName = currScene.name;
         currSceneNumber = Int16.Parse(currSceneName.Substring(currSceneName.Length - 1));
-        nextSceneNumber = currSceneNumber + 1;
-   
+        nextSceneNumber = currSceneNumber + 1; 
     }
 
     void TaskOnClick()

@@ -23,10 +23,13 @@ public class normalGnome : MonoBehaviour
 
     public void PlayExplosion()
     {
-        System.Random rnd = new System.Random();
-        int rand = rnd.Next(0, explosionAudio.Length);
-        audioSource.clip = explosionAudio[rand];
-        audioSource.Play();
+        if (audioSource)
+        {
+            System.Random rnd = new System.Random();
+            int rand = rnd.Next(0, explosionAudio.Length);
+            audioSource.clip = explosionAudio[rand];
+            audioSource.Play();
+        }
     }
  
     void Explode() {

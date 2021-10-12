@@ -77,11 +77,15 @@ public class Catapult_physics : MonoBehaviour
 
     public void PlayGrunt()
     {
-        System.Random rnd = new System.Random();
-        int rand = rnd.Next(0, grunt.Length);
-        Debug.Log(rand);
-        nGnomeAudio.clip = grunt[rand];
-        nGnomeAudio.Play();
+        if (nGnomeAudio)
+        {
+            System.Random rnd = new System.Random();
+            int rand = rnd.Next(0, grunt.Length);
+            Debug.Log(rand);
+            nGnomeAudio.clip = grunt[rand];
+            nGnomeAudio.Play();
+        }
+
     }
 
     void Update()
