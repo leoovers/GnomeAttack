@@ -7,6 +7,7 @@ using TMPro;
 public class Catapult_physics : MonoBehaviour
 {
     public CameraFollow camFollowScript;  // Script attached to Main Camera
+    public effectVolume fxVolScript;
     public Button plus_button;  //  UI button for angle plus
     public Button minus_button;  // UI button for angle minus
     public Slider powerslider;  // UI slider for launch power control
@@ -82,6 +83,7 @@ public class Catapult_physics : MonoBehaviour
             System.Random rnd = new System.Random();
             int rand = rnd.Next(0, grunt.Length);
             Debug.Log(rand);
+            nGnomeAudio.volume = fxVolScript.fxVolume;
             nGnomeAudio.clip = grunt[rand];
             nGnomeAudio.Play();
         }

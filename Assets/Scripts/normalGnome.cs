@@ -5,9 +5,9 @@ using UnityEngine;
 public class normalGnome : MonoBehaviour
 {
     public GameObject crashEffect;
+    public Catapult_physics mainScript;
     public AudioClip[] explosionAudio;
     private AudioSource audioSource;
-    private float volume = 0.5f;
 
     // Start is called before the first frame update
     void Start()
