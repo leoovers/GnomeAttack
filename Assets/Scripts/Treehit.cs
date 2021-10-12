@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Treehit : MonoBehaviour
 {
+    public Catapult_physics mainScript;
     private Animator m_Anim;
+
     void Start()
     {
         m_Anim = GetComponent<Animator>();
@@ -15,15 +17,18 @@ public class Treehit : MonoBehaviour
     {
         
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         m_Anim.SetTrigger("Hit");
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
         {
             m_Anim.SetTrigger("HitBeehive");
+            mainScript.levelWon = true;
             Destroy(GetComponent<CapsuleCollider2D>());
         }
     }
