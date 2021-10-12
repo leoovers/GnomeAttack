@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Flower : MonoBehaviour
 {
+    public Catapult_physics mainScript;
     private Animator m_Anim;
+    private int flowerDmg = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +18,25 @@ public class Flower : MonoBehaviour
     {
         
     }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (m_Anim.GetCurrentAnimatorStateInfo(0).IsName("Kukkadmg1"))
+        {
+            
+            
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         print("Kukkadmg1");
         m_Anim.SetTrigger("Hit");
+        flowerDmg++;
+        Debug.Log(flowerDmg);
+        if (flowerDmg == 2)
+        {
+            mainScript.flowersDestroyed++;
+        }
     }
 }

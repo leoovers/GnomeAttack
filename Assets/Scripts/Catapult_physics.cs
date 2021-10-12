@@ -12,6 +12,7 @@ public class Catapult_physics : MonoBehaviour
     public Slider powerslider;  // UI slider for launch power control
     public Text angleText;  // UI text for angle in degrees
     public GameObject lossPanel;
+    public GameObject winPanel;
     public GameObject normalGnome;  // Prefab for spawning a new gnome
     public GameObject arrow;  // Object that indicates launch angle
     public GameObject spawnPoint;  // Empty object that indicates position for spawning gnomes
@@ -25,6 +26,7 @@ public class Catapult_physics : MonoBehaviour
     private bool launched = false;
     private bool sliderStopped = false;
     private int numberOfGnomes;
+    public int flowersDestroyed = 0;
 
     void Start()
     {
@@ -100,7 +102,7 @@ public class Catapult_physics : MonoBehaviour
             if (!sliderStopped)
             {
                 powerslider.value = (Mathf.Cos(Time.time * 2) + 1) * 20;  // Add time multiplier to add slider speed
-            } 
+            }
         }
 
         angleText.text = angle.ToString() + "°";
@@ -123,7 +125,10 @@ public class Catapult_physics : MonoBehaviour
     IEnumerator Launch ()
 	{
 		yield return new WaitForSeconds(6f);  // Time before new gnome is spawned after launch
-
+        if (flowersDestroyed > 3)
+        {
+            levelWon = true;
+        }
         if (numberOfGnomes > 0 & !levelWon)
         {   
             Destroy(nGnomeAudio);
@@ -141,6 +146,10 @@ public class Catapult_physics : MonoBehaviour
                 lossPanel.SetActive(true);
                 Debug.Log ("Out of gnomes!");
             }
+            else
+            {   
+                winPanel.SetActive(true); 
+            }
         }
-        }
+    }
 }
