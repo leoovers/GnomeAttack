@@ -122,6 +122,7 @@ public class Catapult_physics : MonoBehaviour
         nGnomeRigid.AddForce(dir * thrust, ForceMode2D.Impulse);
         PlayGrunt();
         camFollowScript.xOffset = 3;  // Center the camera a bit more on launch
+        camFollowScript.smoothTime = 0.3f;
         launched = true;
         numberOfGnomes--;
         StartCoroutine(Launch());

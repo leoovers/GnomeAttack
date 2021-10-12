@@ -24,6 +24,7 @@ public class CameraFollow : MonoBehaviour
         toggleFreeLook = false;
         xOffset = 6;
         yOffset = 1.5f;
+        smoothTime = 2f;
     }
 
     void cameraUpdate()
