@@ -7,6 +7,7 @@ public class Flower : MonoBehaviour
     public Catapult_physics mainScript;
     private Animator m_Anim;
     private int flowerDmg = 0;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,11 @@ public class Flower : MonoBehaviour
         if (flowerDmg == 2)
         {
             mainScript.flowersDestroyed++;
+        }
+
+        if (mainScript.flowersDestroyed > 3)
+        {
+            mainScript.levelWon = true;
         }
     }
 }

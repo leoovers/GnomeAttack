@@ -26,6 +26,7 @@ public class Catapult_physics : MonoBehaviour
     private bool launched = false;
     private bool sliderStopped = false;
     private int numberOfGnomes;
+    [SerializeField]
     public int flowersDestroyed = 0;
 
     void Start()
@@ -125,10 +126,7 @@ public class Catapult_physics : MonoBehaviour
     IEnumerator Launch ()
 	{
 		yield return new WaitForSeconds(6f);  // Time before new gnome is spawned after launch
-        if (flowersDestroyed > 3)
-        {
-            levelWon = true;
-        }
+
         if (numberOfGnomes > 0 & !levelWon)
         {   
             Destroy(nGnomeAudio);
