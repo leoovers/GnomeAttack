@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class effectVolume : MonoBehaviour
 {
     private Slider fxSlider;
-    public float fxVolume = 0.5f;
+    public float fxVolume = 0.3f;
 
     // Start is called before the first frame update
     void Start()
     {
         fxSlider = GetComponent<Slider>();
         fxSlider.onValueChanged.AddListener(delegate { effectVolumeUpdate(); });
-        fxSlider.value = fxVolume;
+        fxSlider.value = 0.3f;
     }
 
     void effectVolumeUpdate()

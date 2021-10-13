@@ -22,9 +22,9 @@ public class CameraFollow : MonoBehaviour
         moveCameraSlider.onValueChanged.AddListener(delegate { cameraUpdate(); });  // Add listener for the slider
 
         toggleFreeLook = false;
-        xOffset = 6;
-        yOffset = 1.5f;
-        smoothTime = 2f;
+        xOffset = 9;
+        yOffset = 2.0f;
+        smoothTime = 1.7f;
     }
 
     void cameraUpdate()
