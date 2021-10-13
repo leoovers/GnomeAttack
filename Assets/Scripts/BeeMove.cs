@@ -10,7 +10,7 @@ public class BeeMove : MonoBehaviour
 
     private Vector3 nexPos;
 
-    bool facingRight = false;
+    bool facingRight;
 
 
     [SerializeField]
@@ -28,13 +28,23 @@ public class BeeMove : MonoBehaviour
         posA = childTransform.localPosition;
         posB = transformB.localPosition;
         nexPos = posB;
+
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        childTransform.Translate(Input.GetAxisRaw("Horizontal"), 0f, 0f);
+        
         Move();
+        if (childTransform.rotation.y == 0)
+        {
+            facingRight = false;
+        }
+        else if (childTransform.rotation.y == 180)
+        {
+            facingRight = true;
+        }
 
     }
 
