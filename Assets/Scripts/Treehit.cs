@@ -5,6 +5,7 @@ using UnityEngine;
 public class Treehit : MonoBehaviour
 {
     public Catapult_physics mainScript;
+    public BeeSpawn beescript;
     private Animator m_Anim;
 
     void Start()
@@ -29,6 +30,7 @@ public class Treehit : MonoBehaviour
         {
             m_Anim.SetTrigger("HitBeehive");
             mainScript.levelWon = true;
+            beescript.Invoke("SpawnBees", 2f);
             Destroy(GetComponent<CapsuleCollider2D>());
         }
     }
