@@ -14,13 +14,14 @@ public class Catapult_physics : MonoBehaviour
     public Text angleText;  // UI text for angle in degrees
     public GameObject lossPanel;
     public GameObject winPanel;
-    public GameObject normalGnome;  // Prefab for spawning a new gnome
+    public GameObject[] gnomes;  // Prefab for spawning a new gnome
     public GameObject arrow;  // Object that indicates launch angle
     public GameObject spawnPoint;  // Empty object that indicates position for spawning gnomes
     public float thrust;  // Amount of force applied in launch
     public int angle = 60;  // Angle in degrees
     public bool levelWon = false;
 
+    private GameObject lastGnome;
     private GameObject newGnome;
     private AudioSource nGnomeAudio;
     public AudioClip[] grunt;
@@ -29,9 +30,11 @@ public class Catapult_physics : MonoBehaviour
     private int numberOfGnomes;
     [SerializeField]
     public int flowersDestroyed = 0;
+    private int launchNumber;
 
     void Start()
     {
+        launchNumber = 0;  // First launch is 0 second is 1 ...
         Button p_btn = plus_button.GetComponent<Button>();  // Grabs the plus button component
 	    p_btn.onClick.AddListener(TaskOnClick_plus);  // Adds a listener on the button
 
@@ -42,10 +45,12 @@ public class Catapult_physics : MonoBehaviour
         powerslider.onValueChanged.AddListener(delegate { thrustValueUpdate(); }); // Adds a listener on the slider
 
         thrust = 1f;
-        numberOfGnomes = 3;
+        numberOfGnomes = gnomes.Length;
 
         arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);  // Turn arrow in default angle
-        newGnome = Instantiate(normalGnome, spawnPoint.transform.position, Quaternion.identity);  // Spawn new gnome based on a prefab
+        newGnome = Instantiate(gnomes[launchNumber], spawnPoint.transform.position, Quaternion.identity);  // Spawn new gnome based on a prefab
+        newGnome.transform.parent = gameObject.transform;
+        newGnome.name = "Gnome" + launchNumber.ToString();
         nGnomeAudio = newGnome.GetComponent<AudioSource>();
         camFollowScript.followTransform = newGnome.transform;  // Make the spawned gnome the new camera target
     }
@@ -117,9 +122,14 @@ public class Catapult_physics : MonoBehaviour
     }
 
     void onLaunch()
-    {
+    {   
+        Debug.Log(launchNumber);
+        lastGnome = GameObject.Find("Gnome" + (launchNumber - 1).ToString());
+        if (lastGnome)
+        {
+            Destroy(lastGnome.GetComponent<TrailRenderer>());
+        }
         Vector2 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
-        
         Rigidbody2D nGnomeRigid = newGnome.GetComponent<Rigidbody2D>();
         nGnomeRigid.AddForce(dir * thrust, ForceMode2D.Impulse);
         PlayGrunt();
@@ -136,9 +146,14 @@ public class Catapult_physics : MonoBehaviour
 
         if (numberOfGnomes > 0 & !levelWon)
         {   
+            launchNumber++;
             Destroy(nGnomeAudio);
-            newGnome = Instantiate(normalGnome, spawnPoint.transform.position, Quaternion.identity);
-            nGnomeAudio = newGnome.GetComponent<AudioSource>();
+            if (gnomes[launchNumber])
+            {
+                newGnome = Instantiate(gnomes[launchNumber], spawnPoint.transform.position, Quaternion.identity);
+                newGnome.transform.parent = gameObject.transform;
+                nGnomeAudio = newGnome.GetComponent<AudioSource>();
+            }
             camFollowScript.followTransform = newGnome.transform;
             camFollowScript.xOffset = 6;  // Camera X axis offset before launch
             sliderStopped = false;

@@ -5,19 +5,24 @@ using UnityEngine;
 public class normalGnome : MonoBehaviour
 {
     public GameObject crashEffect;
-    public Catapult_physics mainScript;
+    private Catapult_physics mainScript;
     public AudioClip[] explosionAudio;
     private AudioSource audioSource;
+    private TrailRenderer tr;
 
     // Start is called before the first frame update
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        mainScript = transform.parent.gameObject.GetComponent<Catapult_physics>();
+        tr = GetComponent<TrailRenderer>();
+        tr.emitting = true;
     }
 
     void OnCollisionEnter2D (Collision2D coll) {
         if (!coll.collider.CompareTag("Respawn")) {
             Explode();
+            tr.emitting = false;
         }
     }
 
@@ -27,6 +32,7 @@ public class normalGnome : MonoBehaviour
         {
             System.Random rnd = new System.Random();
             int rand = rnd.Next(0, explosionAudio.Length);
+            audioSource.volume = mainScript.fxVolScript.fxVolume;
             audioSource.clip = explosionAudio[rand];
             audioSource.Play();
         }
