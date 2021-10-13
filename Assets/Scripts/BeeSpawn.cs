@@ -24,5 +24,6 @@ public class BeeSpawn : MonoBehaviour
         newBee = Instantiate(bees, spawnPoint.transform.position, Quaternion.identity);
         newBee = Instantiate(bees2, spawnPoint.transform.position, Quaternion.identity);
 
+
     }
 }

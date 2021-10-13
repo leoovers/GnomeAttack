@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4872717650206208921}
   - component: {fileID: 9134079410767191183}
+  - component: {fileID: 1177930871}
   m_Layer: 5
   m_Name: EffectsSlider
   m_TagString: Untagged
@@ -90,6 +91,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1177930871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506047960950088480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac620ff59bd327b4ea8da52aec30b5f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fxVolume: 0.5
 --- !u!1 &773959599714432265
 GameObject:
   m_ObjectHideFlags: 0
@@ -3103,14 +3117,14 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7381278388371892043, guid: 355823cc0c287b74dad342ca263f5523, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 355823cc0c287b74dad342ca263f5523, type: 3}
---- !u!224 &3924628429837837845 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7381278388704862828, guid: 355823cc0c287b74dad342ca263f5523, type: 3}
-  m_PrefabInstance: {fileID: 5771509523951338617}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3924628430037705525 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7381278388371892044, guid: 355823cc0c287b74dad342ca263f5523, type: 3}
+  m_PrefabInstance: {fileID: 5771509523951338617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &3924628429837837845 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7381278388704862828, guid: 355823cc0c287b74dad342ca263f5523, type: 3}
   m_PrefabInstance: {fileID: 5771509523951338617}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7445422594339725575
