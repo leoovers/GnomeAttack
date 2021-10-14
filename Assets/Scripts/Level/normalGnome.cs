@@ -22,7 +22,10 @@ public class normalGnome : MonoBehaviour
     void OnCollisionEnter2D (Collision2D coll) {
         if (!coll.collider.CompareTag("Respawn")) {
             Explode();
-            tr.emitting = false;
+            if (tr)
+            {
+                tr.emitting = false;
+            }
         }
     }
 
