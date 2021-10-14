@@ -7,6 +7,8 @@ public class Fence : MonoBehaviour
     public GameObject winPanel;
     public GameObject deathEffect;
     public Catapult_physics mainScript;
+    public CameraFollow camScript;
+    public GameObject finalCameraPoint;
     private Animator m_Anim;
 
     void Start()
@@ -30,6 +32,7 @@ public class Fence : MonoBehaviour
     IEnumerator Win ()
 	{
 		yield return new WaitForSeconds(1f);
+        camScript.followTransform = finalCameraPoint.transform;
         winPanel.SetActive(true);
     
     }

@@ -7,6 +7,8 @@ public class Treehit : MonoBehaviour
     public Catapult_physics mainScript;
     public BeeSpawn beescript;
     private Animator m_Anim;
+    public CameraFollow camFollowScript;
+    public GameObject finalCameraPoint;
 
     void Start()
     {
@@ -29,6 +31,7 @@ public class Treehit : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             m_Anim.SetTrigger("HitBeehive");
+            camFollowScript.followTransform = finalCameraPoint.transform;
             mainScript.levelWon = true;
             beescript.Invoke("SpawnBees", 2f);
             Destroy(GetComponent<CapsuleCollider2D>());

@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Goal : MonoBehaviour {
 
+	public GameObject winPanel;
+    public GameObject deathEffect;
+    public GameObject finalCameraPoint;
+    public CameraFollow camScript;
+	// How long the player needs to stay at location
+    public float timerCountDown = 1.0f;
+    // Is the player currently at location
+    bool isPlayerColliding = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -12,15 +21,56 @@ public class Goal : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
 
-	void OnCollisionEnter2D(Collision2D collision)
-	{
-		if (collision.gameObject.tag == "Player") {
-			Debug.Log ("Level Completed!");
-			SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
-
+		if (isPlayerColliding == true)
+		{
+			timerCountDown -= Time.deltaTime;
+			if (timerCountDown < 0)
+			{
+				timerCountDown = 0;
+			}
 		}
 	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		Debug.Log(!collision.GetComponent<Rigidbody2D>());
+		if(collision.gameObject.tag == "Stickable")
+        {
+            Debug.Log("Player Entered");
+            isPlayerColliding = true;
+        }
+	}
+
+	void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Stickable" && isPlayerColliding == true)
+        {
+            Debug.Log("Countdown not done yet");
+            if(timerCountDown <= 0)
+            {
+               
+				StartCoroutine(Win());
+			
+            }
+ 
+        }
+    }
+
+	void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Player Exited");
+            isPlayerColliding = false;
+        }
+    }
+
+	IEnumerator Win ()
+	{
+		Instantiate(deathEffect, transform.position, Quaternion.identity);
+		yield return new WaitForSeconds(1f);
+		camScript.followTransform = finalCameraPoint.transform;
+        winPanel.SetActive(true);
+    }
 }
