@@ -6,7 +6,9 @@ public class Window : MonoBehaviour
 {
     public GameObject winPanel;
     public GameObject deathEffect;
+    public GameObject finalCameraPoint;
     public Catapult_physics mainScript;
+    public CameraFollow camScript;
     private Animator m_Anim;
     private int hitCount;
     
@@ -14,6 +16,7 @@ public class Window : MonoBehaviour
     void Start()
     {
         m_Anim = GetComponent<Animator>();
+        hitCount = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,6 +39,7 @@ public class Window : MonoBehaviour
     IEnumerator Win ()
 	{
 		yield return new WaitForSeconds(1f);
+        camScript.followTransform = finalCameraPoint.transform;
         winPanel.SetActive(true);
     }
 
