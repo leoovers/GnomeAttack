@@ -15,6 +15,8 @@ public class LevelSelect : MonoBehaviour
     private Rect iconDimensions;
     private int PerPage;
     private int currentLevelCount;
+    [SerializeField] GameObject[] levelButtons;
+
 
     // Calculations how many panels are needed
     void Start()
@@ -44,7 +46,7 @@ public class LevelSelect : MonoBehaviour
             panel.GetComponent<RectTransform>().localPosition = new Vector2(panelDimensions.width * (i - 1), 0);
             SetUpGrid(panel);
             int numberOfIcons = i == numberOfPanels ? numberOfLevels - currentLevelCount : PerPage;
-            LoadIcons(numberOfIcons, panel);
+            LoadIcons(numberOfIcons, panel, numberOfLevels);
         }
         Destroy(panelClone);
     }
@@ -57,18 +59,23 @@ public class LevelSelect : MonoBehaviour
         grid.childAlignment = TextAnchor.MiddleCenter;
         grid.spacing = iconSpacing;
     }
-    void LoadIcons(int numberOfIcons, GameObject parentObject)
+    void LoadIcons(int numberOfIcons, GameObject parentObject, int numberOfLevels)
     {
         for (int i = 1; i <= numberOfIcons; i++)
         {
+           
             currentLevelCount++;
             GameObject icon = Instantiate(levelIcon) as GameObject;
             icon.transform.SetParent(thisCanvas.transform, false);
             icon.transform.SetParent(parentObject.transform);
             icon.name = "Level_" + i;
             icon.GetComponentInChildren<TextMeshProUGUI>().SetText(currentLevelCount.ToString());
+            levelButtons[i] = icon;
 
         }
+        //levelButtons[i] = "Level_" + i.ToString();
+
+
     }
 
 }
