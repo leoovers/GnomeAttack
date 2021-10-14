@@ -9,8 +9,9 @@ public class Goal : MonoBehaviour {
     public GameObject deathEffect;
     public GameObject finalCameraPoint;
     public CameraFollow camScript;
+	public Catapult_physics mainScript;
 	// How long the player needs to stay at location
-    public float timerCountDown = 1.0f;
+    public float timerCountDown = 5.0f;
     // Is the player currently at location
     bool isPlayerColliding = false;
 
@@ -35,7 +36,7 @@ public class Goal : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		Debug.Log(!collision.GetComponent<Rigidbody2D>());
-		if(collision.gameObject.tag == "Stickable")
+		if (collision.gameObject.tag == "Stickable")
         {
             Debug.Log("Player Entered");
             isPlayerColliding = true;
@@ -44,22 +45,22 @@ public class Goal : MonoBehaviour {
 
 	void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Stickable" && isPlayerColliding == true)
+        if (collision.gameObject.tag == "Stickable" && isPlayerColliding == true)
         {
             Debug.Log("Countdown not done yet");
-            if(timerCountDown <= 0)
+            if (timerCountDown <= 0)
             {
-               
+              	Debug.Log("in block");
+				  mainScript.levelWon = true;
 				StartCoroutine(Win());
-			
-            }
+			}
  
         }
     }
 
 	void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Stickable")
         {
             Debug.Log("Player Exited");
             isPlayerColliding = false;
@@ -69,7 +70,7 @@ public class Goal : MonoBehaviour {
 	IEnumerator Win ()
 	{
 		Instantiate(deathEffect, transform.position, Quaternion.identity);
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(2f);
 		camScript.followTransform = finalCameraPoint.transform;
         winPanel.SetActive(true);
     }
