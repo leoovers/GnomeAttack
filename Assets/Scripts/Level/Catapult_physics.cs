@@ -16,6 +16,7 @@ public class Catapult_physics : MonoBehaviour
     public GameObject winPanel;
     public GameObject[] gnomes;  // Prefab for spawning a new gnome
     public GameObject spawnPoint;  // Empty object that indicates position for spawning gnomes
+    public GameObject arrow;
     public float thrust;  // Amount of force applied in launch
     public int angle = 60;  // Angle in degrees
     public bool levelWon = false;
@@ -42,6 +43,8 @@ public class Catapult_physics : MonoBehaviour
         powerslider = powerslider.GetComponent<Slider>();
         powerslider.onValueChanged.AddListener(delegate { thrustValueUpdate(); }); // Adds a listener on the slider
 
+        arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
+
         thrust = 1f;
         numberOfGnomes = gnomes.Length;
 
@@ -54,9 +57,10 @@ public class Catapult_physics : MonoBehaviour
 
     void TaskOnClick_plus(){
 		Debug.Log ("You have clicked the + button!");
-        if (angle < 100){
+        if (angle < 90){
             angle = angle + 2;
         }
+        arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
 	}
 
     void TaskOnClick_minus(){
@@ -64,6 +68,7 @@ public class Catapult_physics : MonoBehaviour
         if (angle > 0){
             angle = angle - 2;
         }
+        arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
 	}
 
     void thrustValueUpdate()
