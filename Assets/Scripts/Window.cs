@@ -9,6 +9,8 @@ public class Window : MonoBehaviour
     public GameObject finalCameraPoint;
     public Catapult_physics mainScript;
     public CameraFollow camScript;
+    public AudioClip[] windowAudio;
+    private AudioSource audioSource;
     private Animator m_Anim;
     private int hitCount;
     
@@ -16,6 +18,7 @@ public class Window : MonoBehaviour
     void Start()
     {
         m_Anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         hitCount = 0;
     }
 
@@ -31,9 +34,22 @@ public class Window : MonoBehaviour
                 Instantiate(deathEffect, transform.position, Quaternion.identity);
                 mainScript.levelWon = true;
                 StartCoroutine(Win());
+                PlayShatter();
             }
         }
 
+    }
+
+    public void PlayShatter()
+    {
+        if (audioSource)
+        {
+            System.Random rnd = new System.Random();
+            int rand = rnd.Next(0, windowAudio.Length);
+            audioSource.volume = mainScript.fxVolScript.fxVolume;
+            audioSource.clip = windowAudio[rand];
+            audioSource.Play();
+        }
     }
 
     IEnumerator Win ()

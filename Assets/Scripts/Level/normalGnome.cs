@@ -35,7 +35,7 @@ public class normalGnome : MonoBehaviour
         {
             System.Random rnd = new System.Random();
             int rand = rnd.Next(0, explosionAudio.Length);
-            audioSource.volume = mainScript.fxVolScript.fxVolume;
+            audioSource.volume = 0.2f;
             audioSource.clip = explosionAudio[rand];
             audioSource.Play();
         }
