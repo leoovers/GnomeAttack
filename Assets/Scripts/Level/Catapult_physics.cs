@@ -45,7 +45,7 @@ public class Catapult_physics : MonoBehaviour
 
         arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
 
-        thrust = 1f;
+        thrust = 10f;
         numberOfGnomes = gnomes.Length;
 
         newGnome = Instantiate(gnomes[launchNumber], spawnPoint.transform.position, Quaternion.identity);  // Spawn new gnome based on a prefab
@@ -112,7 +112,8 @@ public class Catapult_physics : MonoBehaviour
             }
             if (!sliderStopped)
             {
-                powerslider.value = (Mathf.Cos(Time.time * 2) + 1) * 20;  // Add time multiplier to add slider speed
+                powerslider.value = (Mathf.Cos(Time.time * 2.5f) + 1.25f) * 20;  // Add time multiplier to add slider speed
+                Debug.Log((Mathf.Cos(Time.time * 2) + 1.25f) * 20);
             }
         }
 
