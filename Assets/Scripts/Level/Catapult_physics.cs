@@ -12,6 +12,8 @@ public class Catapult_physics : MonoBehaviour
     public Button minus_button;  // UI button for angle minus
     public Slider powerslider;  // UI slider for launch power control
     public Text angleText;  // UI text for angle in degrees
+    // public Text scoreText;
+    public Text gnomesLeft;
     public GameObject lossPanel;
     public GameObject winPanel;
     public GameObject[] gnomes;  // Prefab for spawning a new gnome
@@ -47,6 +49,7 @@ public class Catapult_physics : MonoBehaviour
 
         thrust = 10f;
         numberOfGnomes = gnomes.Length;
+        gnomesLeft.text = numberOfGnomes.ToString();
 
         newGnome = Instantiate(gnomes[launchNumber], spawnPoint.transform.position, Quaternion.identity);  // Spawn new gnome based on a prefab
         newGnome.transform.parent = gameObject.transform;
@@ -113,7 +116,6 @@ public class Catapult_physics : MonoBehaviour
             if (!sliderStopped)
             {
                 powerslider.value = (Mathf.Cos(Time.time * 2.5f) + 1.25f) * 20;  // Add time multiplier to add slider speed
-                Debug.Log((Mathf.Cos(Time.time * 2) + 1.25f) * 20);
             }
         }
 
@@ -138,6 +140,7 @@ public class Catapult_physics : MonoBehaviour
         launched = true;
         sliderStopped = true;
         numberOfGnomes--;
+        gnomesLeft.text = numberOfGnomes.ToString();
         StartCoroutine(Launch());
     }
 
