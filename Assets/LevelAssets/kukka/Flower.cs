@@ -5,6 +5,8 @@ using UnityEngine;
 public class Flower : MonoBehaviour
 {
     public Catapult_physics mainScript;
+    public CameraFollow camScript;
+    public GameObject deathEffect;
     private Animator m_Anim;
     private int flowerDmg = 0;
     
@@ -31,11 +33,20 @@ public class Flower : MonoBehaviour
         if (flowerDmg == 2)
         {
             mainScript.flowersDestroyed++;
+            StartCoroutine(Freeze());
         }
 
         if (mainScript.flowersDestroyed > 3)
         {
             mainScript.levelWon = true;
         }
+    }
+
+    IEnumerator Freeze ()
+	{
+		Instantiate(deathEffect, transform.position, Quaternion.identity);
+        camScript.followTransform = this.transform;
+		yield return new WaitForSeconds(1f);
+		camScript.followTransform = mainScript.newGnome.transform;
     }
 }

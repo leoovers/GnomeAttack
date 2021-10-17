@@ -24,7 +24,7 @@ public class Catapult_physics : MonoBehaviour
     public bool levelWon = false;
 
     private GameObject lastGnome;
-    private GameObject newGnome;
+    public GameObject newGnome;
     private AudioSource nGnomeAudio;
     public AudioClip[] grunt;
     private bool launched = false;

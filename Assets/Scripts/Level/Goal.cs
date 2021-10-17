@@ -13,7 +13,7 @@ public class Goal : MonoBehaviour {
 	// How long the player needs to stay at location
     public float timerCountDown = 5.0f;
     // Is the player currently at location
-    bool isPlayerColliding = false;
+    private bool isPlayerColliding = false;
 
 	// Use this for initialization
 	void Start () {
@@ -35,6 +35,7 @@ public class Goal : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		//  timerCountDown = 5.0f;
 		Debug.Log(!collision.GetComponent<Rigidbody2D>());
 		if (collision.gameObject.tag == "Stickable")
         {
