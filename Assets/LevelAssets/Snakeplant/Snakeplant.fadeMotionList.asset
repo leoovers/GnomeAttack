@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
+  m_Name: Snakeplant.fadeMotionList
+  m_EditorClassIdentifier: 
+  MotionInstanceIds: 4cd4ffff40d4ffff38d4ffff70d2ffff
+  CubismFadeMotionObjects:
+  - {fileID: 11400000, guid: aa946b123c0760245abdbd21dd6c59b7, type: 2}
+  - {fileID: 11400000, guid: 37e94156166074743a319d072da7e2e5, type: 2}
+  - {fileID: 11400000, guid: 61502e890f9e6f94b9b9de3743700d85, type: 2}
+  - {fileID: 11400000, guid: 7f82bf41c8f2fbe4e87913f06ac0fbd2, type: 2}

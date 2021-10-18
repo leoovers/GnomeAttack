@@ -1,0 +1,52 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "lasi"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "lasi2"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "lasirik"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "sirpa"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "light"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "lasin palat lentelee"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "Part",
+			"Name": "Folder 4 Copy"
+		},
+		{
+			"Id": "Part2",
+			"Name": "sirpa Copy"
+		}
+	],
+	"CombinedParameters": [
+		[
+			"Param",
+			"Param2"
+		]
+	]
+}
