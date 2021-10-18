@@ -62,7 +62,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626362437252956091}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -136,6 +136,8 @@ GameObject:
   - component: {fileID: 8175780701522728949}
   - component: {fileID: 1860527634068405497}
   - component: {fileID: 6048013524633356278}
+  - component: {fileID: 551924291393406699}
+  - component: {fileID: 2054808575735627506}
   m_Layer: 0
   m_Name: sugarpack
   m_TagString: Untagged
@@ -210,7 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Opacity: 1
-  _lastOpacity: 0
+  _lastOpacity: 1
   _sortingLayerId: 0
   _sortingMode: 0
   _sortingOrder: 0
@@ -279,7 +281,7 @@ Animator:
   m_GameObject: {fileID: 763261122209126858}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 672f35d787927b24d8df1e7d2a3eb844, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -301,6 +303,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CubismFadeMotionList: {fileID: 0}
+--- !u!114 &551924291393406699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763261122209126858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd8116e2a9f5f614f829520e21e87037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &2054808575735627506
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763261122209126858}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07653165, y: -0.1798493}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.64795446, y: 0.67601615}
+  m_EdgeRadius: 0
 --- !u!1 &1577703761442736593
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,7 +637,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5041389458982089565}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
