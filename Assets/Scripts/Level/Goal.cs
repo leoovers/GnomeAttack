@@ -11,7 +11,7 @@ public class Goal : MonoBehaviour {
     public CameraFollow camScript;
 	public Catapult_physics mainScript;
 	// How long the player needs to stay at location
-    public float timerCountDown = 5.0f;
+    public float timerCountDown = 3;
     // Is the player currently at location
     private bool isPlayerColliding = false;
 
@@ -23,20 +23,11 @@ public class Goal : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (isPlayerColliding == true)
-		{
-			timerCountDown -= Time.deltaTime;
-			if (timerCountDown < 0)
-			{
-				timerCountDown = 0;
-			}
-		}
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		//  timerCountDown = 5.0f;
-		Debug.Log(!collision.GetComponent<Rigidbody2D>());
 		if (collision.gameObject.tag == "Stickable")
         {
             Debug.Log("Player Entered");
@@ -48,11 +39,16 @@ public class Goal : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Stickable" && isPlayerColliding == true)
         {
+			timerCountDown -= Time.deltaTime;
+				if (timerCountDown < 0)
+				{
+					timerCountDown = 0;
+				}
             Debug.Log("Countdown not done yet");
             if (timerCountDown <= 0)
             {
               	Debug.Log("in block");
-				  mainScript.levelWon = true;
+				mainScript.levelWon = true;
 				StartCoroutine(Win());
 			}
  
@@ -65,6 +61,7 @@ public class Goal : MonoBehaviour {
         {
             Debug.Log("Player Exited");
             isPlayerColliding = false;
+			timerCountDown = 3;
         }
     }
 

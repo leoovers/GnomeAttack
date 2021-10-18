@@ -25,7 +25,8 @@ public class stickyGnome : MonoBehaviour
 	{
         if(colInfo.gameObject.tag == "Stickable")
         {
-            Destroy(rigid);
+            rigid.isKinematic = true;
+            rigid.velocity = Vector3.zero;
         }
         if (!colInfo.collider.CompareTag("Respawn")) {
             Explode();
