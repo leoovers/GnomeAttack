@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 4113304924574067267}
   - component: {fileID: 4113304924574067264}
   - component: {fileID: 4113304924574067265}
-  m_Layer: 0
+  - component: {fileID: 9206576604552461121}
+  m_Layer: 7
   m_Name: glassShard5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,6 +348,20 @@ PolygonCollider2D:
       - {x: -0.305, y: 0.315}
       - {x: -0.33499998, y: 0.33499998}
       - {x: -0.36499998, y: 0.325}
+--- !u!114 &9206576604552461121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4113304924574067263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 294f862a811b8c343b33517d97641681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceDirection: {x: 200, y: 0}
+  torque: 200
 --- !u!1 &4113304924608968427
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +374,8 @@ GameObject:
   - component: {fileID: 4113304924608968431}
   - component: {fileID: 4113304924608968428}
   - component: {fileID: 4113304924608968429}
-  m_Layer: 0
+  - component: {fileID: 2862003066606753892}
+  m_Layer: 7
   m_Name: glassShard3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -611,6 +627,20 @@ PolygonCollider2D:
       - {x: 2.7949998, y: 2.355}
       - {x: 3.0149999, y: 2.465}
       - {x: 3.0149999, y: 2.5449998}
+--- !u!114 &2862003066606753892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4113304924608968427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 294f862a811b8c343b33517d97641681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceDirection: {x: 200, y: 0}
+  torque: 200
 --- !u!1 &4113304924761938795
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,7 +653,8 @@ GameObject:
   - component: {fileID: 4113304924761938799}
   - component: {fileID: 4113304924761938796}
   - component: {fileID: 4113304924761938797}
-  m_Layer: 0
+  - component: {fileID: 226113954862885334}
+  m_Layer: 7
   m_Name: glassShard2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -894,6 +925,20 @@ PolygonCollider2D:
       - {x: 2.695, y: 3.205}
       - {x: 2.605, y: 3.135}
       - {x: 2.615, y: 3.115}
+--- !u!114 &226113954862885334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4113304924761938795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 294f862a811b8c343b33517d97641681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceDirection: {x: 200, y: 100}
+  torque: 200
 --- !u!1 &4113304925332730456
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,7 +951,8 @@ GameObject:
   - component: {fileID: 4113304925332730460}
   - component: {fileID: 4113304925332730461}
   - component: {fileID: 4113304925332730458}
-  m_Layer: 0
+  - component: {fileID: 8915845862904293921}
+  m_Layer: 7
   m_Name: glassShard4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1180,6 +1226,20 @@ PolygonCollider2D:
       - {x: -2.905, y: 1.235}
       - {x: -2.945, y: 1.235}
       - {x: -2.975, y: 1.225}
+--- !u!114 &8915845862904293921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4113304925332730456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 294f862a811b8c343b33517d97641681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceDirection: {x: -200, y: 0}
+  torque: -200
 --- !u!1 &4113304926082208133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,7 +1252,8 @@ GameObject:
   - component: {fileID: 4113304926082208137}
   - component: {fileID: 4113304926082208134}
   - component: {fileID: 4113304926082208135}
-  m_Layer: 0
+  - component: {fileID: 4536865755284533087}
+  m_Layer: 7
   m_Name: glassShard1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1449,6 +1510,20 @@ PolygonCollider2D:
       - {x: -1.895, y: 2.495}
       - {x: -1.885, y: 2.5249999}
       - {x: -1.9449999, y: 2.565}
+--- !u!114 &4536865755284533087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4113304926082208133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 294f862a811b8c343b33517d97641681, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceDirection: {x: -200, y: 100}
+  torque: -200
 --- !u!1 &7303471907659104026
 GameObject:
   m_ObjectHideFlags: 0
