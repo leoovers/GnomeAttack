@@ -9,6 +9,8 @@ public class heavyGnome : MonoBehaviour
     public float force;
     public LayerMask LayerToHit;
     public GameObject ExplosionEffect;
+    public CameraFollow camScript;
+
     private bool exploded;
 
     // Start is called before the first frame update
@@ -29,8 +31,10 @@ public class heavyGnome : MonoBehaviour
         }
 
         GameObject ExplosionEffectins = Instantiate(ExplosionEffect, transform.position, Quaternion.identity);
+        StartCoroutine(Camera.main.GetComponent<CameraFollow>().Shake(0.5f, 0.5f));
         Destroy(ExplosionEffectins, 10);
-        Destroy(gameObject);
+        exploded = true;
+        // Destroy(gameObject);
     }
 
     void onDrawGizmosSelected()

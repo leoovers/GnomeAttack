@@ -15,6 +15,7 @@ public class CameraFollow : MonoBehaviour
     private Slider moveCameraSlider;
     public float smoothTime = 0.01F;
     private Vector3 velocity = Vector3.zero;
+    public bool shaking = false;
 
     void Start()
     {
@@ -49,15 +50,44 @@ public class CameraFollow : MonoBehaviour
             
         }
 
-        if (!toggleFreeLook){
+        if (!toggleFreeLook & !shaking)
+        {
             moveCamera.gameObject.SetActive(false);
             this.transform.position = Vector3.SmoothDamp(this.transform.position, new Vector3(followTransform.position.x + xOffset,
             followTransform.position.y + yOffset, -10), ref velocity, smoothTime);
         }
-        else{
-            moveCamera.gameObject.SetActive(true);
-            this.transform.position = new Vector3(cameraXvalue,
-            followTransform.position.y + yOffset, this.transform.position.z);
+        else
+        {
+            if (toggleFreeLook)
+            {
+                moveCamera.gameObject.SetActive(true);
+                this.transform.position = new Vector3(cameraXvalue,
+                followTransform.position.y + yOffset, this.transform.position.z);
+            }
+
         }
+    }
+
+    public IEnumerator Shake(float duration, float magnitude)
+    {
+        shaking = true;
+        Debug.Log("Shaking");
+        Vector3 originalPos = transform.position;
+        
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            float xShakeOffset = Random.Range(-0.5f, 0.5f) * magnitude;
+            float yShakeOffset = Random.Range(-0.5f, 0.5f) * magnitude;
+
+            transform.position = new Vector3(xShakeOffset, yShakeOffset, originalPos.z);
+
+            elapsedTime += Time.deltaTime;
+
+            yield return null;
+        }
+        shaking = false;
+        transform.position = Vector3.SmoothDamp(transform.position, originalPos, ref velocity, smoothTime);
     }
 }
