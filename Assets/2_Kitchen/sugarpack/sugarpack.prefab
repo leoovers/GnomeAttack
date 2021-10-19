@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Opacity: 1
-  _lastOpacity: 1
+  _lastOpacity: 0
   _sortingLayerId: 0
   _sortingMode: 0
   _sortingOrder: 0
@@ -315,6 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd8116e2a9f5f614f829520e21e87037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainScript: {fileID: 0}
 --- !u!61 &2054808575735627506
 BoxCollider2D:
   m_ObjectHideFlags: 0

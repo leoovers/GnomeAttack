@@ -5,46 +5,45 @@ using UnityEngine;
 
 public class heavyGnome : MonoBehaviour
 {
-    Collider2D[] inExplosionRadius = null;
-    [SerializeField] private float ExplosionForceMulti = 5;
-    [SerializeField] private float ExplosionRadius = 10;
+    public float fieldOfImpact;
+    public float force;
+    public LayerMask LayerToHit;
+    public GameObject ExplosionEffect;
+    private bool exploded;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        exploded = false;
     }
 
-    void Explode()
+    void explode()
     {
-        inExplosionRadius = Physics2D.OverlapCircleAll(transform.position, ExplosionRadius);
+        Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, fieldOfImpact, LayerToHit);
 
-        foreach (Collider2D o in inExplosionRadius)
+        foreach(Collider2D obj in objects)
         {
-            Rigidbody2D o_rigidbody = o.GetComponent<Rigidbody2D>();
-            if (o_rigidbody != null)
-            {
-                Vector2 distanceVector = o.transform.position - transform.position;
-                if (distanceVector.magnitude > 0)
-                {
-                    float explosionForce = ExplosionForceMulti / distanceVector.magnitude;
-                    o_rigidbody.AddForce(distanceVector.normalized * explosionForce);
-                }
-            }
+            Vector2 direction = obj.transform.position - transform.position;
+
+            obj.GetComponent<Rigidbody2D>().AddForce(direction * force);
         }
+
+        GameObject ExplosionEffectins = Instantiate(ExplosionEffect, transform.position, Quaternion.identity);
+        Destroy(ExplosionEffectins, 10);
+        Destroy(gameObject);
     }
 
-    void onDrawGizmos()
+    void onDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(transform.position, ExplosionRadius);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, fieldOfImpact);
     }
 
     void OnCollisionEnter2D (Collision2D colInfo)
 	{
-        Explode();
-        if (colInfo.gameObject.tag == "Destructable")
+        if (!exploded & colInfo.gameObject.tag != "Respawn")
         {
-            Destroy(colInfo.gameObject);
+            explode();
         }
     }
 

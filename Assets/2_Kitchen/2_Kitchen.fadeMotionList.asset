@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
+  m_Name: 2_Kitchen.fadeMotionList
+  m_EditorClassIdentifier: 
+  MotionInstanceIds: 1ecbffff6eceffffaeddffff
+  CubismFadeMotionObjects:
+  - {fileID: 11400000, guid: 266c03f064b22a8418aac2274734b25d, type: 2}
+  - {fileID: 11400000, guid: 7550f3eaea1a0f54f9ad6498b257d4be, type: 2}
+  - {fileID: 11400000, guid: d7b1d66661c11344083016000e02dc4d, type: 2}
