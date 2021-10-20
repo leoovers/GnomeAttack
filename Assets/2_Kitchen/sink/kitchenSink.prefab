@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6309614143217106961}
   - component: {fileID: 5657226959542292696}
   - component: {fileID: 2056135138902600587}
+  - component: {fileID: -6780506492626290456}
   m_Layer: 0
   m_Name: kitchenSink
   m_TagString: Untagged
@@ -162,7 +163,7 @@ Animator:
   m_GameObject: {fileID: 510723370376234031}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eefdc2b4ddb6a7d42b969a3e2dc6df83, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -184,6 +185,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CubismFadeMotionList: {fileID: 0}
+--- !u!114 &-6780506492626290456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510723370376234031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb2da8e62fe2c6045b446840c443b673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &847763141307523584
 GameObject:
   m_ObjectHideFlags: 0
