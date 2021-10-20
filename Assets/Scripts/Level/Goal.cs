@@ -68,7 +68,7 @@ public class Goal : MonoBehaviour {
 	IEnumerator Win ()
 	{
 		Instantiate(deathEffect, transform.position, Quaternion.identity);
-		yield return new WaitForSeconds(2f);
+		yield return new WaitForSeconds(1f);
 		camScript.followTransform = finalCameraPoint.transform;
         winPanel.SetActive(true);
     }

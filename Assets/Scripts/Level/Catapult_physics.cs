@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System;
 using System.Collections;
 using TMPro;
@@ -14,6 +15,7 @@ public class Catapult_physics : MonoBehaviour
     public Text angleText;  // UI text for angle in degrees
     // public Text scoreText;
     public Text gnomesLeft;
+    public Text objectiveText;
     public GameObject lossPanel;
     public GameObject winPanel;
     public GameObject[] gnomes;  // Prefab for spawning a new gnome
@@ -46,6 +48,34 @@ public class Catapult_physics : MonoBehaviour
         powerslider.onValueChanged.AddListener(delegate { thrustValueUpdate(); }); // Adds a listener on the slider
 
         arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
+
+        Scene currScene = SceneManager.GetActiveScene();
+        string currSceneName = currScene.name;
+        if (currSceneName == "Level_1")
+        {
+            objectiveText.text = "Destroy the fence!";
+        }
+        if (currSceneName == "Level_2")
+        {
+            objectiveText.text = "Destroy the flowers!";
+        }
+        if (currSceneName == "Level_3")
+        {
+            objectiveText.text = "Put the gnome in the pot!";
+        }
+        if (currSceneName == "Level_4")
+        {
+            objectiveText.text= "Destroy the beehive!";
+        }
+        if (currSceneName == "Level_5")
+        {
+            objectiveText.text= "Break the window!";
+        }
+        if (currSceneName == "Level_6")
+        {
+            objectiveText.text= "Stack gnomes to reach the window!";
+        }
+        
 
         thrust = 10f;
         numberOfGnomes = gnomes.Length;
@@ -125,6 +155,7 @@ public class Catapult_physics : MonoBehaviour
 
     void onLaunch()
     {   
+        objectiveText.gameObject.SetActive(false);
         Debug.Log(launchNumber);
         lastGnome = GameObject.Find("Gnome" + (launchNumber - 1).ToString());
         if (lastGnome)
