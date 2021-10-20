@@ -81,11 +81,7 @@ public class Catapult_physics : MonoBehaviour
         numberOfGnomes = gnomes.Length;
         gnomesLeft.text = numberOfGnomes.ToString();
 
-        newGnome = Instantiate(gnomes[launchNumber], spawnPoint.transform.position, Quaternion.identity);  // Spawn new gnome based on a prefab
-        newGnome.transform.parent = gameObject.transform;
-        newGnome.name = "Gnome" + launchNumber.ToString();
-        nGnomeAudio = newGnome.GetComponent<AudioSource>();
-        camFollowScript.followTransform = newGnome.transform;  // Make the spawned gnome the new camera target
+        instantiateGnome();
     }
 
     void TaskOnClick_plus(){
@@ -112,6 +108,15 @@ public class Catapult_physics : MonoBehaviour
     void onSliderStop()
     {
         Debug.Log ("Slider stopped");
+    }
+
+    void instantiateGnome()
+    {
+        newGnome = Instantiate(gnomes[launchNumber], spawnPoint.transform.position, Quaternion.identity);  // Spawn new gnome based on a prefab
+        newGnome.transform.parent = gameObject.transform;
+        newGnome.name = "Gnome" + launchNumber.ToString();
+        nGnomeAudio = newGnome.GetComponent<AudioSource>();
+        camFollowScript.followTransform = newGnome.transform;
     }
 
     public void PlayGrunt()
@@ -185,12 +190,8 @@ public class Catapult_physics : MonoBehaviour
             Destroy(nGnomeAudio);
             if (gnomes[launchNumber])
             {
-                newGnome = Instantiate(gnomes[launchNumber], spawnPoint.transform.position, Quaternion.identity);
-                newGnome.name = "Gnome" + launchNumber.ToString();
-                newGnome.transform.parent = gameObject.transform;
-                nGnomeAudio = newGnome.GetComponent<AudioSource>();
+                instantiateGnome();
             }
-            camFollowScript.followTransform = newGnome.transform;
             camFollowScript.xOffset = 6;  // Camera X axis offset before launch
             sliderStopped = false;
             launched = false;
