@@ -202,6 +202,10 @@ public class Catapult_physics : MonoBehaviour
         {
             if (!levelWon)
             {
+                while (nGnomeRigid.velocity.magnitude > 5)
+                {
+                    yield return null;
+                }
                 lossPanel.SetActive(true);
                 Debug.Log ("Out of gnomes!");
             }
