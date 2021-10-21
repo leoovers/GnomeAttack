@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "flowerpot.moc3",
+		"Textures": [
+			"flowerpot.1024/texture_00.png"
+		],
+		"Physics": "flowerpot.physics3.json",
+		"DisplayInfo": "flowerpot.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		}
+	]
+}
