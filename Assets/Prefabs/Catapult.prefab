@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1085555202924393103}
   m_Layer: 0
   m_Name: Catapult
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,12 +129,17 @@ MonoBehaviour:
   minus_button: {fileID: 0}
   powerslider: {fileID: 0}
   angleText: {fileID: 0}
-  powerText: {fileID: 0}
+  lossPanel: {fileID: 0}
   normalGnome: {fileID: 6622122394134760983, guid: d0455339823d33a8aa35001849775efb, type: 3}
   arrow: {fileID: 0}
   spawnPoint: {fileID: 1085555203541733184}
   thrust: 0
   angle: 60
+  levelWon: 0
+  grunt:
+  - {fileID: 8300000, guid: 558f9f56f603a954b8d45e17e89341d9, type: 3}
+  - {fileID: 8300000, guid: 2b6e306f144fd2047ad36490140f8b85, type: 3}
+  - {fileID: 8300000, guid: bd8857660a16ba549b8cc522d93d9117, type: 3}
 --- !u!1 &1085555203541733184
 GameObject:
   m_ObjectHideFlags: 0

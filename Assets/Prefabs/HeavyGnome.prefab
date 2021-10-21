@@ -135,3 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76c48846376aef3296163d83f95d8b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fieldOfImpact: 5
+  force: 70
+  LayerToHit:
+    serializedVersion: 2
+    m_Bits: 64
+  ExplosionEffect: {fileID: 2005487848922546467, guid: 1ef5948679f8f6a4e9ce3c2be2eb86f4, type: 3}
