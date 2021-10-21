@@ -404,6 +404,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5565197499792298304, guid: 018e4425d7a7d304c8f769393282a4dc, type: 3}
   m_PrefabInstance: {fileID: 1489912037}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &373294827 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2072874724654378650, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
+  m_PrefabInstance: {fileID: 2002242203}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &443872440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -695,6 +706,7 @@ MonoBehaviour:
   xOffset: 0
   yOffset: 0
   smoothTime: 0.3
+  shaking: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -3105,6 +3117,10 @@ PrefabInstance:
       propertyPath: minus_button
       value: 
       objectReference: {fileID: 121503018}
+    - target: {fileID: 1085555202924393103, guid: 606d92130e206be4e9ba7f7040434c21, type: 3}
+      propertyPath: objectiveText
+      value: 
+      objectReference: {fileID: 373294827}
     - target: {fileID: 1085555202924393103, guid: 606d92130e206be4e9ba7f7040434c21, type: 3}
       propertyPath: camFollowScript
       value: 
