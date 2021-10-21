@@ -34,6 +34,9 @@ public class Catapult_physics : MonoBehaviour
     private int numberOfGnomes;
     public int flowersDestroyed = 0;
     private int launchNumber;
+    private bool gnomeStopped;
+    private float stoppedTime;
+    private Rigidbody2D nGnomeRigid;
 
     void Start()
     {
@@ -117,6 +120,7 @@ public class Catapult_physics : MonoBehaviour
         newGnome.name = "Gnome" + launchNumber.ToString();
         nGnomeAudio = newGnome.GetComponent<AudioSource>();
         camFollowScript.followTransform = newGnome.transform;
+        nGnomeRigid = newGnome.GetComponent<Rigidbody2D>();
     }
 
     public void PlayGrunt()
@@ -129,7 +133,6 @@ public class Catapult_physics : MonoBehaviour
             nGnomeAudio.clip = grunt[rand];
             nGnomeAudio.Play();
         }
-
     }
 
     void Update()
@@ -168,7 +171,6 @@ public class Catapult_physics : MonoBehaviour
             Destroy(lastGnome.GetComponent<TrailRenderer>());
         }
         Vector2 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
-        Rigidbody2D nGnomeRigid = newGnome.GetComponent<Rigidbody2D>();
         nGnomeRigid.AddForce(dir * thrust, ForceMode2D.Impulse);
         PlayGrunt();
         camFollowScript.xOffset = 3;  // Center the camera a bit more on launch
