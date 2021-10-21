@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 5657226959542292696}
   - component: {fileID: 2056135138902600587}
   - component: {fileID: -6780506492626290456}
+  - component: {fileID: 5663013909955451828}
   m_Layer: 0
   m_Name: kitchenSink
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 510723370376234031}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 6764087852516853395}
   - {fileID: 3181840103766842345}
@@ -94,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Opacity: 1
-  _lastOpacity: 0
+  _lastOpacity: 1
   _sortingLayerId: 0
   _sortingMode: 0
   _sortingOrder: 0
@@ -197,6 +198,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb2da8e62fe2c6045b446840c443b673, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &5663013909955451828
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 510723370376234031}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.26854748, y: 0.18271042}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.17841631, y: 0.041077107}
+  m_EdgeRadius: 0
 --- !u!1 &847763141307523584
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +252,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847763141307523584}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00006}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000069999995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46937535998529694}
@@ -311,7 +338,7 @@ MonoBehaviour:
   _mainTexture: {fileID: 2800000, guid: 07eebe293907bb44cba80022160c3b6f, type: 3}
   _sortingMode: 0
   _sortingOrder: 0
-  _renderOrder: 6
+  _renderOrder: 7
   _depthOffset: 0.00001
   _opacity: 1
 --- !u!1 &856993367681986932
@@ -342,7 +369,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856993367681986932}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00003}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46937535998529694}
@@ -428,7 +455,7 @@ MonoBehaviour:
   _mainTexture: {fileID: 2800000, guid: 07eebe293907bb44cba80022160c3b6f, type: 3}
   _sortingMode: 0
   _sortingOrder: 0
-  _renderOrder: 3
+  _renderOrder: 4
   _depthOffset: 0.00001
   _opacity: 1
 --- !u!1 &1005388592380066700
@@ -459,7 +486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005388592380066700}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.000069999995}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46937535998529694}
@@ -545,7 +572,7 @@ MonoBehaviour:
   _mainTexture: {fileID: 2800000, guid: 07eebe293907bb44cba80022160c3b6f, type: 3}
   _sortingMode: 0
   _sortingOrder: 0
-  _renderOrder: 7
+  _renderOrder: 8
   _depthOffset: 0.00001
   _opacity: 1
 --- !u!1 &1021030579567358506
@@ -733,7 +760,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3702261729570447496}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00002}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46937535998529694}
@@ -819,7 +846,7 @@ MonoBehaviour:
   _mainTexture: {fileID: 2800000, guid: 07eebe293907bb44cba80022160c3b6f, type: 3}
   _sortingMode: 0
   _sortingOrder: 0
-  _renderOrder: 2
+  _renderOrder: 3
   _depthOffset: 0.00001
   _opacity: 1
 --- !u!1 &3754140372712363301
@@ -850,7 +877,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3754140372712363301}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00001}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46937535998529694}
@@ -884,7 +911,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3754140372712363301}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -936,7 +963,7 @@ MonoBehaviour:
   _mainTexture: {fileID: 2800000, guid: 07eebe293907bb44cba80022160c3b6f, type: 3}
   _sortingMode: 0
   _sortingOrder: 0
-  _renderOrder: 1
+  _renderOrder: 2
   _depthOffset: 0.00001
   _opacity: 0
 --- !u!1 &3768136659767370898
@@ -967,7 +994,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3768136659767370898}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00004}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46937535998529694}
@@ -1053,7 +1080,7 @@ MonoBehaviour:
   _mainTexture: {fileID: 2800000, guid: 07eebe293907bb44cba80022160c3b6f, type: 3}
   _sortingMode: 0
   _sortingOrder: 0
-  _renderOrder: 4
+  _renderOrder: 5
   _depthOffset: 0.00001
   _opacity: 0.5
 --- !u!1 &4313422565919228555
@@ -1161,7 +1188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unmanagedIndex: 2
-  Value: 0
+  Value: 30
 --- !u!114 &5907796621056105934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1204,7 +1231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5968267095856643072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0001}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46937535998529694}
@@ -1290,7 +1317,7 @@ MonoBehaviour:
   _mainTexture: {fileID: 2800000, guid: 07eebe293907bb44cba80022160c3b6f, type: 3}
   _sortingMode: 0
   _sortingOrder: 0
-  _renderOrder: 10
+  _renderOrder: 1
   _depthOffset: 0.00001
   _opacity: 1
 --- !u!1 &7114214114632379391
@@ -1321,7 +1348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7114214114632379391}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00005}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46937535998529694}
@@ -1407,7 +1434,7 @@ MonoBehaviour:
   _mainTexture: {fileID: 2800000, guid: 07eebe293907bb44cba80022160c3b6f, type: 3}
   _sortingMode: 0
   _sortingOrder: 0
-  _renderOrder: 5
+  _renderOrder: 6
   _depthOffset: 0.00001
   _opacity: 0.5
 --- !u!1 &7229367030578006064
@@ -1618,7 +1645,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7947154690028627972}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00008}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00009}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46937535998529694}
@@ -1704,7 +1731,7 @@ MonoBehaviour:
   _mainTexture: {fileID: 2800000, guid: 07eebe293907bb44cba80022160c3b6f, type: 3}
   _sortingMode: 0
   _sortingOrder: 0
-  _renderOrder: 8
+  _renderOrder: 9
   _depthOffset: 0.00001
   _opacity: 1
 --- !u!1 &8124191101082150482
@@ -1735,7 +1762,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8124191101082150482}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00009}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 46937535998529694}
@@ -1821,7 +1848,7 @@ MonoBehaviour:
   _mainTexture: {fileID: 2800000, guid: 07eebe293907bb44cba80022160c3b6f, type: 3}
   _sortingMode: 0
   _sortingOrder: 0
-  _renderOrder: 9
+  _renderOrder: 10
   _depthOffset: 0.00001
   _opacity: 1
 --- !u!1 &8321327555002418591

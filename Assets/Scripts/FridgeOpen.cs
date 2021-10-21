@@ -18,8 +18,7 @@ public class FridgeOpen : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             m_Anim.SetTrigger("Hit");
-            GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<CapsuleCollider2D>().enabled = true;
+
 
         }
     }
@@ -28,6 +27,7 @@ public class FridgeOpen : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             m_Anim.SetTrigger("HitCake");
+            GetComponent<CapsuleCollider2D>().enabled = false;
 
 
         }
