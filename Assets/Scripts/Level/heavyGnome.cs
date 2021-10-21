@@ -10,6 +10,7 @@ public class heavyGnome : MonoBehaviour
     public LayerMask LayerToHit;
     public GameObject ExplosionEffect;
     public CameraFollow camScript;
+    private Rigidbody2D rb;
 
     private bool exploded;
 
@@ -17,6 +18,7 @@ public class heavyGnome : MonoBehaviour
     void Start()
     {
         exploded = false;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void explode()
@@ -54,6 +56,6 @@ public class heavyGnome : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(rb.velocity.magnitude);
     }
 }

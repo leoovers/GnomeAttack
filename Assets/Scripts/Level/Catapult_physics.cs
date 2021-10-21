@@ -27,6 +27,7 @@ public class Catapult_physics : MonoBehaviour
 
     private GameObject lastGnome;
     public GameObject newGnome;
+    private Rigidbody2D nGnomeRigid;
     private AudioSource nGnomeAudio;
     public AudioClip[] grunt;
     private bool launched = false;
@@ -34,6 +35,8 @@ public class Catapult_physics : MonoBehaviour
     private int numberOfGnomes;
     public int flowersDestroyed = 0;
     private int launchNumber;
+    private float stoppedTime;
+    private bool gnomeStopped;
 
     void Start()
     {
@@ -117,6 +120,7 @@ public class Catapult_physics : MonoBehaviour
         newGnome.name = "Gnome" + launchNumber.ToString();
         nGnomeAudio = newGnome.GetComponent<AudioSource>();
         camFollowScript.followTransform = newGnome.transform;
+        nGnomeRigid = newGnome.GetComponent<Rigidbody2D>();
     }
 
     public void PlayGrunt()
@@ -158,6 +162,22 @@ public class Catapult_physics : MonoBehaviour
         // powerText.text = Math.Round((thrust / 40 * 100), 1).ToString() + " %";  
     }
 
+    void FixedUpdate()
+    {
+        if (nGnomeRigid.velocity.magnitude > 5)
+        {
+            stoppedTime = 0;
+        }
+        while (nGnomeRigid.velocity.magnitude < 5)
+        {
+            stoppedTime += Time.deltaTime;
+        }
+        if (stoppedTime > 1)
+        {
+            gnomeStopped = true;
+        }
+    }
+
     void onLaunch()
     {   
         objectiveText.gameObject.SetActive(false);
@@ -168,13 +188,13 @@ public class Catapult_physics : MonoBehaviour
             Destroy(lastGnome.GetComponent<TrailRenderer>());
         }
         Vector2 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
-        Rigidbody2D nGnomeRigid = newGnome.GetComponent<Rigidbody2D>();
         nGnomeRigid.AddForce(dir * thrust, ForceMode2D.Impulse);
         PlayGrunt();
         camFollowScript.xOffset = 3;  // Center the camera a bit more on launch
         camFollowScript.smoothTime = 0.3f;
         launched = true;
         sliderStopped = true;
+        gnomeStopped = false;
         numberOfGnomes--;
         gnomesLeft.text = numberOfGnomes.ToString();
         StartCoroutine(Launch());
@@ -182,7 +202,13 @@ public class Catapult_physics : MonoBehaviour
 
     IEnumerator Launch ()
 	{
-		yield return new WaitForSeconds(6f);  // Time before new gnome is spawned after launch
+        // yield return new WaitForSeconds(0.2f);
+        while (!gnomeStopped)
+        {
+            yield return null;
+        }
+        
+		yield return new WaitForSeconds(2f);  // Time before new gnome is spawned after launch
 
         if (numberOfGnomes > 0 & !levelWon)
         {   
