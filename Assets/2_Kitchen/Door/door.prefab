@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Opacity: 1
-  _lastOpacity: 1
+  _lastOpacity: 0
   _sortingLayerId: 0
   _sortingMode: 0
   _sortingOrder: 0
@@ -809,6 +809,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7a9b5575a04e445afbe146d3f49135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winPanel: {fileID: 0}
+  deathEffect: {fileID: 0}
+  finalCameraPoint: {fileID: 0}
+  camScript: {fileID: 0}
   mainScript: {fileID: 0}
   timerCountDown: 3
 --- !u!1 &6268697020050100055
