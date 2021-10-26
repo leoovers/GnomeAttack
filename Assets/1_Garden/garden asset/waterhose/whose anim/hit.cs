@@ -5,7 +5,6 @@ using UnityEngine;
 public class hit : MonoBehaviour
 {
     public Catapult_physics mainScript;
-    public GameObject finalCameraPoint;
     private Animator m_Anim;
 
     // Start is called before the first frame update

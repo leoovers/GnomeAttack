@@ -87,7 +87,6 @@ public class Catapult_physics : MonoBehaviour
             objectiveText.text= "Climb to the window!";
         }
         
-
         thrust = 10f;
         numberOfGnomes = gnomes.Length;
         gnomesLeft.text = numberOfGnomes.ToString();
