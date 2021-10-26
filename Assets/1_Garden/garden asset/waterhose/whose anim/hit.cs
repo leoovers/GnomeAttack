@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class hit : MonoBehaviour
 {
+    public Catapult_physics mainScript;
+    public GameObject finalCameraPoint;
     private Animator m_Anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +23,7 @@ public class hit : MonoBehaviour
     {
         print("Waterhose");
         m_Anim.SetBool("Hit", true);
+        mainScript.levelWon = true;
+        mainScript.camFollowScript.followTransform = this.transform;
     }
 }

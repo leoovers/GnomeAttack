@@ -64,7 +64,7 @@ public class Catapult_physics : MonoBehaviour
         }
         if (currSceneName == "Level_3")
         {
-            objectiveText.text = "Put the gnome in the pot!";
+            objectiveText.text = "Knock over the grill";
         }
         if (currSceneName == "Level_4")
         {
@@ -72,11 +72,19 @@ public class Catapult_physics : MonoBehaviour
         }
         if (currSceneName == "Level_5")
         {
-            objectiveText.text= "Break the window!";
+            objectiveText.text= "Bully the frogs!";
         }
         if (currSceneName == "Level_6")
         {
-            objectiveText.text= "Stack gnomes to reach the window!";
+            objectiveText.text= "Flood the lawn!";
+        }
+        if (currSceneName == "Level_7")
+        {
+            objectiveText.text= "Break the window!";
+        }
+        if (currSceneName == "Level_8")
+        {
+            objectiveText.text= "Climb to the window!";
         }
         
 
