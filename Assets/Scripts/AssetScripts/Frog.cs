@@ -21,12 +21,20 @@ public class Frog : MonoBehaviour
         {
             m_Anim.SetTrigger("Hit");
             Instantiate(deathEffect, transform.position, Quaternion.identity);
-            mainScript.flowersDestroyed++;
-            if (mainScript.flowersDestroyed == 2)
+            mainScript.objectivesDestroyed++;
+            if (mainScript.objectivesDestroyed == 2)
             {
                 mainScript.levelWon = true;
                 mainScript.camFollowScript.followTransform = finalCameraPoint.transform;
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        foreach(Collider2D c in GetComponents<CircleCollider2D> ()) 
+        {
+            Destroy(c);
         }
     }
 

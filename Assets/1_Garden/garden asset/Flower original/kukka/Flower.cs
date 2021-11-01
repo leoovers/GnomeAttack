@@ -32,11 +32,11 @@ public class Flower : MonoBehaviour
 
         if (flowerDmg == 2)
         {
-            mainScript.flowersDestroyed++;
+            mainScript.objectivesDestroyed++;
             StartCoroutine(Freeze());
         }
 
-        if (mainScript.flowersDestroyed > 3)
+        if (mainScript.objectivesDestroyed > 3)
         {
             mainScript.levelWon = true;
         }

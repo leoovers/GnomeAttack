@@ -10,32 +10,26 @@ public class Catapult_physics : MonoBehaviour
     public CameraFollow camFollowScript;  // Script attached to Main Camera
     public effectVolume fxVolScript;
     public Button plus_button;  //  UI button for angle plus
-    public Button minus_button;  // UI button for angle minus
-    public Slider powerslider;  // UI slider for launch power control
+    public Button minus_button;  // UI button for angle minus // UI slider for launch power control
     public Text angleText;  // UI text for angle in degrees
-    // public Text scoreText;
     public Text gnomesLeft;
-    public Text objectiveText;
     public GameObject lossPanel;
     public GameObject winPanel;
     public GameObject[] gnomes;  // Prefab for spawning a new gnome
     public GameObject spawnPoint;  // Empty object that indicates position for spawning gnomes
-    public GameObject arrow;
-    public float thrust;  // Amount of force applied in launch
+    public GameObject arrow; // Amount of force applied in launch
     public int angle = 60;  // Angle in degrees
     public bool levelWon = false;
+    public float thrust;
 
     private GameObject lastGnome;
     public GameObject newGnome;
     private AudioSource nGnomeAudio;
     public AudioClip[] grunt;
-    private bool launched = false;
-    private bool sliderStopped = false;
+    public bool launched = false;
     private int numberOfGnomes;
-    public int flowersDestroyed = 0;
+    public int objectivesDestroyed = 0;
     private int launchNumber;
-    private bool gnomeStopped;
-    private float stoppedTime;
     private Rigidbody2D nGnomeRigid;
 
     void Start()
@@ -47,47 +41,8 @@ public class Catapult_physics : MonoBehaviour
         Button m_btn = minus_button.GetComponent<Button>();  // Grabs the minus button component
 	    m_btn.onClick.AddListener(TaskOnClick_minus);  // Adds a listener on the button
 
-        powerslider = powerslider.GetComponent<Slider>();
-        powerslider.onValueChanged.AddListener(delegate { thrustValueUpdate(); }); // Adds a listener on the slider
-
         arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
-
-        Scene currScene = SceneManager.GetActiveScene();
-        string currSceneName = currScene.name;
-        if (currSceneName == "Level_1")
-        {
-            objectiveText.text = "Destroy the fence!";
-        }
-        if (currSceneName == "Level_2")
-        {
-            objectiveText.text = "Destroy the flowers!";
-        }
-        if (currSceneName == "Level_3")
-        {
-            objectiveText.text = "Knock over the grill";
-        }
-        if (currSceneName == "Level_4")
-        {
-            objectiveText.text= "Destroy the beehive!";
-        }
-        if (currSceneName == "Level_5")
-        {
-            objectiveText.text= "Bully the frogs!";
-        }
-        if (currSceneName == "Level_6")
-        {
-            objectiveText.text= "Flood the lawn!";
-        }
-        if (currSceneName == "Level_7")
-        {
-            objectiveText.text= "Break the window!";
-        }
-        if (currSceneName == "Level_8")
-        {
-            objectiveText.text= "Climb to the window!";
-        }
         
-        thrust = 10f;
         numberOfGnomes = gnomes.Length;
         gnomesLeft.text = numberOfGnomes.ToString();
 
@@ -109,11 +64,6 @@ public class Catapult_physics : MonoBehaviour
         }
         arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
 	}
-
-    void thrustValueUpdate()
-    {
-        thrust = powerslider.value;
-    }
 
     void onSliderStop()
     {
@@ -168,10 +118,6 @@ public class Catapult_physics : MonoBehaviour
             {
                 TaskOnClick_plus();
             }
-            if (!sliderStopped)
-            {
-                powerslider.value = (Mathf.Cos(Time.time * 2.5f) + 1.25f) * 20;  // Add time multiplier to add slider speed
-            }
         }
 
         angleText.text = angle.ToString() + "°";
@@ -180,7 +126,6 @@ public class Catapult_physics : MonoBehaviour
 
     void onLaunch()
     {   
-        objectiveText.gameObject.SetActive(false);
         Debug.Log(launchNumber);
         lastGnome = GameObject.Find("Gnome" + (launchNumber - 1).ToString());
         if (lastGnome)
@@ -193,7 +138,6 @@ public class Catapult_physics : MonoBehaviour
         camFollowScript.xOffset = 3;  // Center the camera a bit more on launch
         camFollowScript.smoothTime = 0.3f;
         launched = true;
-        sliderStopped = true;
         numberOfGnomes--;
         gnomesLeft.text = numberOfGnomes.ToString();
         StartCoroutine(Launch());
@@ -212,7 +156,6 @@ public class Catapult_physics : MonoBehaviour
                 instantiateGnome();
             }
             camFollowScript.xOffset = 6;  // Camera X axis offset before launch
-            sliderStopped = false;
             launched = false;
         }
         else

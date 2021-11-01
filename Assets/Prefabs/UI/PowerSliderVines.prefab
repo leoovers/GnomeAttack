@@ -307,6 +307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2136015712293167102}
   - component: {fileID: 2136015712293167103}
+  - component: {fileID: 12785823556409095}
   m_Layer: 5
   m_Name: PowerSliderVines
   m_TagString: Untagged
@@ -387,3 +388,15 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &12785823556409095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7783940565362812726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1053545c266e91b49a0f2e48f3ec8926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
