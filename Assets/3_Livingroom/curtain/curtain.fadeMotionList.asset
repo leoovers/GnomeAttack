@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
+  m_Name: curtain.fadeMotionList
+  m_EditorClassIdentifier: 
+  MotionInstanceIds: 0ae5ffff5ee2ffff4ae2ffffc6deffff22ddffff12ddffff
+  CubismFadeMotionObjects:
+  - {fileID: 11400000, guid: 60da0b9987497fc4ca68fb1c953454e1, type: 2}
+  - {fileID: 11400000, guid: 45f45d0964ef19641b2b4f5cbd852604, type: 2}
+  - {fileID: 11400000, guid: 5328d9ce7522cd94dafbdd2886dbfe99, type: 2}
+  - {fileID: 11400000, guid: 6e65dfa62ace90e4aa351de36466d266, type: 2}
+  - {fileID: 11400000, guid: d3b3616abc2481c4f8b79fb1d6a728b1, type: 2}
+  - {fileID: 11400000, guid: c6b1ce336f06f3941b1a7d3d8b6370ae, type: 2}
