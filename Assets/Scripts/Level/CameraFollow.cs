@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class CameraFollow : MonoBehaviour
 {
+    public Catapult_physics mainScript;
     public Transform followTransform;
     public Slider moveCamera;
     public float cameraXvalue;
@@ -34,7 +35,7 @@ public class CameraFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {   
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -65,6 +66,21 @@ public class CameraFollow : MonoBehaviour
                 followTransform.position.y + yOffset, this.transform.position.z);
             }
 
+        }
+
+        if (mainScript.launched)
+        {
+            xOffset = 3;  // Center the camera a bit more on launch
+            smoothTime = 0.3f;
+        }
+        else
+        {
+            xOffset = 6;
+        }
+
+        if (!mainScript.launched)
+        {
+            xOffset = 6;
         }
     }
 

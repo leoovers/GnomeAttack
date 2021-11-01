@@ -135,8 +135,6 @@ public class Catapult_physics : MonoBehaviour
         Vector2 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
         nGnomeRigid.AddForce(dir * thrust, ForceMode2D.Impulse);
         PlayGrunt();
-        camFollowScript.xOffset = 3;  // Center the camera a bit more on launch
-        camFollowScript.smoothTime = 0.3f;
         launched = true;
         numberOfGnomes--;
         gnomesLeft.text = numberOfGnomes.ToString();
@@ -155,7 +153,6 @@ public class Catapult_physics : MonoBehaviour
             {
                 instantiateGnome();
             }
-            camFollowScript.xOffset = 6;  // Camera X axis offset before launch
             launched = false;
         }
         else
