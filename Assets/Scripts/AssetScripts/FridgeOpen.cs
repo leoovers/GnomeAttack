@@ -5,19 +5,30 @@ using UnityEngine;
 public class FridgeOpen : MonoBehaviour
 {
     private Animator m_Anim;
-    private Collider2D cake;
+    private BoxCollider2D FreezerTrigger;
+    private BoxCollider2D FrigeTrigger;
     // Start is called before the first frame update
     void Start()
     {
-        cake = GetComponent<CapsuleCollider2D>();
+
         m_Anim = GetComponent<Animator>();
+        var colliders = GetComponents<BoxCollider2D>();
+        FreezerTrigger = colliders[0];
+        FrigeTrigger = colliders[3];
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            m_Anim.SetTrigger("Hit");
+            if (collision.IsTouching(FrigeTrigger))
+            {
+                m_Anim.SetTrigger("Hit");
+            }
+            if (collision.IsTouching(FreezerTrigger))
+            {
+                m_Anim.SetTrigger("Freezer");
+            }
 
 
         }
