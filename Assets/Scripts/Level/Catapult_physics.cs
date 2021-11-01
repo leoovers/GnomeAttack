@@ -146,7 +146,7 @@ public class Catapult_physics : MonoBehaviour
     {   
         if (!launched)
         {
-            if (Input.GetButtonUp("Jump"))
+            if (Input.GetButtonUp("Jump") | Input.touchCount > 0)
             {
                 onLaunch();
             }
