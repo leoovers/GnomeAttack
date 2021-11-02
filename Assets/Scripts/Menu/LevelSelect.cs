@@ -15,10 +15,10 @@ public class LevelSelect : MonoBehaviour
     private Rect iconDimensions;
     private int PerPage;
     private int currentLevelCount;
-    [SerializeField] GameObject[] levelButtons;
+    public GameObject[] levelButtons;
 
 
-    // Calculations how many panels are needed
+    // Calculations how many panels are needed  
     void Start()
     {
         panelDimensions = levelHolder.GetComponent<RectTransform>().rect;
@@ -28,6 +28,20 @@ public class LevelSelect : MonoBehaviour
         PerPage = maxInARow * maxInACol;
         int totalPages = Mathf.CeilToInt((float)numberOfLevels / PerPage);
         LoadPanels(totalPages);
+
+
+
+        //level progress
+
+        /*int levelReached = PlayerPrefs.GetInt("levelReached", 1);
+
+        for (int i = 0; i < levelButtons.Length; i++)
+        {
+            if (i + 1 > levelReached)
+            {
+                levelButtons[i].GetComponent<Button>().interactable = false;
+            }
+        }*/
     }
 
     // Total panels
@@ -63,18 +77,16 @@ public class LevelSelect : MonoBehaviour
     {
         for (int i = 1; i <= numberOfIcons; i++)
         {
-           
+
             currentLevelCount++;
             GameObject icon = Instantiate(levelIcon) as GameObject;
             icon.transform.SetParent(thisCanvas.transform, false);
             icon.transform.SetParent(parentObject.transform);
             icon.name = "Level_" + currentLevelCount;
             icon.GetComponentInChildren<TextMeshProUGUI>().SetText(currentLevelCount.ToString());
-            levelButtons[currentLevelCount] = icon;
+            levelButtons[currentLevelCount - 1] = icon;
 
         }
-        //levelButtons[i] = "Level_" + i.ToString();
-
 
     }
 
