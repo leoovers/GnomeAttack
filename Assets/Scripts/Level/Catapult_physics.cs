@@ -22,15 +22,16 @@ public class Catapult_physics : MonoBehaviour
     public bool levelWon = false;
     public float thrust;
 
-    private GameObject lastGnome;
     public GameObject newGnome;
-    private AudioSource nGnomeAudio;
     public AudioClip[] grunt;
     public bool launched = false;
-    private int numberOfGnomes;
     public int objectivesDestroyed = 0;
+    private int numberOfGnomes;
     private int launchNumber;
     private Rigidbody2D nGnomeRigid;
+    private GameObject lastGnome;
+    private AudioSource nGnomeAudio;
+    private float timeLaunched = 0f;
 
     void Start()
     {
@@ -119,6 +120,11 @@ public class Catapult_physics : MonoBehaviour
                 TaskOnClick_plus();
             }
         }
+        if (launched)
+        {
+            timeLaunched += Time.deltaTime;
+            Debug.Log(timeLaunched);
+        }
 
         angleText.text = angle.ToString() + "°";
         // powerText.text = Math.Round((thrust / 40 * 100), 1).ToString() + " %";  
@@ -143,28 +149,35 @@ public class Catapult_physics : MonoBehaviour
 
     IEnumerator Launch ()
 	{
-		yield return new WaitForSeconds(6f);  // Time before new gnome is spawned after launch
-
+        while (nGnomeRigid.velocity.magnitude > 5)
+        {
+            if (timeLaunched < 6f)
+            {
+                yield return null;
+            }
+            else
+            {
+                break;
+            }
+        }
+        
         if (numberOfGnomes > 0 & !levelWon)
         {   
+            yield return new WaitForSeconds(0.5f);
             launchNumber++;
             Destroy(nGnomeAudio);
             if (gnomes[launchNumber])
             {
                 instantiateGnome();
             }
+            timeLaunched = 0f;
             launched = false;
         }
         else
         {
-            if (!levelWon)
+            if (!levelWon & numberOfGnomes <= 0)
             {
-                while (nGnomeRigid.velocity.magnitude > 5)
-                {
-                    yield return null;
-                }
                 lossPanel.SetActive(true);
-                Debug.Log ("Out of gnomes!");
             }
             else
             {   

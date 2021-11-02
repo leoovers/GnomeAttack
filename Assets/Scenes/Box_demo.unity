@@ -699,6 +699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d5664064ea812f44a5cff8c7cdd1d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainScript: {fileID: 1085555204513386732}
   followTransform: {fileID: 0}
   moveCamera: {fileID: 1359130052}
   cameraXvalue: 0
@@ -2643,6 +2644,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5080275199589760816, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
+      propertyPath: mainScript
+      value: 
+      objectReference: {fileID: 1085555204513386732}
+    - target: {fileID: 5248761143773564491, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
+      propertyPath: mainScript
+      value: 
+      objectReference: {fileID: 1085555204513386732}
     - target: {fileID: 6151514847994319429, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

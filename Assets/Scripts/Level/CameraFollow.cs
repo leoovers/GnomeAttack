@@ -36,7 +36,7 @@ public class CameraFollow : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
+    {
         if (Input.GetKeyDown(KeyCode.F))
         {
             toggleFreeLook = !toggleFreeLook;
@@ -50,7 +50,10 @@ public class CameraFollow : MonoBehaviour
             }
             
         }
-
+    }
+    
+    void FixedUpdate()
+    {   
         if (!toggleFreeLook & !shaking)
         {
             moveCamera.gameObject.SetActive(false);
