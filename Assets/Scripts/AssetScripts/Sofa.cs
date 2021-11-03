@@ -13,9 +13,9 @@ public class Sofa : MonoBehaviour
     {
         m_Anim = GetComponent<Animator>();
         var colliders = GetComponents<BoxCollider2D>();
-        Ltrigger = colliders[3];
-        Mtrigger = colliders[4];
-        Rtrigger = colliders[5];
+        Ltrigger = colliders[2];
+        Mtrigger = colliders[3];
+        Rtrigger = colliders[0];
 
     }
 
