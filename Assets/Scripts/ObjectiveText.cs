@@ -16,37 +16,41 @@ public class ObjectiveText : MonoBehaviour
 
         Scene currScene = SceneManager.GetActiveScene();
         string currSceneName = currScene.name;
-        if (currSceneName == "Level_1")
+        if (currSceneName == "Level_01")
         {
             objectiveText.text = "Destroy the fence!";
         }
-        if (currSceneName == "Level_2")
+        if (currSceneName == "Level_02")
         {
             objectiveText.text = "Destroy the flowers!";
         }
-        if (currSceneName == "Level_3")
+        if (currSceneName == "Level_03")
         {
             objectiveText.text = "Knock over the grill";
         }
-        if (currSceneName == "Level_4")
+        if (currSceneName == "Level_04")
         {
             objectiveText.text= "Destroy the beehive!";
         }
-        if (currSceneName == "Level_5")
+        if (currSceneName == "Level_05")
         {
             objectiveText.text= "Bully the frogs!";
         }
-        if (currSceneName == "Level_6")
+        if (currSceneName == "Level_06")
         {
             objectiveText.text= "Flood the lawn!";
         }
-        if (currSceneName == "Level_7")
+        if (currSceneName == "Level_07")
         {
             objectiveText.text= "Break the window!";
         }
-        if (currSceneName == "Level_8")
+        if (currSceneName == "Level_08")
         {
             objectiveText.text= "Climb to the window!";
+        }
+        if (currSceneName == "Level_09")
+        {
+            objectiveText.text= "Flood the kitchen!";
         }
     }
 
