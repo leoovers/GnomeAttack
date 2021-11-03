@@ -9,6 +9,7 @@ public class Glass : MonoBehaviour
     int health = 1;
     [SerializeField]
     UnityEngine.Object destructableRef;
+    public Catapult_physics mainScript;
     void Start()
     {
         
@@ -34,11 +35,16 @@ public class Glass : MonoBehaviour
 
     private void explode()
     {
-        
+        mainScript.objectivesDestroyed++;
         GameObject destructable = (GameObject)(Instantiate(destructableRef));
 
         destructable.transform.position = transform.position;
 
         Destroy(gameObject);
+        if (mainScript.objectivesDestroyed >= 3)
+        {
+            mainScript.levelWon = true;
+        }
+
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class FlowerPot : MonoBehaviour
 {
     private Animator m_Anim;
+    public Catapult_physics mainScript;
     int hit = 0;
 
 
@@ -29,7 +30,9 @@ public class FlowerPot : MonoBehaviour
             if(hit == 2)
             {
                 GetComponent<BoxCollider2D>().enabled = false;
-            }
+                mainScript.levelWon = true;
+                 
+}
         }
     }
 }
