@@ -82,7 +82,14 @@ public class LevelSelect : MonoBehaviour
             GameObject icon = Instantiate(levelIcon) as GameObject;
             icon.transform.SetParent(thisCanvas.transform, false);
             icon.transform.SetParent(parentObject.transform);
-            icon.name = "Level_" + currentLevelCount;
+            if (currentLevelCount.ToString().Length == 1)
+            {
+                icon.name = "Level_0" + currentLevelCount;
+            }
+            else
+            {
+                icon.name = "Level_" + currentLevelCount;
+            }
             icon.GetComponentInChildren<TextMeshProUGUI>().SetText(currentLevelCount.ToString());
             levelButtons[currentLevelCount - 1] = icon;
 
