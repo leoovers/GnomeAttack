@@ -30,11 +30,11 @@ public class ObjectiveText : MonoBehaviour
         }
         if (currSceneName == "Level_04")
         {
-            objectiveText.text= "Destroy the beehive!";
+            objectiveText.text = "Destroy the beehive!";
         }
         if (currSceneName == "Level_05")
         {
-            objectiveText.text= "Bully the frogs!";
+            objectiveText.text = "Bully the frogs!";
         }
         if (currSceneName == "Level_06")
         {
@@ -42,7 +42,7 @@ public class ObjectiveText : MonoBehaviour
         }
         if (currSceneName == "Level_07")
         {
-            objectiveText.text= "Break the window!";
+            objectiveText.text = "Break the window!";
         }
         if (currSceneName == "Level_08")
         {
@@ -50,7 +50,7 @@ public class ObjectiveText : MonoBehaviour
         }
         if (currSceneName == "Level_09")
         {
-            objectiveText.text= "Flood the kitchen!";
+            objectiveText.text = "Flood the kitchen!";
         }
     }
 

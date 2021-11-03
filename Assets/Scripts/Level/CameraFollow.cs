@@ -60,16 +60,14 @@ public class CameraFollow : MonoBehaviour
             this.transform.position = Vector3.SmoothDamp(this.transform.position, new Vector3(followTransform.position.x + xOffset,
             followTransform.position.y + yOffset, -10), ref velocity, smoothTime);
         }
-        else
+        else if (toggleFreeLook)
         {
-            if (toggleFreeLook)
-            {
-                moveCamera.gameObject.SetActive(true);
-                this.transform.position = new Vector3(cameraXvalue,
-                followTransform.position.y + yOffset, this.transform.position.z);
-            }
-
+            moveCamera.gameObject.SetActive(true);
+            this.transform.position = new Vector3(cameraXvalue,
+            followTransform.position.y + yOffset, this.transform.position.z);
         }
+
+        
 
         if (mainScript.launched)
         {
