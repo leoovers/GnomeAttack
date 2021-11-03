@@ -32,6 +32,7 @@ public class Catapult_physics : MonoBehaviour
     private GameObject lastGnome;
     private AudioSource nGnomeAudio;
     private float timeLaunched = 0f;
+    private float timeSlowed = 0f;
 
     void Start()
     {
@@ -123,7 +124,14 @@ public class Catapult_physics : MonoBehaviour
         if (launched)
         {
             timeLaunched += Time.deltaTime;
-            Debug.Log(timeLaunched);
+        }
+        if (launched & nGnomeRigid.velocity.magnitude < 5)
+        {
+            timeSlowed += Time.deltaTime;
+        }
+        else
+        {
+            timeSlowed = 0f;
         }
 
         angleText.text = angle.ToString() + "°";
@@ -149,9 +157,9 @@ public class Catapult_physics : MonoBehaviour
 
     IEnumerator Launch ()
 	{
-        while (nGnomeRigid.velocity.magnitude > 5)
+        while (launched)
         {
-            if (timeLaunched < 6f)
+            if (timeLaunched < 6f & timeSlowed < 1.5f)
             {
                 yield return null;
             }

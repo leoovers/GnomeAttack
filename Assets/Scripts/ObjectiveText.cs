@@ -53,9 +53,6 @@ public class ObjectiveText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mainScript.launched)
-        {
-            objectiveText.gameObject.SetActive(false);
-        }
+        
     }
 }
