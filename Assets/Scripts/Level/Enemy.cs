@@ -23,10 +23,13 @@ public class Enemy : MonoBehaviour {
 		{
 			colInfo.gameObject.GetComponent<Renderer>().enabled = false;
 			Die();
+			Destroy(colInfo.gameObject.GetComponent<BoxCollider2D>());
+			Destroy(colInfo.gameObject);
 		}
 	}
+	
 
-	void Die ()
+    void Die ()
 	{
 		Instantiate(deathEffect, transform.position, Quaternion.identity);
 		EnemiesAlive--;
