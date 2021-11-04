@@ -52,6 +52,34 @@ public class ObjectiveText : MonoBehaviour
         {
             objectiveText.text = "Flood the kitchen!";
         }
+        if (currSceneName == "Level_10")
+        {
+            objectiveText.text = "Break the glass!";
+        }
+        if (currSceneName == "Level_11")
+        {
+            objectiveText.text = "Break the vase!";
+        }
+        if (currSceneName == "Level_12")
+        {
+            objectiveText.text = "Open the fridge!";
+        }
+        if (currSceneName == "Level_13")
+        {
+            objectiveText.text = "Destroy the cake!";
+        }
+        if (currSceneName == "Level_14")
+        {
+            objectiveText.text = "Tip over the sugar bag!";
+        }
+        if (currSceneName == "Level_15")
+        {
+            objectiveText.text = "Mess up the soup!";
+        }
+        if (currSceneName == "Level_16")
+        {
+            objectiveText.text = "Reach the door handle!";
+        }
     }
 
     // Update is called once per frame

@@ -26,14 +26,7 @@ public class nextLevel : MonoBehaviour
 
     void TaskOnClick()
     {
-        if (nextSceneNumber.ToString().Length == 1)
-        {
-            SceneManager.LoadScene("Level_0" + nextSceneNumber.ToString());
-        }
-        else
-        {
-            SceneManager.LoadScene("Level_" + nextSceneNumber.ToString());
-        }
+        SceneManager.LoadScene("Level_" + nextSceneNumber.ToString());
     }
 
     // Update is called once per frame
