@@ -103,7 +103,7 @@ public class Catapult_physics : MonoBehaviour
                 Touch touch = Input.GetTouch(0);
                 Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
                 touchPosition.z = 0f;
-                if (50 < touch.position.x & touch.position.x > 300)
+                if (touch.position.x > 350)
                 {
                     onLaunch();
                 }
