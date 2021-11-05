@@ -6,7 +6,7 @@ using UnityEngine;
 public class heavyGnome : MonoBehaviour
 {
     public float fieldOfImpact;
-    public float force;
+    public float force = 5f;
     public LayerMask LayerToHit;
     public GameObject ExplosionEffect;
     public CameraFollow camScript;
@@ -18,7 +18,6 @@ public class heavyGnome : MonoBehaviour
     void Start()
     {
         exploded = false;
-        rb = GetComponent<Rigidbody2D>();
     }
 
     void explode()
@@ -49,13 +48,19 @@ public class heavyGnome : MonoBehaviour
 	{
         if (!exploded & colInfo.gameObject.tag != "Respawn")
         {
-            explode();
+            StartCoroutine(DelayedExplosion());
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(rb.velocity.magnitude);
+
+    }
+
+    IEnumerator DelayedExplosion ()
+	{
+		yield return new WaitForSeconds(0.05f);
+        explode();
     }
 }

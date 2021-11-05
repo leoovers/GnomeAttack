@@ -8,6 +8,7 @@ public class CameraFollow : MonoBehaviour
 {
     public Catapult_physics mainScript;
     public Transform followTransform;
+    public GameObject goal;
     public Slider moveCamera;
     public float cameraXvalue;
     public bool toggleFreeLook;
@@ -39,16 +40,12 @@ public class CameraFollow : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            toggleFreeLook = !toggleFreeLook;
-            if (toggleFreeLook)
-            {
-                moveCamera.Select();
-            }
-            else
-            {
-                EventSystem.current.SetSelectedGameObject(null);
-            }
-            
+            // Camera.main.position = Vector3.SmoothDamp(this.position, goal.position, ref velocity, smoothTime);
+            followTransform = goal.transform;
+        }
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+            followTransform = mainScript.newGnome.transform;
         }
     }
     
@@ -98,7 +95,7 @@ public class CameraFollow : MonoBehaviour
             float xShakeOffset = Random.Range(-0.5f, 0.5f) * magnitude;
             float yShakeOffset = Random.Range(-0.5f, 0.5f) * magnitude;
 
-            transform.position = new Vector3(xShakeOffset, yShakeOffset, originalPos.z);
+            transform.position = new Vector3(originalPos.x + xShakeOffset, originalPos.y + yShakeOffset, originalPos.z);
 
             elapsedTime += Time.deltaTime;
 
