@@ -10,10 +10,13 @@ public class stickyGnome : MonoBehaviour
     public AudioClip[] explosionAudio;
     private AudioSource audioSource;
     private TrailRenderer tr;
-
+    private Animator m_Anim;
+    private bool grounded = true;
+   
     // Start is called before the first frame update
     void Start()
     {
+        m_Anim = GetComponent<Animator>();
         rigid = this.GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
         mainScript = transform.parent.gameObject.GetComponent<Catapult_physics>();
@@ -23,10 +26,16 @@ public class stickyGnome : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D colInfo)
 	{
-        if(colInfo.gameObject.tag == "Stickable")
+            
+        
+        if (colInfo.gameObject.tag == "Stickable")
         {
             rigid.isKinematic = true;
             rigid.velocity = Vector3.zero;
+            m_Anim.Play("sticky gnome idle 2");
+            m_Anim.SetBool("Grounded", true);
+            m_Anim.SetBool("ree", true);
+
         }
         if (!colInfo.collider.CompareTag("Respawn")) {
             Explode();
@@ -35,6 +44,8 @@ public class stickyGnome : MonoBehaviour
                 tr.emitting = false;
             }
         }
+    
+
     }
 
     public void PlayExplosion()
@@ -57,6 +68,13 @@ public class stickyGnome : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+  
+    }
+  
+
+    private void OnCollisionExit2D(Collision2D col)
+    {
+        m_Anim.SetBool("Grounded", false);
         
     }
 }

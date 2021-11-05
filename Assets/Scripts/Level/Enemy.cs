@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour {
 	public float health = 1f;
 
 	public static int EnemiesAlive = 0;
-	public GameObject Panel;
+	public GameObject finalCameraPoint;
 
 	void Start ()
 	{
@@ -36,13 +36,8 @@ public class Enemy : MonoBehaviour {
 		if (EnemiesAlive <= 0)
 		{
 			mainScript.levelWon = true;
-			StartCoroutine(Win());
+			mainScript.camFollowScript.followTransform = finalCameraPoint.transform;
+			mainScript.levelWon = true;
 		}	
 	}
-
-	IEnumerator Win ()
-	{
-		yield return new WaitForSeconds(1f);
-        Panel.SetActive(true);
-    }
 }
