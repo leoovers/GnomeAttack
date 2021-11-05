@@ -5730,7 +5730,7 @@ GameObject:
   - component: {fileID: 5733098812077645659}
   m_Layer: 0
   m_Name: gnome sticky
-  m_TagString: Stickable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5822,7 +5822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 967223d908bf07b4f90945995bdca68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maskTexture: {fileID: 11400000, guid: 16bf142754640ab4487bb625c30931fd, type: 2}
+  _maskTexture: {fileID: 0}
 --- !u!114 &2039627534418237613
 MonoBehaviour:
   m_ObjectHideFlags: 0
