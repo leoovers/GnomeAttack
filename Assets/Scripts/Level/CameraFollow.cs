@@ -40,7 +40,6 @@ public class CameraFollow : MonoBehaviour
     {   
         if (!shaking)
         {
-            moveCamera.gameObject.SetActive(false);
             this.transform.position = Vector3.SmoothDamp(this.transform.position, new Vector3(followTransform.position.x + xOffset,
             followTransform.position.y + yOffset, -10), ref velocity, smoothTime);
         }
