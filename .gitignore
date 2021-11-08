@@ -13,6 +13,10 @@
 # Ignore Editor User Settings
 /UserSettings/*
 
+# This font asset seems to cause merge every time
+/Assets/TextMesh*Pro/Examples*&*Extras/Resources/Fonts*&*Materials/Bangers*SDF.asset
+
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
