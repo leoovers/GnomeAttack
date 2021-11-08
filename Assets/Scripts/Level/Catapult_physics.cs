@@ -15,15 +15,15 @@ public class Catapult_physics : MonoBehaviour
     public GameObject winPanel;
     public GameObject[] gnomes;  // List of prefabs for spawning a new gnome
     public GameObject spawnPoint;  // Empty object that indicates position for spawning gnomes
+    public GameObject newGnome;
+    public AudioClip[] grunt;
+    public int objectivesDestroyed = 0;
     public int angle = 60;  // Launch angle in degrees
+    public bool launched = false;
     public bool levelWon = false;
     public bool levelLost = false;
     public float thrust;
 
-    public GameObject newGnome;
-    public AudioClip[] grunt;
-    public bool launched = false;
-    public int objectivesDestroyed = 0;
     private int numberOfGnomes;
     private int launchNumber;
     private Rigidbody2D nGnomeRigid;
@@ -53,8 +53,8 @@ public class Catapult_physics : MonoBehaviour
         newGnome.transform.parent = gameObject.transform;
         newGnome.name = "Gnome" + launchNumber.ToString();
         nGnomeAudio = newGnome.GetComponent<AudioSource>();
-        camFollowScript.followTransform = newGnome.transform;
         nGnomeRigid = newGnome.GetComponent<Rigidbody2D>();
+        camFollowScript.followTransform = newGnome.transform;
     }
 
     public void PlayGrunt()
@@ -107,7 +107,6 @@ public class Catapult_physics : MonoBehaviour
 
     void onLaunch()
     {   
-        Debug.Log(launchNumber);
         lastGnome = GameObject.Find("Gnome" + (launchNumber - 1).ToString());
         if (lastGnome)
         {
@@ -115,7 +114,7 @@ public class Catapult_physics : MonoBehaviour
         }
         Vector2 dir = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
         nGnomeRigid.AddForce(dir * thrust, ForceMode2D.Impulse);
-        PlayGrunt();
+        
         launched = true;
         numberOfGnomes--;
         gnomesLeft.text = numberOfGnomes.ToString();
@@ -124,6 +123,8 @@ public class Catapult_physics : MonoBehaviour
 
     IEnumerator Launch ()
 	{
+        PlayGrunt();
+
         while (launched)
         {
             if (timeLaunched < 6f & timeSlowed < 1f & !levelWon)
@@ -138,7 +139,6 @@ public class Catapult_physics : MonoBehaviour
         
         if (numberOfGnomes > 0 & !levelWon)
         {   
-            yield return new WaitForSeconds(0.5f);
             launchNumber++;
             Destroy(nGnomeAudio);
             if (gnomes[launchNumber])
