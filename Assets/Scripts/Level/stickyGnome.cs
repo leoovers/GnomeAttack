@@ -11,7 +11,6 @@ public class stickyGnome : MonoBehaviour
     private AudioSource audioSource;
     private TrailRenderer tr;
     private Animator m_Anim;
-    private bool grounded = true;
    
     // Start is called before the first frame update
     void Start()

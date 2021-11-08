@@ -92,7 +92,7 @@ public class Catapult_physics : MonoBehaviour
         {
             timeLaunched += Time.deltaTime;
         }
-        if (launched & nGnomeRigid.velocity.magnitude < 5)
+        if (launched & nGnomeRigid.velocity.magnitude < 4)
         {
             timeSlowed += Time.deltaTime;
         }
@@ -126,7 +126,7 @@ public class Catapult_physics : MonoBehaviour
 	{
         while (launched)
         {
-            if (timeLaunched < 6f & timeSlowed < 1.5f)
+            if (timeLaunched < 6f & timeSlowed < 1f & !levelWon)
             {
                 yield return null;
             }
@@ -157,6 +157,7 @@ public class Catapult_physics : MonoBehaviour
             }
             else
             {   
+                yield return new WaitForSeconds(0.5f);
                 winPanel.SetActive(true); 
             }
         }
