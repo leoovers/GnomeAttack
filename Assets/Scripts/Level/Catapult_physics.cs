@@ -9,17 +9,15 @@ public class Catapult_physics : MonoBehaviour
 {
     public CameraFollow camFollowScript;  // Script attached to Main Camera
     public effectVolume fxVolScript;
-    public Button plus_button;  //  UI button for angle plus
-    public Button minus_button;  // UI button for angle minus // UI slider for launch power control
     public Text angleText;  // UI text for angle in degrees
     public Text gnomesLeft;
     public GameObject lossPanel;
     public GameObject winPanel;
-    public GameObject[] gnomes;  // Prefab for spawning a new gnome
+    public GameObject[] gnomes;  // List of prefabs for spawning a new gnome
     public GameObject spawnPoint;  // Empty object that indicates position for spawning gnomes
-    public GameObject arrow; // Amount of force applied in launch
-    public int angle = 60;  // Angle in degrees
+    public int angle = 60;  // Launch angle in degrees
     public bool levelWon = false;
+    public bool levelLost = false;
     public float thrust;
 
     public GameObject newGnome;
@@ -37,35 +35,12 @@ public class Catapult_physics : MonoBehaviour
     void Start()
     {
         launchNumber = 0;  // First launch is 0 second is 1 ...
-        Button p_btn = plus_button.GetComponent<Button>();  // Grabs the plus button component
-	    p_btn.onClick.AddListener(TaskOnClick_plus);  // Adds a listener on the button
 
-        Button m_btn = minus_button.GetComponent<Button>();  // Grabs the minus button component
-	    m_btn.onClick.AddListener(TaskOnClick_minus);  // Adds a listener on the button
-
-        arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
-        
         numberOfGnomes = gnomes.Length;
         gnomesLeft.text = numberOfGnomes.ToString();
 
         instantiateGnome();
     }
-
-    void TaskOnClick_plus(){
-		Debug.Log ("You have clicked the + button!");
-        if (angle < 90){
-            angle = angle + 2;
-        }
-        arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
-	}
-
-    void TaskOnClick_minus(){
-		Debug.Log ("You have clicked the - button!");
-        if (angle > 0){
-            angle = angle - 2;
-        }
-        arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, angle);
-	}
 
     void onSliderStop()
     {
@@ -111,14 +86,6 @@ public class Catapult_physics : MonoBehaviour
             if (Input.GetButtonUp("Jump"))
             {
                 onLaunch();
-            }
-            if (Input.GetKeyDown("backspace"))
-            {
-                TaskOnClick_minus();
-            }
-            if (Input.GetKeyDown("return"))
-            {
-                TaskOnClick_plus();
             }
         }
         if (launched)
@@ -185,6 +152,7 @@ public class Catapult_physics : MonoBehaviour
         {
             if (!levelWon & numberOfGnomes <= 0)
             {
+                levelLost = true;
                 lossPanel.SetActive(true);
             }
             else

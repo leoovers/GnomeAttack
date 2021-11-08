@@ -85,7 +85,7 @@ public class ObjectiveText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mainScript.levelWon)
+        if (mainScript.levelWon | mainScript.levelLost)
         {
             this.gameObject.SetActive(false);
         }
