@@ -9,10 +9,12 @@ public class normalGnome : MonoBehaviour
     public AudioClip[] explosionAudio;
     private AudioSource audioSource;
     private TrailRenderer tr;
+    private Animator m_Anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        m_Anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         mainScript = transform.parent.gameObject.GetComponent<Catapult_physics>();
         tr = GetComponent<TrailRenderer>();
@@ -20,6 +22,7 @@ public class normalGnome : MonoBehaviour
     }
 
     void OnCollisionEnter2D (Collision2D coll) {
+        m_Anim.SetBool("Grounded", true);
         if (!coll.collider.CompareTag("Respawn")) {
             Explode();
             if (tr)
@@ -50,5 +53,10 @@ public class normalGnome : MonoBehaviour
     void Update()
     {
         
+    }
+    private void OnCollisionExit2D(Collision2D col)
+    {
+        m_Anim.SetBool("Grounded", false);
+
     }
 }

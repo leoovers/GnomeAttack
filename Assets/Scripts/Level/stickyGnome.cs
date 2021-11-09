@@ -31,7 +31,6 @@ public class stickyGnome : MonoBehaviour
         {
             rigid.isKinematic = true;
             rigid.velocity = Vector3.zero;
-            m_Anim.Play("sticky gnome idle 2");
             m_Anim.SetBool("Grounded", true);
             m_Anim.SetBool("ree", true);
 

@@ -1,0 +1,23 @@
+{
+	"Version": 3,
+	"FileReferences": {
+		"Moc": "gnome normal.moc3",
+		"Textures": [
+			"gnome normal.1024/texture_00.png"
+		],
+		"Physics": "gnome normal.physics3.json",
+		"DisplayInfo": "gnome normal.cdi3.json"
+	},
+	"Groups": [
+		{
+			"Target": "Parameter",
+			"Name": "EyeBlink",
+			"Ids": []
+		},
+		{
+			"Target": "Parameter",
+			"Name": "LipSync",
+			"Ids": []
+		}
+	]
+}

@@ -1,0 +1,194 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "head x"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "head y"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "Parameter6"
+		},
+		{
+			"Id": "Param27",
+			"GroupId": "",
+			"Name": "movement line"
+		},
+		{
+			"Id": "Param28",
+			"GroupId": "",
+			"Name": "mov line 2"
+		},
+		{
+			"Id": "Param29",
+			"GroupId": "",
+			"Name": "mov line 2 opacity"
+		},
+		{
+			"Id": "Param30",
+			"GroupId": "",
+			"Name": "mov line opacity"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "torso turn"
+		},
+		{
+			"Id": "Param14",
+			"GroupId": "",
+			"Name": "eye l"
+		},
+		{
+			"Id": "Param19",
+			"GroupId": "",
+			"Name": "l brow"
+		},
+		{
+			"Id": "Param16",
+			"GroupId": "",
+			"Name": "eye l move"
+		},
+		{
+			"Id": "Param17",
+			"GroupId": "",
+			"Name": "eye"
+		},
+		{
+			"Id": "Param15",
+			"GroupId": "",
+			"Name": "eye r"
+		},
+		{
+			"Id": "Param18",
+			"GroupId": "",
+			"Name": "r brow"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "",
+			"Name": "mouth"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "",
+			"Name": "mouth close"
+		},
+		{
+			"Id": "Param11",
+			"GroupId": "",
+			"Name": "beard phys"
+		},
+		{
+			"Id": "Param21",
+			"GroupId": "",
+			"Name": "shoe l"
+		},
+		{
+			"Id": "Param22",
+			"GroupId": "",
+			"Name": "shoe r"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "leg l"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "leg r"
+		},
+		{
+			"Id": "Param24",
+			"GroupId": "",
+			"Name": "leg r mid"
+		},
+		{
+			"Id": "Param23",
+			"GroupId": "",
+			"Name": "leg l mid"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "hand r"
+		},
+		{
+			"Id": "Param20",
+			"GroupId": "",
+			"Name": "hand l"
+		},
+		{
+			"Id": "Param25",
+			"GroupId": "",
+			"Name": "hand l mid"
+		},
+		{
+			"Id": "Param26",
+			"GroupId": "",
+			"Name": "hand r move"
+		},
+		{
+			"Id": "Param10",
+			"GroupId": "",
+			"Name": "hat phys"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "Part5",
+			"Name": "gnome normal.psd (Corresponding layer not found)"
+		},
+		{
+			"Id": "Part3",
+			"Name": "gnome normal.psd (Corresponding layer not found)"
+		},
+		{
+			"Id": "eyer",
+			"Name": "eyer"
+		},
+		{
+			"Id": "Part",
+			"Name": "eye l"
+		},
+		{
+			"Id": "Part4",
+			"Name": "Folder 2"
+		},
+		{
+			"Id": "Part2",
+			"Name": "Folder 2"
+		},
+		{
+			"Id": "eye2",
+			"Name": "eye"
+		},
+		{
+			"Id": "eye",
+			"Name": "eye"
+		}
+	],
+	"CombinedParameters": [
+		[
+			"Param",
+			"Param3"
+		],
+		[
+			"Param16",
+			"Param17"
+		],
+		[
+			"Param8",
+			"Param9"
+		]
+	]
+}
