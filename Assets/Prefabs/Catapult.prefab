@@ -125,21 +125,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camFollowScript: {fileID: 0}
-  plus_button: {fileID: 0}
-  minus_button: {fileID: 0}
-  powerslider: {fileID: 0}
+  fxVolScript: {fileID: 0}
   angleText: {fileID: 0}
+  gnomesLeft: {fileID: 0}
   lossPanel: {fileID: 0}
-  normalGnome: {fileID: 6622122394134760983, guid: d0455339823d33a8aa35001849775efb, type: 3}
-  arrow: {fileID: 0}
+  winPanel: {fileID: 0}
+  gnomes:
+  - {fileID: 1885146330255279246, guid: c9e9c0ea8b910f549b5deaabfd620c29, type: 3}
+  - {fileID: 1885146330255279246, guid: c9e9c0ea8b910f549b5deaabfd620c29, type: 3}
+  - {fileID: 1885146330255279246, guid: c9e9c0ea8b910f549b5deaabfd620c29, type: 3}
   spawnPoint: {fileID: 1085555203541733184}
-  thrust: 0
-  angle: 60
-  levelWon: 0
+  newGnome: {fileID: 0}
   grunt:
   - {fileID: 8300000, guid: 558f9f56f603a954b8d45e17e89341d9, type: 3}
   - {fileID: 8300000, guid: 2b6e306f144fd2047ad36490140f8b85, type: 3}
   - {fileID: 8300000, guid: bd8857660a16ba549b8cc522d93d9117, type: 3}
+  objectivesDestroyed: 0
+  angle: 60
+  launched: 0
+  levelWon: 0
+  levelLost: 0
+  thrust: 0
 --- !u!1 &1085555203541733184
 GameObject:
   m_ObjectHideFlags: 0
