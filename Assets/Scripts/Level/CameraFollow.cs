@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class CameraFollow : MonoBehaviour
 {
@@ -21,9 +22,30 @@ public class CameraFollow : MonoBehaviour
         xOffset = 9;
         yOffset = 2.0f;
         smoothTime = 1.7f;
+
+        // ViewDistance("Level_1", 9.0f);
     }
 
-    // Update is called once per frame
+    void ViewDistance(string levelName, float ortSize)
+    {
+        // Set camera distance per level
+
+        Camera mainCamera = GetComponent<Camera>();
+        mainCamera.orthographic = true;
+        Scene currScene = SceneManager.GetActiveScene();
+        string currSceneName = currScene.name;
+
+        // Add a clause to change camera view distance in a specific level
+        if (currSceneName == levelName)
+        {
+            mainCamera.orthographicSize = ortSize;
+        }
+        else
+        {
+            mainCamera.orthographicSize = 7.0f;
+        }
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
@@ -41,7 +63,7 @@ public class CameraFollow : MonoBehaviour
         if (!shaking)
         {
             this.transform.position = Vector3.SmoothDamp(this.transform.position, new Vector3(followTransform.position.x + xOffset,
-            followTransform.position.y + yOffset, -10), ref velocity, smoothTime);
+            followTransform.position.y + yOffset, -10), ref velocity, smoothTime); 
         }
         
         if (mainScript.launched)
