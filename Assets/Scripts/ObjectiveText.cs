@@ -12,73 +12,34 @@ public class ObjectiveText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        objectiveText = GetComponent<Text>();
+        setObjText("Level_1", "Destroy the fence!");
+        setObjText("Level_2", "Destroy the flowers!");
+        setObjText("Level_3", "Knock over the grill!");
+        setObjText("Level_4", "Destroy the beehive!");
+        setObjText("Level_5", "Bully the frogs!");
+        setObjText("Level_6", "Flood the lawn!");
+        setObjText("Level_7", "Break the window!");
+        setObjText("Level_8", "Climb to the window!");
+        setObjText("Level_9", "Flood the kitchen!");
+        setObjText("Level_10", "Break the glass!");
+        setObjText("Level_11", "Break the vase!");
+        setObjText("Level_12", "Open the fridge!");
+        setObjText("Level_13", "Destroy the cake!");
+        setObjText("Level_14", "Tip over the sugar bag!");
+        setObjText("Level_15", "Mess up the soup!");
+        setObjText("Level_16", "Reach the door handle!");
+    }
 
+    void setObjText(string levelName, string objText)
+    {
+        objectiveText = GetComponent<Text>();
+        
         Scene currScene = SceneManager.GetActiveScene();
         string currSceneName = currScene.name;
-        if (currSceneName == "Level_1")
+
+        if (currSceneName == levelName)
         {
-            objectiveText.text = "Destroy the fence!";
-        }
-        if (currSceneName == "Level_2")
-        {
-            objectiveText.text = "Destroy the flowers!";
-        }
-        if (currSceneName == "Level_3")
-        {
-            objectiveText.text = "Knock over the grill";
-        }
-        if (currSceneName == "Level_4")
-        {
-            objectiveText.text = "Destroy the beehive!";
-        }
-        if (currSceneName == "Level_5")
-        {
-            objectiveText.text = "Bully the frogs!";
-        }
-        if (currSceneName == "Level_6")
-        {
-            objectiveText.text= "Flood the lawn!";
-        }
-        if (currSceneName == "Level_7")
-        {
-            objectiveText.text = "Break the window!";
-        }
-        if (currSceneName == "Level_8")
-        {
-            objectiveText.text= "Climb to the window!";
-        }
-        if (currSceneName == "Level_9")
-        {
-            objectiveText.text = "Flood the kitchen!";
-        }
-        if (currSceneName == "Level_10")
-        {
-            objectiveText.text = "Break the glass!";
-        }
-        if (currSceneName == "Level_11")
-        {
-            objectiveText.text = "Break the vase!";
-        }
-        if (currSceneName == "Level_12")
-        {
-            objectiveText.text = "Open the fridge!";
-        }
-        if (currSceneName == "Level_13")
-        {
-            objectiveText.text = "Destroy the cake!";
-        }
-        if (currSceneName == "Level_14")
-        {
-            objectiveText.text = "Tip over the sugar bag!";
-        }
-        if (currSceneName == "Level_15")
-        {
-            objectiveText.text = "Mess up the soup!";
-        }
-        if (currSceneName == "Level_16")
-        {
-            objectiveText.text = "Reach the door handle!";
+            objectiveText.text = objText;
         }
     }
 
