@@ -5,9 +5,12 @@ using UnityEngine;
 public class Tv : MonoBehaviour
 {
     private Animator m_Anim;
+    public Catapult_physics mainScript;
+    private int Hitcount;
     // Start is called before the first frame update
     void Start()
     {
+        Hitcount = 0;
         m_Anim = GetComponent<Animator>();
     }
 
@@ -20,8 +23,13 @@ public class Tv : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
+            Hitcount++;
             m_Anim.SetTrigger("Hit");
 
+            if(Hitcount >= 3) 
+            {
+                mainScript.levelWon = true;
+            }
 
         }
     }

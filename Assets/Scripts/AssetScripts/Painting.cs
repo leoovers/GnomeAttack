@@ -5,6 +5,8 @@ using UnityEngine;
 public class Painting : MonoBehaviour
 {
     private Animator m_Anim;
+    public Catapult_physics mainScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +22,10 @@ public class Painting : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            m_Anim.SetTrigger("Hit");
 
+            m_Anim.SetTrigger("Hit");
+            mainScript.levelWon = true;
+            this.gameObject.AddComponent<Rigidbody2D>();
 
         }
     }
