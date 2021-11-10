@@ -635,15 +635,15 @@ PrefabInstance:
     - target: {fileID: 1085555202924393103, guid: 4a8c8d6c8ab0d274ba4a5aa772fc8ab9, type: 3}
       propertyPath: gnomes.Array.data[0]
       value: 
-      objectReference: {fileID: 1885146330255279246, guid: c9e9c0ea8b910f549b5deaabfd620c29, type: 3}
+      objectReference: {fileID: 2037780942340799635, guid: c9e9c0ea8b910f549b5deaabfd620c29, type: 3}
     - target: {fileID: 1085555202924393103, guid: 4a8c8d6c8ab0d274ba4a5aa772fc8ab9, type: 3}
       propertyPath: gnomes.Array.data[1]
       value: 
-      objectReference: {fileID: 1885146330255279246, guid: c9e9c0ea8b910f549b5deaabfd620c29, type: 3}
+      objectReference: {fileID: 2037780942340799635, guid: c9e9c0ea8b910f549b5deaabfd620c29, type: 3}
     - target: {fileID: 1085555202924393103, guid: 4a8c8d6c8ab0d274ba4a5aa772fc8ab9, type: 3}
       propertyPath: gnomes.Array.data[2]
       value: 
-      objectReference: {fileID: 1885146330255279246, guid: c9e9c0ea8b910f549b5deaabfd620c29, type: 3}
+      objectReference: {fileID: 2037780942340799635, guid: c9e9c0ea8b910f549b5deaabfd620c29, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a8c8d6c8ab0d274ba4a5aa772fc8ab9, type: 3}
 --- !u!4 &5366739459961049614 stripped
@@ -731,6 +731,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7834859762684865074}
     m_Modifications:
+    - target: {fileID: 629383361936981867, guid: 0ac31ce352cdbdc52924a81adde203ea, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4082203729711231567, guid: 0ac31ce352cdbdc52924a81adde203ea, type: 3}
       propertyPath: m_RootOrder
       value: 6
