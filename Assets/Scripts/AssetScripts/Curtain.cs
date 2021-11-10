@@ -5,9 +5,13 @@ using UnityEngine;
 public class Curtain : MonoBehaviour
 {
     private Animator m_Anim;
+    public Catapult_physics mainScript;
+    private int Hitcount;
     // Start is called before the first frame update
     void Start()
     {
+
+        Hitcount = 0;
         m_Anim = GetComponent<Animator>();
     }
 
@@ -29,7 +33,16 @@ public class Curtain : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Hitcount++;
             m_Anim.SetTrigger("Hit");
+
+            if (Hitcount >= 3)
+            {
+                mainScript.levelWon = true;
+                this.gameObject.AddComponent<Rigidbody2D>();
+
+            }
+
         }
     }
 }

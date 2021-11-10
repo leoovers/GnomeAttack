@@ -5,6 +5,8 @@ using UnityEngine;
 public class Lamp : MonoBehaviour
 {
     private Animator m_Anim;
+    public Catapult_physics mainScript;
+    private int Lampdmg = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,17 @@ public class Lamp : MonoBehaviour
         {
             m_Anim.SetTrigger("Hit");
 
+            Lampdmg++;
+
+            if (Lampdmg == 2)
+            {
+                mainScript.objectivesDestroyed++;
+            }
+
+            if (mainScript.objectivesDestroyed >= 3)
+            {
+                mainScript.levelWon = true;
+            }
 
         }
     }

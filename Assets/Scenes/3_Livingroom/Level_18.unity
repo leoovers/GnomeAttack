@@ -1668,7 +1668,7 @@ PrefabInstance:
     - target: {fileID: 7431753328901130825, guid: 6d64340fd567905429ee1dc098c32c95, type: 3}
       propertyPath: mainScript
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1974967666}
     - target: {fileID: 7599003798461673698, guid: 6d64340fd567905429ee1dc098c32c95, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -7917,6 +7917,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb527f9f849af94ab9d020ba3be80dd, type: 3}
+--- !u!114 &1974967666 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5366739459961049608, guid: deb527f9f849af94ab9d020ba3be80dd, type: 3}
+  m_PrefabInstance: {fileID: 1974967665}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845b568d455ea8193890eb4a02df2617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1993963127
 Mesh:
   m_ObjectHideFlags: 0

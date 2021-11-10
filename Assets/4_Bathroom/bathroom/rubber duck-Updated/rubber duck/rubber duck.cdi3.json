@@ -1,0 +1,38 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "y"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "x"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "hat off"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "hat fly"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "squash"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [],
+	"CombinedParameters": [
+		[
+			"Param",
+			"Param2"
+		]
+	]
+}
