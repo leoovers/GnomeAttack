@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
+  m_Name: rubber duck.fadeMotionList
+  m_EditorClassIdentifier: 
+  MotionInstanceIds: 04eeffff00edfffff8ecffff
+  CubismFadeMotionObjects:
+  - {fileID: 11400000, guid: 863fa8c183f6de745916b57db505c86a, type: 2}
+  - {fileID: 11400000, guid: 773f844af5314334aa3299451968bd23, type: 2}
+  - {fileID: 11400000, guid: 4501df207304a18499302228bbc4fdb1, type: 2}
