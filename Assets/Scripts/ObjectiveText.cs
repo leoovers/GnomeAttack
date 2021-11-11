@@ -28,6 +28,13 @@ public class ObjectiveText : MonoBehaviour
         setObjText("Level_14", "Tip over the sugar bag!");
         setObjText("Level_15", "Mess up the soup!");
         setObjText("Level_16", "Reach the door handle!");
+        setObjText("Level_17", "Break the tv!");
+        setObjText("Level_18", "Break the Flowerpot!");
+        setObjText("Level_19", "Hit down the clock!");
+        setObjText("Level_20", "Hit down the painting!");
+        setObjText("Level_21", "Drop the curtains!");
+        setObjText("Level_22", "Destroy the vitrine!");
+        setObjText("Level_23", "Bounce on the sofa and hit the lamps!");
     }
 
     void setObjText(string levelName, string objText)

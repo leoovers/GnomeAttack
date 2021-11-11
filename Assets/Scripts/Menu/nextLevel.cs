@@ -12,6 +12,8 @@ public class nextLevel : MonoBehaviour
     private string currSceneName;
     private int currSceneNumber;
     private int nextSceneNumber;
+    public string b;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,15 @@ public class nextLevel : MonoBehaviour
 
         currScene = SceneManager.GetActiveScene();
         currSceneName = currScene.name;
-        currSceneNumber = Int16.Parse(currSceneName.Substring(currSceneName.Length - 1));
+        
+        for (int i = 0; i <currSceneName.Length; i++)
+        {
+            if (Char.IsDigit(currSceneName[i]))
+            {
+                b += currSceneName[i];
+            }
+        }
+        currSceneNumber = Int16.Parse(b);
         nextSceneNumber = currSceneNumber + 1; 
     }
 

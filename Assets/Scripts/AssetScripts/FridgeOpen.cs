@@ -73,19 +73,5 @@ public class FridgeOpen : MonoBehaviour
 
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Player") & m_Anim.name == ("fridfecake"))
-        {
-            Hitcake++;
-            m_Anim.SetTrigger("HitCake");
-            GetComponent<CapsuleCollider2D>().enabled = false;
-
-            if(Hitcake >= 2)
-            {
-                mainScript.levelWon = true;
-            }
-
-        }
-    }
+   
 }

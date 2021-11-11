@@ -397,7 +397,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3280671566591473454}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -765,6 +765,9 @@ GameObject:
   - component: {fileID: 8665033638419892518}
   - component: {fileID: 2454328988637058885}
   - component: {fileID: 5912550403720881946}
+  - component: {fileID: -1687647045596002228}
+  - component: {fileID: 4494126474515643452}
+  - component: {fileID: 7500297846805540572}
   m_Layer: 0
   m_Name: aita
   m_TagString: Untagged
@@ -839,7 +842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Opacity: 1
-  _lastOpacity: 0
+  _lastOpacity: 1
   _sortingLayerId: 0
   _sortingMode: 0
   _sortingOrder: 0
@@ -908,7 +911,7 @@ Animator:
   m_GameObject: {fileID: 4516603283427756081}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ae6e35ca3dee89441bc3d75ae848d2a2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -930,6 +933,75 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CubismFadeMotionList: {fileID: 0}
+--- !u!114 &-1687647045596002228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4516603283427756081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b41f05a3af53074e91179d8828cf303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winPanel: {fileID: 0}
+  deathEffect: {fileID: 0}
+  mainScript: {fileID: 0}
+  camScript: {fileID: 0}
+  finalCameraPoint: {fileID: 0}
+--- !u!61 &4494126474515643452
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4516603283427756081}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0033228993, y: 0.026583135}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.12940145, y: 1.2126654}
+  m_EdgeRadius: 0
+--- !u!61 &7500297846805540572
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4516603283427756081}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.008446351, y: -0.0077785254}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.20426089, y: 0.48861313}
+  m_EdgeRadius: 0
 --- !u!1 &5309918776951683364
 GameObject:
   m_ObjectHideFlags: 0
