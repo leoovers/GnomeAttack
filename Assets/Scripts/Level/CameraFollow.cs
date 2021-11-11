@@ -23,9 +23,14 @@ public class CameraFollow : MonoBehaviour
         yOffset = 2.0f;
         smoothTime = 1.7f;
 
-        ViewDistance("Level_21", 9.0f);
-        ViewDistance("Level_22", 9.0f);
-        ViewDistance("Level_23", 9.0f);
+        ViewDistance("Level_9", 10.0f);
+        ViewDistance("Level_11", 10.0f);
+        ViewDistance("Level_12", 10.0f);
+        ViewDistance("Level_13", 10.0f);
+        ViewDistance("Level_13", 10.0f);
+        ViewDistance("Level_20", 10.0f);
+
+
     }
 
     void ViewDistance(string levelName, float ortSize)
