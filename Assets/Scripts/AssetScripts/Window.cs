@@ -13,13 +13,16 @@ public class Window : MonoBehaviour
     private AudioSource audioSource;
     private Animator m_Anim;
     private int hitCount;
-    
+    private BoxCollider2D TabTrigger;
+
     // Start is called before the first frame update
     void Start()
     {
         m_Anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         hitCount = 0;
+        var colliders = GetComponents<BoxCollider2D>();
+        TabTrigger = colliders[1];
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,6 +41,16 @@ public class Window : MonoBehaviour
             }
         }
 
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Player") )
+        {
+            if (collision.collider.IsTouching(TabTrigger))
+            {
+                m_Anim.SetTrigger("HitTab");
+            }
+        }
     }
 
     public void PlayShatter()

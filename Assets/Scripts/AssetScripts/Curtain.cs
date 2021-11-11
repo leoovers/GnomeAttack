@@ -39,7 +39,7 @@ public class Curtain : MonoBehaviour
             if (Hitcount >= 3)
             {
                 mainScript.levelWon = true;
-                this.gameObject.AddComponent<Rigidbody2D>();
+                
 
             }
 
