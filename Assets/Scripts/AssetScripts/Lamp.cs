@@ -28,12 +28,15 @@ public class Lamp : MonoBehaviour
 
             if (Lampdmg == 2)
             {
+                this.gameObject.AddComponent<Rigidbody2D>();
+                Destroy(this.gameObject.GetComponent<BoxCollider2D>());
                 mainScript.objectivesDestroyed++;
             }
 
             if (mainScript.objectivesDestroyed >= 3)
             {
                 mainScript.levelWon = true;
+                
             }
 
         }
