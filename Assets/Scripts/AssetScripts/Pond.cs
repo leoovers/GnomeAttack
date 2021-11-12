@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Pond : MonoBehaviour
 {
+    [SerializeField]
+    UnityEngine.Object SplashRef;
     public Catapult_physics mainScript;
     // Start is called before the first frame update
     void Start()
@@ -15,18 +17,16 @@ public class Pond : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+  
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.collider.CompareTag("Player"))
+        {
+         
+            Destroy(collision.collider.gameObject);
 
-        
-            if (collision.gameObject.tag == "Player")
-            {
-                Debug.Log("Level Failed!");
-            Destroy(collision.gameObject);
 
         }
- 
-        
-
     }
+ 
 }
