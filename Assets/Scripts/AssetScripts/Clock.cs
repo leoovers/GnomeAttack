@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Clock : MonoBehaviour
 {
+    
     private Animator m_Anim; 
     public Catapult_physics mainScript;
     private int Hitcount;
@@ -31,6 +32,7 @@ public class Clock : MonoBehaviour
             {
                 mainScript.levelWon = true;
                 this.gameObject.AddComponent<Rigidbody2D>();
+                mainScript.camFollowScript.followTransform = this.transform;
 
             }
 

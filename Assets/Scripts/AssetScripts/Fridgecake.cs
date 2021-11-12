@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Fridgecake : MonoBehaviour
 {
+    public GameObject finalCameraPoint;
     private Animator m_Anim;
     private int Hitcake;
     public Catapult_physics mainScript;
@@ -30,6 +31,7 @@ public class Fridgecake : MonoBehaviour
             if (Hitcake >= 2)
             {
                 mainScript.levelWon = true;
+                mainScript.camFollowScript.followTransform = finalCameraPoint.transform;
             }
 
         }

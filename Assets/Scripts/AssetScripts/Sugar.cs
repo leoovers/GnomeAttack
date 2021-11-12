@@ -6,6 +6,7 @@ public class Sugar : MonoBehaviour
 {
     private Animator m_Anim;
     public Catapult_physics mainScript;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,7 @@ public class Sugar : MonoBehaviour
             m_Anim.SetTrigger("Hit");
             
             mainScript.levelWon = true;
+            mainScript.camFollowScript.followTransform = this.transform;
 
         }
     }

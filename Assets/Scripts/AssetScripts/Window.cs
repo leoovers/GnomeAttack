@@ -7,8 +7,8 @@ public class Window : MonoBehaviour
     public GameObject winPanel;
     public GameObject deathEffect;
     public GameObject finalCameraPoint;
-    public Catapult_physics mainScript;
     public CameraFollow camScript;
+    public Catapult_physics mainScript;
     public AudioClip[] windowAudio;
     private AudioSource audioSource;
     private Animator m_Anim;

@@ -26,6 +26,7 @@ public class Painting : MonoBehaviour
             m_Anim.SetTrigger("Hit");
             mainScript.levelWon = true;
             this.gameObject.AddComponent<Rigidbody2D>();
+            mainScript.camFollowScript.followTransform = this.transform;
 
         }
     }

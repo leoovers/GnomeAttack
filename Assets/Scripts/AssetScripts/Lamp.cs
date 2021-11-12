@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Lamp : MonoBehaviour
 {
+    public GameObject finalCameraPoint;
     private Animator m_Anim;
     public Catapult_physics mainScript;
     private int Lampdmg = 0;
@@ -36,7 +37,8 @@ public class Lamp : MonoBehaviour
             if (mainScript.objectivesDestroyed >= 3)
             {
                 mainScript.levelWon = true;
-                
+                mainScript.camFollowScript.followTransform = finalCameraPoint.transform;
+
             }
 
         }

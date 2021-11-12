@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Flower : MonoBehaviour
 {
+   
     public Catapult_physics mainScript;
     public CameraFollow camScript;
     public GameObject deathEffect;

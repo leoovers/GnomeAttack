@@ -5,6 +5,7 @@ using UnityEngine;
 public class FridgeOpen : MonoBehaviour
 {
     private Animator m_Anim;
+    public GameObject finalCameraPoint;
     private BoxCollider2D FreezerTrigger;
     private BoxCollider2D FrigeTrigger;
     private BoxCollider2D PhotoTrigger;
@@ -40,6 +41,7 @@ public class FridgeOpen : MonoBehaviour
             {
                 m_Anim.SetTrigger("Hit");
                 mainScript.levelWon = true;
+                mainScript.camFollowScript.followTransform = finalCameraPoint.transform;
             }
             if (collision.IsTouching(FreezerTrigger))
             {

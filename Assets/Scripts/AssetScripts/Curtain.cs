@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Curtain : MonoBehaviour
 {
+    public GameObject finalCameraPoint;
     private Animator m_Anim;
     public Catapult_physics mainScript;
     private int Hitcount;
@@ -39,7 +40,7 @@ public class Curtain : MonoBehaviour
             if (Hitcount >= 3)
             {
                 mainScript.levelWon = true;
-                
+                mainScript.camFollowScript.followTransform = finalCameraPoint.transform;
 
             }
 

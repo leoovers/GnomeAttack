@@ -31,8 +31,9 @@ public class FlowerPot : MonoBehaviour
             {
                 GetComponent<BoxCollider2D>().enabled = false;
                 mainScript.levelWon = true;
-                 
-}
+                mainScript.camFollowScript.followTransform = this.transform;
+
+            }
         }
     }
 }

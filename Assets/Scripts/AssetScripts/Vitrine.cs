@@ -30,6 +30,7 @@ public class Vitrine : MonoBehaviour
             if (Hitcount >= 4)
             {
                 mainScript.levelWon = true;
+                mainScript.camFollowScript.followTransform = this.transform;
                 this.gameObject.AddComponent<Rigidbody2D>();
 
             }

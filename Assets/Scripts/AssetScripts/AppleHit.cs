@@ -17,9 +17,17 @@ public class AppleHit : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        this.Invoke("rigid", 0.5f);
         m_Anim.SetTrigger("Hit");
+
+        
         Destroy(GetComponent<CircleCollider2D>());
         
 
+    }
+
+    private void rigid()
+    {
+        this.gameObject.AddComponent<Rigidbody2D>();
     }
 }

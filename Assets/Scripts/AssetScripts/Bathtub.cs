@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bathtub : MonoBehaviour
 {
+    
     private Animator m_Anim;
     // Start is called before the first frame update
     void Start()

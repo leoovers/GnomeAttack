@@ -5,6 +5,7 @@ using UnityEngine;
 public class Toilet : MonoBehaviour
 {
     private Animator m_Anim;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -10,6 +10,8 @@ public class Glass : MonoBehaviour
     [SerializeField]
     UnityEngine.Object destructableRef;
     public Catapult_physics mainScript;
+    public GameObject finalCameraPoint;
+
     void Start()
     {
         
@@ -44,6 +46,7 @@ public class Glass : MonoBehaviour
         if (mainScript.objectivesDestroyed >= 3)
         {
             mainScript.levelWon = true;
+            mainScript.camFollowScript.followTransform = finalCameraPoint.transform;
         }
 
     }
