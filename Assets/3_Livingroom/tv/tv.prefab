@@ -2151,7 +2151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Opacity: 1
-  _lastOpacity: 0
+  _lastOpacity: 1
   _sortingLayerId: 0
   _sortingMode: 0
   _sortingOrder: 0
@@ -2171,7 +2171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 967223d908bf07b4f90945995bdca68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maskTexture: {fileID: 0}
+  _maskTexture: {fileID: 11400000, guid: 16bf142754640ab4487bb625c30931fd, type: 2}
 --- !u!114 &8177879924081797736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2268,7 +2268,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.059468403, y: 0.13852677}
+  m_Offset: {x: 0.124103814, y: 0.15333992}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2279,7 +2279,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3655577, y: 0.6988871}
+  m_Size: {x: 0.4948287, y: 0.73596275}
   m_EdgeRadius: 0
 --- !u!114 &5360273767016887077
 MonoBehaviour:
@@ -2293,3 +2293,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0097953adb5a87049ab5a8eb7790ca71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalCameraPoint: {fileID: 0}
+  mainScript: {fileID: 0}

@@ -966,8 +966,8 @@ GameObject:
   - component: {fileID: 9205302453526276856}
   - component: {fileID: 4628979825877299801}
   - component: {fileID: 5804537490947443739}
-  - component: {fileID: -2226434146690184269}
   - component: {fileID: 1261518593651680338}
+  - component: {fileID: 6967062366515945283}
   m_Layer: 0
   m_Name: clock
   m_TagString: Untagged
@@ -1042,7 +1042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Opacity: 1
-  _lastOpacity: 0
+  _lastOpacity: 1
   _sortingLayerId: 0
   _sortingMode: 0
   _sortingOrder: 0
@@ -1133,32 +1133,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CubismFadeMotionList: {fileID: 0}
---- !u!61 &-2226434146690184269
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4267313318822582299}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.027149856, y: 0.26149565}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.36840945, y: 0.5113032}
-  m_EdgeRadius: 0
 --- !u!114 &1261518593651680338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1171,6 +1145,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12ec7c372e337174c9052fb6d64b7832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainScript: {fileID: 0}
+--- !u!60 &6967062366515945283
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267313318822582299}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.04182299, y: 0.63614005}
+      - {x: -0.32834154, y: 0.40301824}
+      - {x: -0.26107168, y: 0.39937505}
+      - {x: -0.2595209, y: -0.027591087}
+      - {x: 0.1894635, y: -0.016848743}
+      - {x: 0.20242506, y: 0.4386684}
 --- !u!1 &4408720060704083986
 GameObject:
   m_ObjectHideFlags: 0

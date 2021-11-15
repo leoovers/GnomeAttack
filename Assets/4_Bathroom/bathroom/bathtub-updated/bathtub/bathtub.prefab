@@ -431,6 +431,9 @@ GameObject:
   - component: {fileID: 7578435429328517866}
   - component: {fileID: 6926926645644227908}
   - component: {fileID: 8934072048464076174}
+  - component: {fileID: 2711835464002671825}
+  - component: {fileID: -4016219249069468163}
+  - component: {fileID: 8242258874354387645}
   m_Layer: 0
   m_Name: bathtub
   m_TagString: Untagged
@@ -574,7 +577,7 @@ Animator:
   m_GameObject: {fileID: 1593648665028425666}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 60fd0b8f77e94c748a2ef8dad49fe1a3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -596,6 +599,88 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CubismFadeMotionList: {fileID: 0}
+--- !u!60 &2711835464002671825
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593648665028425666}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.4986955, y: 0.17780429}
+      - {x: 0.48790604, y: 0.18575098}
+      - {x: 0.44202706, y: 0.15651676}
+      - {x: 0.005661249, y: 0.12042439}
+      - {x: -0.32036126, y: 0.11825557}
+      - {x: -0.44525146, y: 0.13301454}
+      - {x: -0.52450496, y: 0.18305543}
+      - {x: -0.5188947, y: 0.2828328}
+      - {x: -0.56556267, y: 0.23828962}
+      - {x: -0.5896745, y: 0.17728554}
+      - {x: -0.57165533, y: 0.12934588}
+      - {x: -0.5529788, y: 0.10552201}
+      - {x: -0.51892257, y: 0.0622401}
+      - {x: -0.37604472, y: -0.27378422}
+      - {x: 0.36428156, y: -0.26202083}
+      - {x: 0.46767062, y: 0.042354234}
+      - {x: 0.5054344, y: 0.09311808}
+      - {x: 0.581391, y: 0.19522251}
+      - {x: 0.51273215, y: 0.30927446}
+--- !u!61 &-4016219249069468163
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593648665028425666}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.48452246, y: 0.4448639}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.06209576, y: 0.11027223}
+  m_EdgeRadius: 0
+--- !u!114 &8242258874354387645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593648665028425666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1baef8d24aa9cd049beb607ef484d197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2107886665201172565
 GameObject:
   m_ObjectHideFlags: 0

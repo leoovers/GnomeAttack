@@ -26,8 +26,12 @@ public class Vitrine : MonoBehaviour
 
             Hitcount++;
             m_Anim.SetTrigger("Hit");
+            if (Hitcount == 2)
+            {
+                Destroy(this.gameObject.GetComponent<BoxCollider2D>());
+            }
 
-            if (Hitcount >= 4)
+                if (Hitcount >= 3)
             {
                 mainScript.levelWon = true;
                 mainScript.camFollowScript.followTransform = this.transform;

@@ -30,7 +30,7 @@ public class Lamp : MonoBehaviour
             if (Lampdmg == 2)
             {
                 this.gameObject.AddComponent<Rigidbody2D>();
-                Destroy(this.gameObject.GetComponent<BoxCollider2D>());
+                Destroy(this.gameObject.GetComponent<PolygonCollider2D>());
                 mainScript.objectivesDestroyed++;
             }
 
