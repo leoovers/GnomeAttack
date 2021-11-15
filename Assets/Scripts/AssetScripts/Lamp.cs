@@ -8,6 +8,7 @@ public class Lamp : MonoBehaviour
     private Animator m_Anim;
     public Catapult_physics mainScript;
     private int Lampdmg = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,15 +33,22 @@ public class Lamp : MonoBehaviour
                 this.gameObject.AddComponent<Rigidbody2D>();
                 Destroy(this.gameObject.GetComponent<PolygonCollider2D>());
                 mainScript.objectivesDestroyed++;
+                StartCoroutine(Freeze());
             }
 
             if (mainScript.objectivesDestroyed >= 3)
             {
                 mainScript.levelWon = true;
                 mainScript.camFollowScript.followTransform = finalCameraPoint.transform;
-
             }
 
         }
+    }
+
+    IEnumerator Freeze ()
+    {
+        mainScript.camFollowScript.followTransform = this.transform;
+        yield return new WaitForSeconds(1f);
+        mainScript.camFollowScript.followTransform = mainScript.newGnome.transform;
     }
 }

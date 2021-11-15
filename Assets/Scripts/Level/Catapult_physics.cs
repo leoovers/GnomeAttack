@@ -63,9 +63,7 @@ public class Catapult_physics : MonoBehaviour
         {
             System.Random rnd = new System.Random();
             int rand = rnd.Next(0, grunt.Length);
-            nGnomeAudio.volume = fxVolScript.fxVolume;
-            nGnomeAudio.clip = grunt[rand];
-            nGnomeAudio.Play();
+            SoundManager.PlaySound(grunt[rand]);
         }
     }
 
@@ -78,7 +76,7 @@ public class Catapult_physics : MonoBehaviour
                 Touch touch = Input.GetTouch(0);
                 Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
                 touchPosition.z = 0f;
-                if (touch.position.x > 350)
+                if (touch.position.x > Screen.width / 2)
                 {
                     onLaunch();
                 }
