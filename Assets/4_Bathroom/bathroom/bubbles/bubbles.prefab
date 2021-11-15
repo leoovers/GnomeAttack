@@ -95,7 +95,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &1613815332665423684
 MonoBehaviour:
@@ -109,14 +109,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308e904e3f33207489a2c15b9b0b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _localSortingOrder: 0
+  _localSortingOrder: 3
   _color: {r: 1, g: 1, b: 1, a: 1}
   _mainTexture: {fileID: 2800000, guid: 08855afb953250c468abc883bffb5e6b, type: 3}
   _sortingMode: 0
   _sortingOrder: 0
   _renderOrder: 0
   _depthOffset: 0.00001
-  _opacity: 0
+  _opacity: 1
 --- !u!1 &501717498855550197
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,7 +213,7 @@ Transform:
   m_GameObject: {fileID: 560056036836989406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children:
   - {fileID: 1536663863207441605}
   - {fileID: 6890252446158309104}
@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Opacity: 1
-  _lastOpacity: 0
+  _lastOpacity: 1
   _sortingLayerId: 0
   _sortingMode: 0
   _sortingOrder: 0
@@ -340,7 +340,7 @@ Animator:
   m_GameObject: {fileID: 560056036836989406}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f5dfa524c5be14a48b99149b67be08ea, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -480,7 +480,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494032156820186999}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -513,7 +513,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &5398020586149154156
 MonoBehaviour:
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308e904e3f33207489a2c15b9b0b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _localSortingOrder: 0
+  _localSortingOrder: 3
   _color: {r: 1, g: 1, b: 1, a: 1}
   _mainTexture: {fileID: 2800000, guid: 08855afb953250c468abc883bffb5e6b, type: 3}
   _sortingMode: 0
@@ -630,7 +630,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &3011843073195161790
 MonoBehaviour:
@@ -644,14 +644,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308e904e3f33207489a2c15b9b0b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _localSortingOrder: 0
+  _localSortingOrder: 3
   _color: {r: 1, g: 1, b: 1, a: 1}
   _mainTexture: {fileID: 2800000, guid: 08855afb953250c468abc883bffb5e6b, type: 3}
   _sortingMode: 0
   _sortingOrder: 0
   _renderOrder: 2
   _depthOffset: 0.00001
-  _opacity: 0
+  _opacity: 1
 --- !u!1 &3164471749336105564
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,7 +774,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3885314029073708349}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -807,7 +807,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &6815509571619046928
 MonoBehaviour:
@@ -821,7 +821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308e904e3f33207489a2c15b9b0b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _localSortingOrder: 0
+  _localSortingOrder: 3
   _color: {r: 1, g: 1, b: 1, a: 1}
   _mainTexture: {fileID: 2800000, guid: 08855afb953250c468abc883bffb5e6b, type: 3}
   _sortingMode: 0
@@ -904,7 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unmanagedIndex: 0
-  Value: 0
+  Value: 30
 --- !u!114 &4040392705255685607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,7 +1014,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &8916923100903579915
 MonoBehaviour:
@@ -1028,14 +1028,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308e904e3f33207489a2c15b9b0b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _localSortingOrder: 0
+  _localSortingOrder: 3
   _color: {r: 1, g: 1, b: 1, a: 1}
   _mainTexture: {fileID: 2800000, guid: 08855afb953250c468abc883bffb5e6b, type: 3}
   _sortingMode: 0
   _sortingOrder: 0
   _renderOrder: 1
   _depthOffset: 0.00001
-  _opacity: 0
+  _opacity: 1
 --- !u!1 &5645652325905647109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,7 +1196,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7070871694616844393}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1229,7 +1229,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &2576449082905476151
 MonoBehaviour:
@@ -1243,7 +1243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308e904e3f33207489a2c15b9b0b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _localSortingOrder: 0
+  _localSortingOrder: 3
   _color: {r: 1, g: 1, b: 1, a: 1}
   _mainTexture: {fileID: 2800000, guid: 08855afb953250c468abc883bffb5e6b, type: 3}
   _sortingMode: 0
@@ -1380,7 +1380,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &4069820634796457694
 MonoBehaviour:
@@ -1394,14 +1394,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308e904e3f33207489a2c15b9b0b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _localSortingOrder: 0
+  _localSortingOrder: 3
   _color: {r: 1, g: 1, b: 1, a: 1}
   _mainTexture: {fileID: 2800000, guid: 08855afb953250c468abc883bffb5e6b, type: 3}
   _sortingMode: 0
   _sortingOrder: 0
   _renderOrder: 6
   _depthOffset: 0.00001
-  _opacity: 0
+  _opacity: 1
 --- !u!1 &8665742930189795499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,7 +1497,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &6512081746924812293
 MonoBehaviour:
@@ -1511,11 +1511,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308e904e3f33207489a2c15b9b0b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _localSortingOrder: 0
+  _localSortingOrder: 3
   _color: {r: 1, g: 1, b: 1, a: 1}
   _mainTexture: {fileID: 2800000, guid: 08855afb953250c468abc883bffb5e6b, type: 3}
   _sortingMode: 0
   _sortingOrder: 0
   _renderOrder: 7
   _depthOffset: 0.00001
-  _opacity: 0
+  _opacity: 1

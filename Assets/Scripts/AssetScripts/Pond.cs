@@ -7,9 +7,11 @@ public class Pond : MonoBehaviour
     [SerializeField]
     UnityEngine.Object SplashRef;
     public Catapult_physics mainScript;
+    public GameObject gnome;
     // Start is called before the first frame update
     void Start()
     {
+ 
     }
 
     // Update is called once per frame
@@ -24,9 +26,11 @@ public class Pond : MonoBehaviour
         {
          
             Destroy(collision.collider.gameObject);
+            
 
 
         }
     }
  
+
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class normalGnome : MonoBehaviour
 {
+    [SerializeField]
+    UnityEngine.Object SplashRef;
     public GameObject crashEffect;
     private Catapult_physics mainScript;
     public AudioClip[] explosionAudio;
@@ -30,6 +32,10 @@ public class normalGnome : MonoBehaviour
                 tr.emitting = false;
             }
         }
+        if (coll.collider.CompareTag("Pond"))
+        {
+            splash();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -53,6 +59,11 @@ public class normalGnome : MonoBehaviour
     void Explode() {
         Instantiate(crashEffect, transform.position, Quaternion.identity);
         PlayExplosion();
+    }
+    private void splash()
+    {
+        GameObject splash = (GameObject)(Instantiate(SplashRef));
+        splash.transform.position = transform.position;
     }
 
     // Update is called once per frame
