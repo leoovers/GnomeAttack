@@ -3564,6 +3564,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7381278388245097109, guid: 355823cc0c287b74dad342ca263f5523, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+    - target: {fileID: 7381278388245097109, guid: 355823cc0c287b74dad342ca263f5523, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7381278388371892047, guid: 355823cc0c287b74dad342ca263f5523, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1

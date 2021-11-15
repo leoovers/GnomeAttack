@@ -40,6 +40,9 @@ public class Catapult_physics : MonoBehaviour
         gnomesLeft.text = numberOfGnomes.ToString();
 
         instantiateGnome();
+
+        int cl = PlayerPrefs.GetInt("CompletedLevels");
+        Debug.Log(cl);
     }
 
     void onSliderStop()
@@ -119,6 +122,24 @@ public class Catapult_physics : MonoBehaviour
         StartCoroutine(Launch());
     }
 
+    void UpdatePlayerPrefs()
+    {
+        Scene currScene = SceneManager.GetActiveScene();
+        String currSceneName = currScene.name;
+        String substr = "";
+        
+        for (int i = 0; i < currSceneName.Length; i++)
+        {
+            if (Char.IsDigit(currSceneName[i]))
+            {
+                substr += currSceneName[i];
+            }
+        }
+        int currSceneNumber = Int16.Parse(substr);
+        PlayerPrefs.SetInt("CompletedLevels", currSceneNumber);
+        PlayerPrefs.Save();
+    }
+
     IEnumerator Launch ()
 	{
         PlayGrunt();
@@ -156,7 +177,8 @@ public class Catapult_physics : MonoBehaviour
             else
             {   
                 yield return new WaitForSeconds(0.5f);
-                winPanel.SetActive(true); 
+                winPanel.SetActive(true);
+                UpdatePlayerPrefs();
             }
         }
     }

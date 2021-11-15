@@ -22,8 +22,8 @@ public class Reset : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonUp("Reset"))
-            {
-                TaskOnClick_reset();
-            }
+        {
+            TaskOnClick_reset();
+        }
     }
 }

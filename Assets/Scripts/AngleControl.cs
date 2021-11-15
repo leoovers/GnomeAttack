@@ -24,7 +24,6 @@ public class AngleControl : MonoBehaviour
     }
 
     void TaskOnClick_plus(){
-        Debug.Log ("You have clicked the + button!");
         if (mainScript.angle < 90){
             mainScript.angle = mainScript.angle + 2;
         }
@@ -32,7 +31,6 @@ public class AngleControl : MonoBehaviour
     }
 
     void TaskOnClick_minus(){
-        Debug.Log ("You have clicked the - button!");
         if (mainScript.angle > 0){
             mainScript.angle = mainScript.angle - 2;
         }

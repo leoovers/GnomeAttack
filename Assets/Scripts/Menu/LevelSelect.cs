@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class LevelSelect : MonoBehaviour
@@ -16,6 +18,9 @@ public class LevelSelect : MonoBehaviour
     private int PerPage;
     private int currentLevelCount;
     public GameObject[] levelButtons;
+    private string sceneName;
+    private int LevelNum;
+    public LevelSelect levelSel;
 
 
     // Calculations how many panels are needed  
@@ -29,19 +34,23 @@ public class LevelSelect : MonoBehaviour
         int totalPages = Mathf.CeilToInt((float)numberOfLevels / PerPage);
         LoadPanels(totalPages);
 
+        levelSel = Camera.main.GetComponent<LevelSelect>();
+        int CompletedLevels = PlayerPrefs.GetInt("CompletedLevels"); //level progression
+        int levelReached = CompletedLevels + 1;
+
+        //LevelSelect LvlButton = LevelButtonArr.AddComponent<LevelSelect>();
+
+        Debug.Log(levelButtons);
+
+        // for (int i = 0; i < levelButtons.Length; i++)
+        // {
+        //     if (i + 1 > levelReached)
+        //     {
+        //         levelButtons[i].GetComponent<Button>().interactable = false;
+        //     }
+        // }
 
 
-        //level progress
-
-        /*int levelReached = PlayerPrefs.GetInt("levelReached", 1);
-
-        for (int i = 0; i < levelButtons.Length; i++)
-        {
-            if (i + 1 > levelReached)
-            {
-                levelButtons[i].GetComponent<Button>().interactable = false;
-            }
-        }*/
     }
 
     // Total panels

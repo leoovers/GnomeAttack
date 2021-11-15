@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Fence : MonoBehaviour
 {
-    public GameObject winPanel;
     public GameObject deathEffect;
     public Catapult_physics mainScript;
     public CameraFollow camScript;
@@ -33,7 +32,7 @@ public class Fence : MonoBehaviour
 	{
 		yield return new WaitForSeconds(1f);
         camScript.followTransform = finalCameraPoint.transform;
-        winPanel.SetActive(true);
+        mainScript.levelWon = true;
     
     }
 }

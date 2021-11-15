@@ -23,7 +23,7 @@ public class nextLevel : MonoBehaviour
         currScene = SceneManager.GetActiveScene();
         currSceneName = currScene.name;
         
-        for (int i = 0; i <currSceneName.Length; i++)
+        for (int i = 0; i < currSceneName.Length; i++)
         {
             if (Char.IsDigit(currSceneName[i]))
             {
