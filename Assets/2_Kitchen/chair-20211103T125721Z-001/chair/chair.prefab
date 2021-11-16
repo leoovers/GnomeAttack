@@ -967,6 +967,7 @@ GameObject:
   - component: {fileID: 7371675935295093342}
   - component: {fileID: 9168012696085203149}
   - component: {fileID: 220449745594332693}
+  - component: {fileID: 5158358710020267117}
   m_Layer: 0
   m_Name: chair
   m_TagString: Untagged
@@ -1041,7 +1042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Opacity: 1
-  _lastOpacity: 0
+  _lastOpacity: 1
   _sortingLayerId: 0
   _sortingMode: 0
   _sortingOrder: 0
@@ -1132,6 +1133,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CubismFadeMotionList: {fileID: 0}
+--- !u!60 &5158358710020267117
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6675203036369175671}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.0311106, y: 0.03661774}
+      - {x: -0.025844797, y: 0.06320039}
+      - {x: -0.031593792, y: 0.55786645}
+      - {x: -0.09051022, y: 0.57690597}
+      - {x: -0.09025819, y: 0.5442217}
+      - {x: -0.18127525, y: 0.53983426}
+      - {x: -0.18598789, y: 0.56594324}
+      - {x: -0.24832982, y: 0.5796993}
+      - {x: -0.29331505, y: 0.5639774}
+      - {x: -0.3086826, y: 0.55223507}
+      - {x: -0.3090733, y: 0.45605493}
+      - {x: -0.28874993, y: -0.18940358}
+      - {x: -0.353668, y: -0.5870658}
+      - {x: -0.26950175, y: -0.60260093}
+      - {x: -0.24145329, y: -0.5470169}
+      - {x: -0.2243717, y: -0.51316607}
+      - {x: -0.21289778, y: -0.44003}
+      - {x: -0.17252077, y: -0.15915184}
+      - {x: 0.11111936, y: -0.23083371}
+      - {x: 0.11488922, y: -0.6415424}
+      - {x: 0.16886786, y: -0.6455129}
+      - {x: 0.23441193, y: -0.60335374}
+      - {x: 0.21193658, y: -0.18349724}
+      - {x: 0.27013496, y: -0.13656232}
+      - {x: 0.3072063, y: -0.4827267}
+      - {x: 0.37130514, y: -0.48260954}
+      - {x: 0.37722695, y: -0.49194157}
+      - {x: 0.36024576, y: -0.0976599}
+      - {x: 0.29368633, y: -0.082960114}
+      - {x: -0.020433903, y: -0.031355277}
 --- !u!1 &7220262354451055253
 GameObject:
   m_ObjectHideFlags: 0

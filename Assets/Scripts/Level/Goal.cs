@@ -28,16 +28,17 @@ public class Goal : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		//  timerCountDown = 5.0f;
-		if (collision.gameObject.tag == "Stickable")
+		if (collision.gameObject.tag == "Stickable"|| collision.gameObject.tag == "Player")
         {
             Debug.Log("Player Entered");
             isPlayerColliding = true;
         }
+
 	}
 
 	void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Stickable" && isPlayerColliding == true)
+        if (collision.gameObject.tag == "Stickable" || collision.gameObject.tag == "Player" && isPlayerColliding == true)
         {
 			timerCountDown -= Time.deltaTime;
 				if (timerCountDown < 0)
@@ -57,7 +58,7 @@ public class Goal : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Stickable")
+        if(collision.gameObject.tag == "Stickable" || collision.gameObject.tag == "Player")
         {
             Debug.Log("Player Exited");
             isPlayerColliding = false;

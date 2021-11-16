@@ -17,7 +17,7 @@ public class AppleHit : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        this.Invoke("rigid", 0.5f);
+        this.Invoke("rigid", 0.8f);
         m_Anim.SetTrigger("Hit");
 
         
