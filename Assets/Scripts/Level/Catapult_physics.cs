@@ -40,9 +40,6 @@ public class Catapult_physics : MonoBehaviour
         gnomesLeft.text = numberOfGnomes.ToString();
 
         instantiateGnome();
-
-        int cl = PlayerPrefs.GetInt("CompletedLevels");
-        Debug.Log(cl);
     }
 
     void onSliderStop()
@@ -177,8 +174,8 @@ public class Catapult_physics : MonoBehaviour
             else
             {   
                 yield return new WaitForSeconds(0.5f);
-                winPanel.SetActive(true);
                 UpdatePlayerPrefs();
+                winPanel.SetActive(true);
             }
         }
     }

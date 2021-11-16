@@ -12,7 +12,7 @@ public class nextLevel : MonoBehaviour
     private string currSceneName;
     private int currSceneNumber;
     private int nextSceneNumber;
-    public string b;
+    private string b;
 
     // Start is called before the first frame update
     void Start()
