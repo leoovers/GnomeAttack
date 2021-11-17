@@ -30,7 +30,7 @@ public class CameraFollow : MonoBehaviour
         ViewDistance("Level_13", 10.0f);
         ViewDistance("Level_20", 10.0f);
         ViewDistance("Level_23", 10.0f);
-
+        ViewDistance("Level_25", 15.0f);
 
     }
 
