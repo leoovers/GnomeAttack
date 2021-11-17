@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 68483442}
   - component: {fileID: 68483441}
+  - component: {fileID: 68483443}
   m_Layer: 0
   m_Name: phon1..3
   m_TagString: Untagged
@@ -206,6 +207,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &68483443
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68483440}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 11.91, y: 6.7}
+    newSize: {x: 11.91, y: 6.7}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 5.591007, y: -3.4476633}
+      - {x: -5.5529594, y: -3.413439}
+      - {x: -5.955, y: 3.35}
+      - {x: -5.926318, y: -4.153099}
+      - {x: 5.897635, y: -4.153099}
+      - {x: 5.955, y: 3.35}
 --- !u!43 &112669496
 Mesh:
   m_ObjectHideFlags: 0
