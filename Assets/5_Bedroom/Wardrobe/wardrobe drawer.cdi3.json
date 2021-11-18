@@ -1,0 +1,63 @@
+{
+	"Version": 3,
+	"Parameters": [
+		{
+			"Id": "Param",
+			"GroupId": "",
+			"Name": "y"
+		},
+		{
+			"Id": "Param2",
+			"GroupId": "",
+			"Name": "x"
+		},
+		{
+			"Id": "Param6",
+			"GroupId": "",
+			"Name": "clothes upper"
+		},
+		{
+			"Id": "Param3",
+			"GroupId": "",
+			"Name": "door r"
+		},
+		{
+			"Id": "Param4",
+			"GroupId": "",
+			"Name": "door l"
+		},
+		{
+			"Id": "Param5",
+			"GroupId": "",
+			"Name": "box down shake"
+		},
+		{
+			"Id": "Param7",
+			"GroupId": "",
+			"Name": "clothing trash"
+		},
+		{
+			"Id": "Param8",
+			"GroupId": "",
+			"Name": "red dress"
+		},
+		{
+			"Id": "Param9",
+			"GroupId": "",
+			"Name": "yellow dress"
+		}
+	],
+	"ParameterGroups": [],
+	"Parts": [
+		{
+			"Id": "Part",
+			"Name": "Folder 1"
+		}
+	],
+	"CombinedParameters": [
+		[
+			"Param",
+			"Param2"
+		]
+	]
+}
