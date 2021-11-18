@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BeeDestroy : MonoBehaviour
 {
+    [SerializeField]
+    UnityEngine.Object BeeRef;
     private GameObject grandparent;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,8 @@ public class BeeDestroy : MonoBehaviour
         if(collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Stickable"))
         {
             Destroy(grandparent);
+            GameObject Bee = (GameObject)(Instantiate(BeeRef));
+            Bee.transform.position = transform.position;
         }
 
     }
