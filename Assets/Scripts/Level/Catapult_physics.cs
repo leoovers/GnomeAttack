@@ -18,7 +18,7 @@ public class Catapult_physics : MonoBehaviour
     public GameObject newGnome;
     public AudioClip[] grunt;
     public int objectivesDestroyed = 0;
-    public int angle = 60;  // Launch angle in degrees
+    public float angle = 60f;  // Launch angle in degrees
     public bool launched = false;
     public bool levelWon = false;
     public bool levelLost = false;
@@ -40,11 +40,6 @@ public class Catapult_physics : MonoBehaviour
         gnomesLeft.text = numberOfGnomes.ToString();
 
         instantiateGnome();
-    }
-
-    void onSliderStop()
-    {
-        Debug.Log ("Slider stopped");
     }
 
     void instantiateGnome()
@@ -99,7 +94,7 @@ public class Catapult_physics : MonoBehaviour
             timeSlowed = 0f;
         }
 
-        angleText.text = angle.ToString() + "°";
+        angleText.text = Math.Round(angle,1).ToString() + "°";
         // powerText.text = Math.Round((thrust / 40 * 100), 1).ToString() + " %";  
     }
 

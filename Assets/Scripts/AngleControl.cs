@@ -23,16 +23,44 @@ public class AngleControl : MonoBehaviour
         plusButton.onClick.AddListener(TaskOnClick_plus);
     }
 
-    void TaskOnClick_plus(){
-        if (mainScript.angle < 90){
-            mainScript.angle = mainScript.angle + 2;
+    void TaskOnClick_plus()
+    {
+        if (mainScript.angle < 90f){
+            mainScript.angle = mainScript.angle + 2f;
         }
         arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, mainScript.angle);
     }
 
-    void TaskOnClick_minus(){
-        if (mainScript.angle > 0){
-            mainScript.angle = mainScript.angle - 2;
+    void TaskOnClick_minus()
+    {
+        if (mainScript.angle > 0f){
+            mainScript.angle = mainScript.angle - 2f;
+        }
+        arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, mainScript.angle);
+    }
+
+    void onSwipeUp()
+    {
+        if (mainScript.angle + SwipeManager.swipeCm < 90f)
+        {
+            mainScript.angle += SwipeManager.swipeCm;
+        }
+        else
+        {
+            mainScript.angle = 90f;   
+        }
+        arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, mainScript.angle);
+    }
+
+    void onSwipeDown()
+    {
+        if (mainScript.angle - SwipeManager.swipeCm > 0f)
+        {
+            mainScript.angle -= SwipeManager.swipeCm;
+        }
+        else
+        {
+            mainScript.angle = 0f;   
         }
         arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, mainScript.angle);
     }
@@ -48,5 +76,14 @@ public class AngleControl : MonoBehaviour
         {
             TaskOnClick_plus();
         }
+
+        //if (SwipeManager.IsSwipingUp())
+        //{
+        //  onSwipeUp();
+        //}
+        //if (SwipeManager.IsSwipingDown())
+        //{
+        //    onSwipeDown();
+        //}
     }
 }

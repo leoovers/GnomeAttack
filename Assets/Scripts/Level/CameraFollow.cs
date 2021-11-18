@@ -13,6 +13,7 @@ public class CameraFollow : MonoBehaviour
     public float xOffset;
     public float yOffset;
     public float smoothTime;
+    public float speed = 0.1F;
     public bool shaking = false;
 
     private Vector3 velocity = Vector3.zero;
@@ -45,6 +46,7 @@ public class CameraFollow : MonoBehaviour
 
         // Add a clause to change camera view distance in a specific level
         if (currSceneName == levelName)
+        
         {
             mainCamera.orthographicSize = ortSize;
         }
@@ -64,6 +66,11 @@ public class CameraFollow : MonoBehaviour
         {
             followTransform = mainScript.newGnome.transform;
         }
+        // if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        // {
+        //     Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+        //     transform.Translate(-touchDeltaPosition.x * speed * (Time.deltaTime*2), -touchDeltaPosition.y * speed * (Time.deltaTime*2), 0);
+        // }
     }
     
     void FixedUpdate()
