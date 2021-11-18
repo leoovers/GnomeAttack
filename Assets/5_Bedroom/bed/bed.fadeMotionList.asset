@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
+  m_Name: bed.fadeMotionList
+  m_EditorClassIdentifier: 
+  MotionInstanceIds: aaeeffff66e7ffff56e7ffff
+  CubismFadeMotionObjects:
+  - {fileID: 11400000, guid: d367018ce3fe1184e99f7367b86f413a, type: 2}
+  - {fileID: 11400000, guid: 9790be11fbcd6fa4b96321842e35ad56, type: 2}
+  - {fileID: 11400000, guid: b893b638f98ea7e468fe289c396a9bdb, type: 2}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
+  m_Name: Wardrobe.fadeMotionList
+  m_EditorClassIdentifier: 
+  MotionInstanceIds: 6af1ffff9eeeffff72ebffff6aebffff62ebffff5ee7ffff
+  CubismFadeMotionObjects:
+  - {fileID: 11400000, guid: ce3047f7137906e4993b5f6b2b705700, type: 2}
+  - {fileID: 11400000, guid: b3868261b1af98545baec9bf0cd43793, type: 2}
+  - {fileID: 11400000, guid: 3623df052921d0b44bd6de338359e259, type: 2}
+  - {fileID: 11400000, guid: bac39df8afa63924b948f9838e39096d, type: 2}
+  - {fileID: 11400000, guid: 35a15e40485cd1748b4c675698f577e0, type: 2}
+  - {fileID: 11400000, guid: 56bd60544dc490f49ac2bcef708afb5f, type: 2}
