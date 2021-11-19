@@ -13,16 +13,24 @@ public class CameraFollow : MonoBehaviour
     public float xOffset;
     public float yOffset;
     public float smoothTime;
-    public float speed = 0.1F;
+    public float speed = 0.01F;
     public bool shaking = false;
 
+    [SerializeField]
+    private GameObject cameraBorder;
+
     private Vector3 velocity = Vector3.zero;
+    private bool moving = false;
+    private float maxValueX;
+    private float minValueX;
+    private float maxValueY;
+    private float minValueY;
 
     void Start()
     {
         xOffset = 9;
         yOffset = 2.0f;
-        smoothTime = 1.7f;
+        smoothTime = 1.2f;
 
         ViewDistance("Level_9", 10.0f);
         ViewDistance("Level_11", 10.0f);
@@ -33,6 +41,13 @@ public class CameraFollow : MonoBehaviour
         ViewDistance("Level_23", 10.0f);
         ViewDistance("Level_25", 15.0f);
 
+        cameraBorder = GameObject.Find("CameraBorder");
+
+        maxValueX = cameraBorder.transform.position.x + cameraBorder.transform.localScale.x / 2;
+        minValueX = cameraBorder.transform.position.x - cameraBorder.transform.localScale.x / 2;
+        maxValueY = cameraBorder.transform.position.y + cameraBorder.transform.localScale.y / 2;
+        minValueY = cameraBorder.transform.position.y - cameraBorder.transform.localScale.y / 2;
+ 
     }
 
     void ViewDistance(string levelName, float ortSize)
@@ -56,6 +71,12 @@ public class CameraFollow : MonoBehaviour
         }
     }
 
+    public void smoothToTarget(Vector3 target)
+    {
+        this.transform.position = Vector3.SmoothDamp(this.transform.position, new Vector3(target.x + xOffset,
+        target.y + yOffset, -10), ref velocity, smoothTime);
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.F))
@@ -66,16 +87,37 @@ public class CameraFollow : MonoBehaviour
         {
             followTransform = mainScript.newGnome.transform;
         }
-        // if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
-        // {
-        //     Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-        //     transform.Translate(-touchDeltaPosition.x * speed * (Time.deltaTime*2), -touchDeltaPosition.y * speed * (Time.deltaTime*2), 0);
-        // }
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        {
+            moving = true;
+            Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+            transform.Translate(-touchDeltaPosition.x * (Time.deltaTime * 2), -touchDeltaPosition.y * (Time.deltaTime * 2), 0);
+        }
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+        {
+            moving = false;
+        }
+        if (this.transform.position.x > maxValueX)
+        {
+            this.transform.position = new Vector3(maxValueX ,this.transform.position.y, -10);
+        }
+        if (this.transform.position.x < minValueX)
+        {
+            this.transform.position = new Vector3(minValueX ,this.transform.position.y, -10);
+        }
+        if (this.transform.position.y > maxValueY)
+        {
+            this.transform.position = new Vector3(this.transform.position.x, maxValueY, -10);
+        }
+        if (this.transform.position.y < minValueY)
+        {
+            this.transform.position = new Vector3(this.transform.position.x, minValueY, -10);
+        }
     }
     
     void FixedUpdate()
     {   
-        if (!shaking)
+        if (!shaking & !moving)
         {
             this.transform.position = Vector3.SmoothDamp(this.transform.position, new Vector3(followTransform.position.x + xOffset,
             followTransform.position.y + yOffset, -10), ref velocity, smoothTime); 
