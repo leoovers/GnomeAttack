@@ -14,6 +14,7 @@ public class Window : MonoBehaviour
     private Animator m_Anim;
     private int hitCount;
     private BoxCollider2D TabTrigger;
+    private BoxCollider2D KeyTrigger;
 
     // Start is called before the first frame update
     void Start()
@@ -23,15 +24,24 @@ public class Window : MonoBehaviour
         hitCount = 0;
         var colliders = GetComponents<BoxCollider2D>();
         TabTrigger = colliders[1];
+        KeyTrigger = colliders[3];
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) 
         {
-            hitCount++;
-            Debug.Log("windowdmg1");
-            m_Anim.SetTrigger("Hit");
+            if (collision.IsTouching(KeyTrigger))
+            {
+                m_Anim.SetTrigger("HitKey");
+            }
+            else
+            {
+                hitCount++;
+                Debug.Log("windowdmg1");
+                m_Anim.SetTrigger("Hit");
+            }
+           
             if (hitCount == 2)
             {
                 Instantiate(deathEffect, transform.position, Quaternion.identity);
