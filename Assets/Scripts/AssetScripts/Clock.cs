@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Clock : MonoBehaviour
 {
+    public AudioClip cuckooSound;
     
     private Animator m_Anim; 
     public Catapult_physics mainScript;
@@ -34,6 +35,10 @@ public class Clock : MonoBehaviour
                 this.gameObject.AddComponent<Rigidbody2D>();
                 mainScript.camFollowScript.followTransform = this.transform;
 
+            }
+            if (Hitcount == 2)
+            {
+                SoundManager.PlaySound(cuckooSound);
             }
 
         }
