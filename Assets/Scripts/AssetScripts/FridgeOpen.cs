@@ -54,6 +54,7 @@ public class FridgeOpen : MonoBehaviour
             if (collision.IsTouching(FTrigger))
             {
                 m_Anim.SetTrigger("F");
+                
             }
             if (collision.IsTouching(ArtTrigger))
             {
