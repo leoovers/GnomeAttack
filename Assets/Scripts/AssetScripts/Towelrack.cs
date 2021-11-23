@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Towelrack : MonoBehaviour
 {
+    public Catapult_physics mainScript;
     private Animator m_Anim;
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class Towelrack : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             m_Anim.SetTrigger("Hit");
-
+            mainScript.levelWon = true;
 
         }
     }
