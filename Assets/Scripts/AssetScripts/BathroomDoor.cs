@@ -30,7 +30,7 @@ public class BathroomDoor : MonoBehaviour
             Hitcount++;
             m_Anim.SetTrigger("Hit");
 
-            if (Hitcount >= 2)
+            if (Hitcount == 2)
             {
                 mainScript.levelWon = true;
                 mainScript.camFollowScript.followTransform = this.transform;

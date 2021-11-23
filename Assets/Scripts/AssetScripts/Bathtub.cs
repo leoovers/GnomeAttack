@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bathtub : MonoBehaviour
 {
-    
+    public Catapult_physics mainScript;
     private Animator m_Anim;
     public SoapBottle soapscript;
     // Start is called before the first frame update
@@ -19,6 +19,11 @@ public class Bathtub : MonoBehaviour
         if (soapscript.soap == true)
         {
             m_Anim.SetTrigger("Bubbles");
+           
+        }
+        if (m_Anim.GetCurrentAnimatorStateInfo(0).IsTag("ree"))
+        {
+            mainScript.levelWon = true;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,11 +33,15 @@ public class Bathtub : MonoBehaviour
             if (soapscript.soap == true)
             {
                 m_Anim.SetTrigger("HitBubbles");
+                
             }
             else 
             {
                 m_Anim.SetTrigger("HitNoBubbles");
+                
             }
+
+            
         }
 
     }
