@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Analytics;
 using System;
 using System.Collections;
 using TMPro;
@@ -32,6 +33,10 @@ public class Catapult_physics : MonoBehaviour
     private float timeLaunched = 0f;
     private float timeSlowed = 0f;
 
+    //ANALYTICS
+    private AnalyticsManager analyticsManager;
+    private GameObject am;
+
     void Start()
     {
         launchNumber = 0;  // First launch is 0 second is 1 ...
@@ -40,6 +45,12 @@ public class Catapult_physics : MonoBehaviour
         gnomesLeft.text = numberOfGnomes.ToString();
 
         instantiateGnome();
+
+        //ANALYTICS
+        am = GameObject.Find("AnalyticsManager");
+        if (am != null) {
+            analyticsManager = am.GetComponent<AnalyticsManager>();
+        }
     }
 
     void instantiateGnome()
@@ -171,6 +182,7 @@ public class Catapult_physics : MonoBehaviour
                 yield return new WaitForSeconds(0.5f);
                 UpdatePlayerPrefs();
                 winPanel.SetActive(true);
+                analyticsManager.SendCompletionData();
             }
         }
     }
