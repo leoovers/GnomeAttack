@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour {
 		{
 			mainScript.levelWon = true;
 			mainScript.camFollowScript.followTransform = finalCameraPoint.transform;
-			mainScript.levelWon = true;
+			
 		}	
 	}
 }

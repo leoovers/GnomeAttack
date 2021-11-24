@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
+  m_Name: catapult-20211124T083213Z-001.fadeMotionList
+  m_EditorClassIdentifier: 
+  MotionInstanceIds: 4adbffff3edbffff36dbffff
+  CubismFadeMotionObjects:
+  - {fileID: 11400000, guid: 245213e3831463a48a1d5d70b923607a, type: 2}
+  - {fileID: 11400000, guid: 8f9ef2e2a8b14ff448a0a154aa5faed5, type: 2}
+  - {fileID: 11400000, guid: 872b730d7d600904b9e1117fcac0e0f6, type: 2}
