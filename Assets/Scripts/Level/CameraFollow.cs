@@ -18,7 +18,12 @@ public class CameraFollow : MonoBehaviour
 
     [SerializeField]
     private GameObject cameraBorder;
+    [SerializeField]
+    private GameObject angleSlider;
+    private Slider slider;
 
+    [SerializeField]
+    private bool disableCameraScroll = false;
     private Vector3 velocity = Vector3.zero;
     private bool moving = false;
     private float maxValueX;
@@ -36,13 +41,14 @@ public class CameraFollow : MonoBehaviour
         ViewDistance("Level_11", 10.0f);
         ViewDistance("Level_12", 10.0f);
         ViewDistance("Level_13", 10.0f);
-        ViewDistance("Level_13", 10.0f);
         ViewDistance("Level_20", 10.0f);
         ViewDistance("Level_23", 10.0f);
         ViewDistance("Level_25", 15.0f);
         ViewDistance("Level_30", 15.0f);
 
         cameraBorder = GameObject.Find("CameraBorder");
+        angleSlider = GameObject.Find("AngleSlider");
+        slider = angleSlider.GetComponent<Slider>();
 
         maxValueX = cameraBorder.transform.position.x + cameraBorder.transform.localScale.x / 2;
         minValueX = cameraBorder.transform.position.x - cameraBorder.transform.localScale.x / 2;
@@ -88,23 +94,46 @@ public class CameraFollow : MonoBehaviour
         {
             followTransform = mainScript.newGnome.transform;
         }
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        {
+            Touch touch = Input.GetTouch(0);
+            Vector2 touchStartPos = touch.position;
+            if (touchStartPos.x > Screen.width / 2)
+            {
+                Debug.Log("right side");
+                slider.interactable = false;
+            }
+            if (touchStartPos.x < Screen.width / 2)
+            {
+                Debug.Log("left side");
+                Debug.Log("width=" + Screen.width);
+                Debug.Log("touchposX=" + touchStartPos.x);
+                disableCameraScroll = true;
+            }
+
+        }
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
         {
-            moving = true;
-            Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-            transform.Translate(-touchDeltaPosition.x * (Time.deltaTime * 2), -touchDeltaPosition.y * (Time.deltaTime * 2), 0);
+            if (!disableCameraScroll)
+            {
+                moving = true;
+                Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+                transform.Translate(-touchDeltaPosition.x * (Time.deltaTime * 2), -touchDeltaPosition.y * (Time.deltaTime * 2), 0);
+            }
         }
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
         {
             moving = false;
+            disableCameraScroll = false;
+            slider.interactable = true;
         }
         if (this.transform.position.x > maxValueX)
         {
-            this.transform.position = new Vector3(maxValueX ,this.transform.position.y, -10);
+            this.transform.position = new Vector3(maxValueX, this.transform.position.y, -10);
         }
         if (this.transform.position.x < minValueX)
         {
-            this.transform.position = new Vector3(minValueX ,this.transform.position.y, -10);
+            this.transform.position = new Vector3(minValueX, this.transform.position.y, -10);
         }
         if (this.transform.position.y > maxValueY)
         {
