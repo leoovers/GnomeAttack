@@ -7,6 +7,7 @@ using TMPro;
 
 public class Catapult_physics : MonoBehaviour
 {
+    private Animator m_Anim;
     public CameraFollow camFollowScript;  // Script attached to Main Camera
     public effectVolume fxVolScript;
     public Text angleText;  // UI text for angle in degrees
@@ -34,6 +35,7 @@ public class Catapult_physics : MonoBehaviour
 
     void Start()
     {
+        m_Anim = GetComponent<Animator>();
         launchNumber = 0;  // First launch is 0 second is 1 ...
 
         numberOfGnomes = gnomes.Length;
@@ -99,7 +101,8 @@ public class Catapult_physics : MonoBehaviour
     }
 
     void onLaunch()
-    {   
+    {
+        m_Anim.SetTrigger("FHit");
         lastGnome = GameObject.Find("Gnome" + (launchNumber - 1).ToString());
         if (lastGnome)
         {
