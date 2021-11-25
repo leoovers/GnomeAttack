@@ -10,6 +10,8 @@ public static class SoundManager
     
     public static void PlaySound(AudioClip audioClip) 
     {
+        // Take an audio clip as argument, play it once
+
         GameObject soundGameObject = new GameObject("Sound");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
         audioSource.PlayOneShot(audioClip, fxVolume);
@@ -17,6 +19,8 @@ public static class SoundManager
 
     public static void PlayOnLoop(AudioClip clip)
     {
+        // Take an audio clip as argument, play it on loop
+
         GameObject soundGameObject = new GameObject("SoundLoop");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
         audioSource.clip = clip;
@@ -27,6 +31,8 @@ public static class SoundManager
 
     public static void PlayRandom(AudioClip[] list)
     {
+        // Take a list of audio clips as argument, play a random clip once
+
         System.Random rnd = new System.Random();
         int rand = rnd.Next(0, list.Length);
         PlaySound(list[rand]);

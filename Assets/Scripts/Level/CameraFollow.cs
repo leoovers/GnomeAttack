@@ -12,9 +12,11 @@ public class CameraFollow : MonoBehaviour
     public GameObject goal;
     public float xOffset;
     public float yOffset;
+
     public float smoothTime;
     public float speed = 0.01F;
     public bool shaking = false;
+
     public AudioClip levelMusic;
 
     [SerializeField]
@@ -69,15 +71,9 @@ public class CameraFollow : MonoBehaviour
         Scene currScene = SceneManager.GetActiveScene();
         string currSceneName = currScene.name;
 
-        // Add a clause to change camera view distance in a specific level
         if (currSceneName == levelName)
-        
         {
             mainCamera.orthographicSize = ortSize;
-        }
-        else
-        {
-            mainCamera.orthographicSize = 7.0f;
         }
     }
 
