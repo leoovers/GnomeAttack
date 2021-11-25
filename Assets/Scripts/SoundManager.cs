@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,20 +15,20 @@ public static class SoundManager
         audioSource.PlayOneShot(audioClip, fxVolume);
     }
 
-    public static void PlayBackGround(AudioClip audioClip)
-    {
-        GameObject soundGameObject = new GameObject("Sound");
-        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
-        audioSource.loop = true;
-        audioSource.PlayOneShot(audioClip, ambientVolume);
-    }
-
     public static void PlayOnLoop(AudioClip clip)
     {
-        GameObject soundGameObject = new GameObject("MenuSound");
+        GameObject soundGameObject = new GameObject("SoundLoop");
         AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
         audioSource.clip = clip;
+        audioSource.volume = ambientVolume;
         audioSource.loop = true;
         audioSource.Play();
+    }
+
+    public static void PlayRandom(AudioClip[] list)
+    {
+        System.Random rnd = new System.Random();
+        int rand = rnd.Next(0, list.Length);
+        PlaySound(list[rand]);
     }
 }

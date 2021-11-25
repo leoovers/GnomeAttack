@@ -48,9 +48,7 @@ public class stickyGnome : MonoBehaviour
 
     public void PlayExplosion()
     {
-        System.Random rnd = new System.Random();
-        int rand = rnd.Next(0, explosionAudio.Length);
-        SoundManager.PlaySound(explosionAudio[rand]);
+        SoundManager.PlayRandom(explosionAudio);
     }
  
     void Explode() {

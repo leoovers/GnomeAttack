@@ -50,9 +50,7 @@ public class normalGnome : MonoBehaviour
     {
         if (audioSource)
         {
-            System.Random rnd = new System.Random();
-            int rand = rnd.Next(0, explosionAudio.Length);
-            SoundManager.PlaySound(explosionAudio[rand]);
+            SoundManager.PlayRandom(explosionAudio);
         }
     }
  

@@ -7,7 +7,6 @@ using TMPro;
 
 public class Catapult_physics : MonoBehaviour
 {
-    private Animator m_Anim;
     public CameraFollow camFollowScript;  // Script attached to Main Camera
     public effectVolume fxVolScript;
     public Text angleText;  // UI text for angle in degrees
@@ -35,6 +34,7 @@ public class Catapult_physics : MonoBehaviour
     private GameObject launchButton;
     [SerializeField]
     private Button launchBtn;
+    private Animator m_Anim;
 
     void Start()
     {
@@ -72,9 +72,7 @@ public class Catapult_physics : MonoBehaviour
     {
         if (nGnomeAudio)
         {
-            System.Random rnd = new System.Random();
-            int rand = rnd.Next(0, grunt.Length);
-            SoundManager.PlaySound(grunt[rand]);
+            SoundManager.PlayRandom(grunt);
         }
     }
 
