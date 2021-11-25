@@ -32,6 +32,8 @@ public class Catapult_physics : MonoBehaviour
     private AudioSource nGnomeAudio;
     private float timeLaunched = 0f;
     private float timeSlowed = 0f;
+    private GameObject launchButton;
+    private Button launchBtn;
 
     void Start()
     {
@@ -40,8 +42,19 @@ public class Catapult_physics : MonoBehaviour
 
         numberOfGnomes = gnomes.Length;
         gnomesLeft.text = numberOfGnomes.ToString();
+        launchButton = GameObject.Find("LaunchButton");
+        launchBtn = launchButton.GetComponent<Button>();
+        launchBtn.onClick.AddListener(onLaunchButtonClick);
 
         instantiateGnome();
+    }
+
+    void onLaunchButtonClick()
+    {
+        if (!launched)
+        {
+            onLaunch();
+        }
     }
 
     void instantiateGnome()
@@ -68,16 +81,6 @@ public class Catapult_physics : MonoBehaviour
     {   
         if (!launched)
         {
-            if (Input.touchCount > 0)
-            {
-                Touch touch = Input.GetTouch(0);
-                Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-                touchPosition.z = 0f;
-                if (touch.position.x > Screen.width / 2 & touch.position.y < Screen.height / 3)
-                {
-                    onLaunch();
-                }
-            }
             if (Input.GetButtonUp("Jump"))
             {
                 onLaunch();
