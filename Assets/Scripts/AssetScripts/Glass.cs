@@ -11,6 +11,7 @@ public class Glass : MonoBehaviour
     UnityEngine.Object destructableRef;
     public Catapult_physics mainScript;
     public GameObject finalCameraPoint;
+    public AudioClip glassShatter;
 
     void Start()
     {
@@ -22,6 +23,12 @@ public class Glass : MonoBehaviour
     {
         
     }
+
+    private void playShatter()
+    {
+        SoundManager.PlaySound(glassShatter);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
@@ -30,6 +37,7 @@ public class Glass : MonoBehaviour
             health--;
             if(health <= 0)
             {
+                playShatter();
                 explode();
             }
         }

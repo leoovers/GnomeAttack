@@ -15,6 +15,7 @@ public class CameraFollow : MonoBehaviour
     public float smoothTime;
     public float speed = 0.01F;
     public bool shaking = false;
+    public AudioClip levelMusic;
 
     [SerializeField]
     private GameObject cameraBorder;
@@ -33,11 +34,11 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        xOffset = 9;
+        xOffset = 4;
         yOffset = 2.0f;
         smoothTime = 1.2f;
 
-        ViewDistance("Level_9", 10.0f);
+        ViewDistance("Level_9", 13.0f);
         ViewDistance("Level_11", 10.0f);
         ViewDistance("Level_12", 10.0f);
         ViewDistance("Level_13", 10.0f);
@@ -55,7 +56,8 @@ public class CameraFollow : MonoBehaviour
         minValueX = cameraBorder.transform.position.x - cameraBorder.transform.localScale.x / 2;
         maxValueY = cameraBorder.transform.position.y + cameraBorder.transform.localScale.y / 2;
         minValueY = cameraBorder.transform.position.y - cameraBorder.transform.localScale.y / 2;
- 
+
+        SoundManager.PlayBackGround(levelMusic);
     }
 
     void ViewDistance(string levelName, float ortSize)
@@ -119,7 +121,7 @@ public class CameraFollow : MonoBehaviour
             {
                 moving = true;
                 Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-                transform.Translate(-touchDeltaPosition.x * (Time.deltaTime * 2), -touchDeltaPosition.y * (Time.deltaTime * 2), 0);
+                transform.Translate(-touchDeltaPosition.x * (Time.deltaTime * 0.8f), -touchDeltaPosition.y * (Time.deltaTime * 0.8f), 0);
             }
         }
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
@@ -159,14 +161,10 @@ public class CameraFollow : MonoBehaviour
             xOffset = 3;  // Center the camera a bit on launch
             smoothTime = 0.3f;
         }
-        else
-        {
-            xOffset = 6;
-        }
 
         if (!mainScript.launched)
         {
-            xOffset = 6;
+            xOffset = 9;
         }
     }
 
