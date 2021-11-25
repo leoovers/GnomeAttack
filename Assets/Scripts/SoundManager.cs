@@ -21,4 +21,13 @@ public static class SoundManager
         audioSource.loop = true;
         audioSource.PlayOneShot(audioClip, ambientVolume);
     }
+
+    public static void PlayOnLoop(AudioClip clip)
+    {
+        GameObject soundGameObject = new GameObject("MenuSound");
+        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
+        audioSource.clip = clip;
+        audioSource.loop = true;
+        audioSource.Play();
+    }
 }

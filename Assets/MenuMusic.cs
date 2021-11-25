@@ -9,7 +9,7 @@ public class MenuMusic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SoundManager.PlayBackGround(menuMusic);
+        SoundManager.PlayOnLoop(menuMusic);
     }
 
     // Update is called once per frame

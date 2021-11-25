@@ -57,7 +57,7 @@ public class CameraFollow : MonoBehaviour
         maxValueY = cameraBorder.transform.position.y + cameraBorder.transform.localScale.y / 2;
         minValueY = cameraBorder.transform.position.y - cameraBorder.transform.localScale.y / 2;
 
-        SoundManager.PlayBackGround(levelMusic);
+        SoundManager.PlayOnLoop(levelMusic);
     }
 
     void ViewDistance(string levelName, float ortSize)
