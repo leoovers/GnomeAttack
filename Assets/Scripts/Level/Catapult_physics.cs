@@ -33,6 +33,7 @@ public class Catapult_physics : MonoBehaviour
     private float timeLaunched = 0f;
     private float timeSlowed = 0f;
     private GameObject launchButton;
+    [SerializeField]
     private Button launchBtn;
 
     void Start()
