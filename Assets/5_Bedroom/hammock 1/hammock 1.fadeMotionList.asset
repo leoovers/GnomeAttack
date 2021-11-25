@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
+  m_Name: hammock 1.fadeMotionList
+  m_EditorClassIdentifier: 
+  MotionInstanceIds: 2683ffff1a83ffff1283ffff
+  CubismFadeMotionObjects:
+  - {fileID: 11400000, guid: 7d04f9840c33d0a4cab6c581709b37d5, type: 2}
+  - {fileID: 11400000, guid: 17d13a12750e82b4ea77a28704269deb, type: 2}
+  - {fileID: 11400000, guid: ff177aae979d2944faa48d7e73620d87, type: 2}
