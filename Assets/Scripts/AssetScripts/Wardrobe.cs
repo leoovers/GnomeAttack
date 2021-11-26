@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Wardrobe : MonoBehaviour
 {
+    public Catapult_physics mainScript;
     private Animator m_Anim;
     private BoxCollider2D RDoor;
     private BoxCollider2D LDoor;
@@ -29,7 +30,15 @@ public class Wardrobe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (m_Anim.GetCurrentAnimatorStateInfo(2).IsTag("Bclothes") & m_Anim.GetCurrentAnimatorStateInfo(3).IsTag("Mclothes") & 
+            m_Anim.GetCurrentAnimatorStateInfo(4).IsTag("RedDress") & m_Anim.GetCurrentAnimatorStateInfo(5).IsTag("YDress"))
+        {
+            mainScript.levelWon = true;
+        }
+        if (m_Anim.GetCurrentAnimatorStateInfo(1).IsTag("Rdoor") & m_Anim.GetCurrentAnimatorStateInfo(0).IsTag("Ldoor"))
+        {
+            this.Invoke("open", 1.5f);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -38,19 +47,12 @@ public class Wardrobe : MonoBehaviour
             if (collision.IsTouching(LDoor))
             {
                 m_Anim.SetTrigger("Hit");
-                LDoor.enabled = false;
+                
             }
             if (collision.IsTouching(RDoor))
             {
                 m_Anim.SetTrigger("RHit");
-                RDoor.enabled = false;
-                Doors.enabled = false;
-                Bclothes.enabled = true;
-                Mclothes.enabled = true;
-                RDress.enabled = true;
-                YDress.enabled = true;
-
-
+                
             }
             if (collision.IsTouching(RDress))
             {
@@ -80,5 +82,15 @@ public class Wardrobe : MonoBehaviour
 
             }
         }
+    }
+    private void open()
+    {
+        LDoor.enabled = false;
+        RDoor.enabled = false;
+        Doors.enabled = false;
+        Bclothes.enabled = true;
+        Mclothes.enabled = true;
+        RDress.enabled = true;
+        YDress.enabled = true;
     }
 }
