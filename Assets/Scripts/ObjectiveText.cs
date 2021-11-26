@@ -35,6 +35,14 @@ public class ObjectiveText : MonoBehaviour
         setObjText("Level_21", "Drop the curtains!");
         setObjText("Level_22", "Destroy the vitrine!");
         setObjText("Level_23", "Bounce on the sofa and hit the lamps!");
+        setObjText("Level_24", "Get to the top of the stairs!");
+        setObjText("Level_25", "Break the door!");
+        setObjText("Level_26", "Clog the toilet!");
+        setObjText("Level_27", "Slide the soaps!");
+        setObjText("Level_28", "Flood the tub!");
+        setObjText("Level_29", "Soap the bath!");
+        setObjText("Level_30", "Hit the ducks!");
+        setObjText("Level_31", "Drop the towel!");
     }
 
     void setObjText(string levelName, string objText)

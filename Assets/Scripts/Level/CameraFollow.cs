@@ -41,6 +41,7 @@ public class CameraFollow : MonoBehaviour
         smoothTime = 1.2f;
 
         ViewDistance("Level_9", 13.0f);
+        ViewDistance("Level_10", 10.0f);
         ViewDistance("Level_11", 10.0f);
         ViewDistance("Level_12", 10.0f);
         ViewDistance("Level_13", 10.0f);
@@ -160,7 +161,7 @@ public class CameraFollow : MonoBehaviour
 
         if (!mainScript.launched)
         {
-            xOffset = 9;
+            xOffset = 10;
         }
     }
 
