@@ -11,7 +11,7 @@ public class LevelSelect : MonoBehaviour
     public GameObject levelHolder;
     public GameObject levelIcon;
     public GameObject thisCanvas;
-    public int numberOfLevels = 50;
+    public int numberOfLevels = 32;
     public Vector2 iconSpacing;
     private Rect panelDimensions;
     private Rect iconDimensions;
@@ -46,6 +46,8 @@ public class LevelSelect : MonoBehaviour
         {
             if (i + 1 > levelReached)
             {
+                GameObject img = levelButtons[i].gameObject.transform.GetChild(0).gameObject;
+                img.GetComponent<Image>().color = new Color32(255,255,225,100);
                 levelButtons[i].GetComponent<Button>().interactable = false;
             }
         }

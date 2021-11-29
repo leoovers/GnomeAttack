@@ -898,12 +898,16 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 558f9f56f603a954b8d45e17e89341d9, type: 3}
   - {fileID: 8300000, guid: 2b6e306f144fd2047ad36490140f8b85, type: 3}
   - {fileID: 8300000, guid: bd8857660a16ba549b8cc522d93d9117, type: 3}
+  launchAudio:
+  - {fileID: 8300000, guid: a87b0d44eebc95b9ba77c72731e605ee, type: 3}
+  - {fileID: 8300000, guid: 4b8fdff2e104eaa7f81aefbe55a63b68, type: 3}
   objectivesDestroyed: 0
   angle: 60
   launched: 0
   levelWon: 0
   levelLost: 0
   thrust: 0
+  launchBtn: {fileID: 0}
 --- !u!1 &1653080209568251460
 GameObject:
   m_ObjectHideFlags: 0

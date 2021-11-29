@@ -135,6 +135,9 @@ public class Catapult_physics : MonoBehaviour
             }
         }
         int currSceneNumber = Int16.Parse(substr);
+        
+        PlayerPrefs.SetFloat("MusicVolume", SoundManager.ambientVolume);
+        PlayerPrefs.SetFloat("fxVolume", SoundManager.fxVolume);
         PlayerPrefs.SetInt("CompletedLevels", currSceneNumber);
         PlayerPrefs.Save();
     }

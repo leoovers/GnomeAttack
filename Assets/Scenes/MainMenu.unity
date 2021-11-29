@@ -1365,7 +1365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3771325294096625892, guid: 2339391cd072d1a4db5df2e4427195db, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 128.3
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3771325294096625892, guid: 2339391cd072d1a4db5df2e4427195db, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1693,6 +1693,7 @@ GameObject:
   m_Component:
   - component: {fileID: 948283827}
   - component: {fileID: 948283828}
+  - component: {fileID: 948283829}
   m_Layer: 5
   m_Name: VolumeSlider
   m_TagString: Untagged
@@ -1773,6 +1774,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &948283829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948283826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 849bd1b980913b14e927c6e0667ba4cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1004825436
 GameObject:
   m_ObjectHideFlags: 0
@@ -2069,7 +2082,7 @@ MonoBehaviour:
   levelHolder: {fileID: 742381175}
   levelIcon: {fileID: 1114800113816810457, guid: a9578d2b968184846add1a69c1f210ef, type: 3}
   thisCanvas: {fileID: 177710032}
-  numberOfLevels: 40
+  numberOfLevels: 32
   iconSpacing: {x: 60, y: 20}
   levelButtons:
   - {fileID: 0}
@@ -2936,11 +2949,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6288858167809024328, guid: 2339391cd072d1a4db5df2e4427195db, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6288858167809024328, guid: 2339391cd072d1a4db5df2e4427195db, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6288858167809024328, guid: 2339391cd072d1a4db5df2e4427195db, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2956,7 +2969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6334065637470879917, guid: 2339391cd072d1a4db5df2e4427195db, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8994119566083821962, guid: 2339391cd072d1a4db5df2e4427195db, type: 3}
       propertyPath: m_text
@@ -3810,6 +3823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1921779973}
   - component: {fileID: 1921779974}
+  - component: {fileID: 1921779975}
   m_Layer: 5
   m_Name: EffectsSlider
   m_TagString: Untagged
@@ -3890,6 +3904,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1921779975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921779972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac620ff59bd327b4ea8da52aec30b5f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1949730982
 GameObject:
   m_ObjectHideFlags: 0

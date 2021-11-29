@@ -10,6 +10,7 @@ public class VolumeSlider : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SoundManager.ambientVolume = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
         volumeSlider = GetComponent<Slider>();
         volumeSlider.onValueChanged.AddListener(delegate { musicVolumeUpdate(); });
         volumeSlider.value = SoundManager.ambientVolume;

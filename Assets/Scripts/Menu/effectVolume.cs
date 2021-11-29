@@ -10,6 +10,7 @@ public class effectVolume : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SoundManager.fxVolume = PlayerPrefs.GetFloat("fxVolume", 0.5f);
         fxSlider = GetComponent<Slider>();
         fxSlider.onValueChanged.AddListener(delegate { effectVolumeUpdate(); });
         fxSlider.value = SoundManager.fxVolume;
