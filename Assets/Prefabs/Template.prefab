@@ -146,7 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac620ff59bd327b4ea8da52aec30b5f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fxVolume: 0.5
 --- !u!1 &5419313484598754827
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +363,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2783322096617266360, guid: ad18fc8b61c017543a82b5d893b3a5a8, type: 3}
+      propertyPath: levelMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: f7d2d432a3f95f936a38cffe8fe6f702, type: 3}
     - target: {fileID: 2783322096617266360, guid: ad18fc8b61c017543a82b5d893b3a5a8, type: 3}
       propertyPath: mainScript
       value: 
@@ -639,11 +642,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1167634651869916344 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6151514849005040988, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
-  m_PrefabInstance: {fileID: 5002047479300544996}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8295000963127377904 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3924628429837837844, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
@@ -676,6 +674,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1167634651869916344 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6151514849005040988, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
+  m_PrefabInstance: {fileID: 5002047479300544996}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5002047480612435165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -816,6 +819,18 @@ PrefabInstance:
       propertyPath: camFollowScript
       value: 
       objectReference: {fileID: 2818762654081643443}
+    - target: {fileID: 1627488317, guid: 7dc5890aefc6ab04793d8918989170fe, type: 3}
+      propertyPath: launchAudio.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1627488317, guid: 7dc5890aefc6ab04793d8918989170fe, type: 3}
+      propertyPath: launchAudio.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: a87b0d44eebc95b9ba77c72731e605ee, type: 3}
+    - target: {fileID: 1627488317, guid: 7dc5890aefc6ab04793d8918989170fe, type: 3}
+      propertyPath: launchAudio.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4b8fdff2e104eaa7f81aefbe55a63b68, type: 3}
     - target: {fileID: 476443631279559813, guid: 7dc5890aefc6ab04793d8918989170fe, type: 3}
       propertyPath: m_Mesh
       value: 
