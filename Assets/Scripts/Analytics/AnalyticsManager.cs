@@ -8,6 +8,7 @@ using UnityEngine.Analytics;
 public class AnalyticsManager : MonoBehaviour
 {
     public static AnalyticsManager instance;
+    private AnalyticsResult analyticsResult;
 
     public string levelID;
     //public string stageID;
@@ -23,20 +24,35 @@ public class AnalyticsManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
         if (scene.name.Contains("Level")) {
-            levelID = Regex.Match(scene.name, @"\d+").Value;
-            SendStartData();
+            if(levelID != Regex.Match(scene.name, @"\d+").Value) {
+                levelID = Regex.Match(scene.name, @"\d+").Value;
+                SendStartData();
+            }
         }
     }
 
-    public void SendCompletionData() {
-        AnalyticsEvent.LevelComplete(levelID);
-        Debug.Log("SEND COMPLETION");
+    public void SendStartData() {
+        //AnalyticsEvent.LevelStart(levelID);
+        analyticsResult = AnalyticsEvent.Custom("level_start", new Dictionary<string, object>
+        {
+            {"level_id", levelID},
+            //possible other data like tries or time taken to beat the level.
+        });
+
+        Debug.Log("SEND START RESULT AND LEVEL ID: " + analyticsResult + levelID);
     }
 
-    public void SendStartData() {
-        AnalyticsEvent.LevelStart(levelID);
-        Debug.Log("SEND START");
+    public void SendCompletionData() {
+        //analyticsResult = AnalyticsEvent.LevelComplete(levelID);
+        analyticsResult = AnalyticsEvent.Custom("level_complete", new Dictionary<string, object>
+        {
+            {"level_id", levelID},
+            //possible other data like tries or time taken to beat the level.
+        });
+
+        Debug.Log("SEND COMPLETION RESULT AND LEVEL ID: " + analyticsResult + levelID);
     }
+
 
     /* public void GameOver() {
         Destroy(gameObject);
