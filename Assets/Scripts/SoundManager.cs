@@ -7,6 +7,7 @@ public static class SoundManager
 {
     public static float fxVolume = 0.5F;
     public static float ambientVolume = 0.2F;
+    public static AudioSource loopSrc;
     
     public static void PlaySound(AudioClip audioClip) 
     {
@@ -22,11 +23,11 @@ public static class SoundManager
         // Take an audio clip as argument, play it on loop
 
         GameObject soundGameObject = new GameObject("SoundLoop");
-        AudioSource audioSource = soundGameObject.AddComponent<AudioSource>();
-        audioSource.clip = clip;
-        audioSource.volume = ambientVolume;
-        audioSource.loop = true;
-        audioSource.Play();
+        loopSrc = soundGameObject.AddComponent<AudioSource>();
+        loopSrc.clip = clip;
+        loopSrc.volume = ambientVolume;
+        loopSrc.loop = true;
+        loopSrc.Play();
     }
 
     public static void PlayRandom(AudioClip[] list)

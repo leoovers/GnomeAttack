@@ -42,13 +42,13 @@ public class LevelSelect : MonoBehaviour
 
         Debug.Log(levelButtons);
 
-        // for (int i = 0; i < levelButtons.Length; i++)
-        // {
-        //     if (i + 1 > levelReached)
-        //     {
-        //         levelButtons[i].GetComponent<Button>().interactable = false;
-        //     }
-        // }
+        for (int i = 0; i < levelButtons.Length; i++)
+        {
+            if (i + 1 > levelReached)
+            {
+                levelButtons[i].GetComponent<Button>().interactable = false;
+            }
+        }
 
 
     }

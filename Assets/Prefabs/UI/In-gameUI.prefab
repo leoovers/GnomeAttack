@@ -225,7 +225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac620ff59bd327b4ea8da52aec30b5f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fxVolume: 0.5
 --- !u!1 &622900723209592372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,7 +1236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 5, y: 5, z: 5}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 31.310425, y: 20.050507}
+  m_AnchoredPosition: {x: 31.310425, y: 20.050537}
   m_SizeDelta: {x: 156.55054, y: 100.252686}
   m_Pivot: {x: 1.2, y: 1.2}
 --- !u!222 &6824025222883437726
@@ -3803,6 +3802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7636447353220077699}
   - component: {fileID: 3601236248008422569}
+  - component: {fileID: 197679699766670552}
   m_Layer: 5
   m_Name: VolumeSlider
   m_TagString: Untagged
@@ -3883,6 +3883,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &197679699766670552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8347167057815293712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 849bd1b980913b14e927c6e0667ba4cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8465473013812262829
 GameObject:
   m_ObjectHideFlags: 0

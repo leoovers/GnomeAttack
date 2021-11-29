@@ -67,11 +67,7 @@ public class Window : MonoBehaviour
     {
         if (audioSource)
         {
-            System.Random rnd = new System.Random();
-            int rand = rnd.Next(0, windowAudio.Length);
-            audioSource.volume = mainScript.fxVolScript.fxVolume;
-            audioSource.clip = windowAudio[rand];
-            audioSource.Play();
+            SoundManager.PlayRandom(windowAudio);
         }
     }
 

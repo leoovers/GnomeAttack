@@ -17,6 +17,7 @@ public class Catapult_physics : MonoBehaviour
     public GameObject spawnPoint;  // Empty object that indicates position for spawning gnomes
     public GameObject newGnome;
     public AudioClip[] grunt;
+    public AudioClip[] launchAudio;
     public int objectivesDestroyed = 0;
     public float angle = 60f;  // Launch angle in degrees
     public bool launched = false;
@@ -73,6 +74,7 @@ public class Catapult_physics : MonoBehaviour
         if (nGnomeAudio)
         {
             SoundManager.PlayRandom(grunt);
+            SoundManager.PlayRandom(launchAudio);
         }
     }
 
