@@ -5,8 +5,8 @@ using UnityEngine;
 public class Lamp : MonoBehaviour
 {
     public GameObject finalCameraPoint;
-    private Animator m_Anim;
     public Catapult_physics mainScript;
+    private Animator m_Anim;
     private int Lampdmg = 0;
 
     // Start is called before the first frame update
