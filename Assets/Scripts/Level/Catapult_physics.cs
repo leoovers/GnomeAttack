@@ -7,6 +7,9 @@ using TMPro;
 
 public class Catapult_physics : MonoBehaviour
 {
+    public GameObject ringleader;
+    public GameObject RLSpawn;
+    private GameObject newRL;
     public CameraFollow camFollowScript;  // Script attached to Main Camera
     public effectVolume fxVolScript;
     public Text angleText;  // UI text for angle in degrees
@@ -41,7 +44,7 @@ public class Catapult_physics : MonoBehaviour
     {
         m_Anim = GetComponent<Animator>();
         launchNumber = 0;  // First launch is 0 second is 1 ...
-
+        newRL = Instantiate(ringleader, RLSpawn.transform.position, Quaternion.identity);
         numberOfGnomes = gnomes.Length;
         gnomesLeft.text = numberOfGnomes.ToString();
         launchButton = GameObject.Find("LaunchButton");
