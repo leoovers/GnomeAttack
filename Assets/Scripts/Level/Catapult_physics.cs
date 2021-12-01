@@ -148,7 +148,7 @@ public class Catapult_physics : MonoBehaviour
 
         while (launched)
         {
-            if (timeSlowed < 1f & !levelWon)
+            if (timeLaunched < 6f & timeSlowed < 1f & !levelWon)
             {
                 yield return null;
             }

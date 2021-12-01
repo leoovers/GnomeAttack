@@ -25,7 +25,8 @@ public class normalGnome : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D coll) {
         m_Anim.SetBool("Grounded", true);
-        if (!coll.collider.CompareTag("Respawn")) {
+        if (!coll.collider.CompareTag("Respawn"))
+        {
             Explode();
             if (tr)
             {

@@ -29,7 +29,7 @@ public class HoneyJar : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-
+            ScoreManager.levelScore += 100;
             m_Anim.SetTrigger("Hit");
             
         }

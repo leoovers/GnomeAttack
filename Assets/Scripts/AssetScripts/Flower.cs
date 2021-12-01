@@ -34,6 +34,7 @@ public class Flower : MonoBehaviour
         if (flowerDmg == 2)
         {
             mainScript.objectivesDestroyed++;
+            ScoreManager.levelScore += 200;
             StartCoroutine(Freeze());
         }
 

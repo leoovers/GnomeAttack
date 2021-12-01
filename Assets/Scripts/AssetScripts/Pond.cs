@@ -24,11 +24,24 @@ public class Pond : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
          
-            Destroy(collision.collider.gameObject);
+            StartCoroutine(DestroyGameObj(collision.collider.gameObject));
             
 
 
         }
+    }
+
+    void DestroyObj(GameObject obj)
+    {
+        Destroy(obj);
+    }
+
+    IEnumerator DestroyGameObj(GameObject obj)
+    {
+        obj.transform.localScale = new Vector3(0, 0, 0);
+        yield return new WaitForSeconds(0.8f);
+        DestroyObj(obj);
+        
     }
  
 

@@ -37,6 +37,7 @@ public class Glass : MonoBehaviour
             health--;
             if(health <= 0)
             {
+                ScoreManager.levelScore += 200;
                 playShatter();
                 explode();
             }

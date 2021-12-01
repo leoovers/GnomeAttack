@@ -17,6 +17,7 @@ public class AppleHit : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        ScoreManager.levelScore += 200;
         this.Invoke("rigid", 0.8f);
         m_Anim.SetTrigger("Hit");
 
