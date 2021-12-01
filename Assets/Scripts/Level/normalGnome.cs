@@ -12,6 +12,8 @@ public class normalGnome : MonoBehaviour
     private AudioSource audioSource;
     private TrailRenderer tr;
     private Animator m_Anim;
+    private GameObject currentlocation;
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +46,12 @@ public class normalGnome : MonoBehaviour
         if (other.gameObject.CompareTag("Coins"))
         {
             Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("InsideWindow"))
+        {
+            currentlocation = other.gameObject;
+            transform.position = currentlocation.GetComponent<InsideWindow>().GetDestination().position;
+
         }
     }
 
