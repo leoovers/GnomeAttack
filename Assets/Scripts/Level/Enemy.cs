@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour {
 
 	public GameObject deathEffect;
 	public Catapult_physics mainScript;
-	public float health = 1f;
+	public float health = 0.5f;
 
 	public static int EnemiesAlive = 0;
 	public GameObject finalCameraPoint;

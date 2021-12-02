@@ -23,14 +23,17 @@ public class BeeDestroy : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             grandparent.AddComponent<Rigidbody2D>();
-            ScoreManager.levelScore += 200;
+            
             
         }
         if(collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Stickable"))
         {
+            
             Destroy(grandparent);
             GameObject Bee = (GameObject)(Instantiate(BeeRef));
             Bee.transform.position = transform.position;
+            ScoreManager.levelScore += 200;
+
         }
 
     }
