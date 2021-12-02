@@ -23,7 +23,7 @@ public class BeeDestroy : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             grandparent.AddComponent<Rigidbody2D>();
-            this.Invoke("killbee", 3f);
+            ScoreManager.levelScore += 200;
             
         }
         if(collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Stickable"))
