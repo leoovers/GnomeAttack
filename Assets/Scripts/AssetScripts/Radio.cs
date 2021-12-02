@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Radio : MonoBehaviour
 {
+    public Catapult_physics mainScript;
     private Animator m_Anim;
     private BoxCollider2D Ltrigger;
     private BoxCollider2D Rtrigger;
@@ -47,6 +48,7 @@ public class Radio : MonoBehaviour
             if (collision.collider.IsTouching(Rtrigger))
             {
                 m_Anim.SetTrigger("RHit");
+                mainScript.levelWon = true;
             }
         }
     }
