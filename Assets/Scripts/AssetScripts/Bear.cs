@@ -25,16 +25,18 @@ public class Bear : MonoBehaviour
     void Update()
     {
         
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))
         {
+            hit++;
             if (collision.collider.IsTouching(Body))
             {
                 m_Anim.SetTrigger("Hit");
-                hit++;
-                if(hit == 2)
+
+                if (hit == 2)
                 {
                     Body.enabled = false;
                     Head.enabled = false;
