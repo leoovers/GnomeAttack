@@ -10,15 +10,15 @@ public class Catapult_physics : MonoBehaviour
     public GameObject ringleader;
     public GameObject RLSpawn;
     private GameObject newRL;
-    public CameraFollow camFollowScript;  // Script attached to Main Camera
-    public effectVolume fxVolScript;
-    public Text angleText;  // UI text for angle in degrees
-    public Text gnomesLeft;
     public GameObject lossPanel;
     public GameObject winPanel;
     public GameObject[] gnomes;  // List of prefabs for spawning a new gnome
     public GameObject spawnPoint;  // Empty object that indicates position for spawning gnomes
     public GameObject newGnome;
+    public CameraFollow camFollowScript;  // Script attached to Main Camera
+    public effectVolume fxVolScript;
+    public Text angleText;  // UI text for angle in degrees
+    public Text gnomesLeft;
     public AudioClip[] grunt;
     public AudioClip[] launchAudio;
     public int objectivesDestroyed = 0;
@@ -104,7 +104,6 @@ public class Catapult_physics : MonoBehaviour
         }
 
         angleText.text = Math.Round(angle,1).ToString() + "°";
-        // powerText.text = Math.Round((thrust / 40 * 100), 1).ToString() + " %";  
     }
 
     void onLaunch()

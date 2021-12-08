@@ -9,15 +9,13 @@ public class CameraFollow : MonoBehaviour
 {
     public Catapult_physics mainScript;
     public Transform followTransform;
+    public AudioClip levelMusic;
     public GameObject goal;
     public float xOffset;
     public float yOffset;
-
     public float smoothTime;
     public float speed = 0.01F;
     public bool shaking = false;
-
-    public AudioClip levelMusic;
 
     [SerializeField]
     private GameObject cameraBorder;
@@ -100,14 +98,10 @@ public class CameraFollow : MonoBehaviour
             Vector2 touchStartPos = touch.position;
             if (touchStartPos.x > Screen.width / 2)
             {
-                Debug.Log("right side");
                 slider.interactable = false;
             }
             if (touchStartPos.x < Screen.width / 2)
             {
-                Debug.Log("left side");
-                Debug.Log("width=" + Screen.width);
-                Debug.Log("touchposX=" + touchStartPos.x);
                 disableCameraScroll = true;
             }
 
