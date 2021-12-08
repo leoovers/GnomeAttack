@@ -27,7 +27,13 @@ public class ObjectiveText : MonoBehaviour
         "Breek de tv!", "Breek de bloempot!", "Laat de klok vallen!", "Laat het schilderij vallen!", "Laat de gordijnen vallen!", "Vernietig de vitrine!", "Spring in de zetel en raak de lampen!", "Klim de trap op!",
         "Breek de deur!", "Verstop de wc!", "Glij op de zeep!", "Zet de wasmachine aan!", "Zeep het bad in!", "Raak de eendjes!", "Laat de handdoeken vallen!", "Vlieg door de deur!",
         "Vernietig de deur!", "Spring op het bed en breek de lamp!", "Zet de radio aan!", "Open de kasten!", "Gooi het speelgoed op de grond!", "Vernietig de kussens!", "Raak de boeken!", "Vlieg door het raam!" };
-
+    
+    private string[] kaz = new string[]{"Қоршауды сындыр!", "Гүлдері сындыр!", "Грильді төңкер!", "Ара ұясын бұзып таста!", "Бақаларды қорқыт!", "Көгалдағы суды бас!", "Терезені сындыр!", "Терезеге кір!", 
+        "Ас үйді суға толтыр!", "Бөтелкені сындыр!", "Бал құмыраны сындыр!", "Тоңазытқышты аш!", "Тортты жаншып таста!" , "Кантты шашып таста!", "Сорпаны бұзып таста!", "Есікті аш!", 
+        "Теледидарды сындыр!", "Гүл құмырасын сындыр!", "Сағатты бұзып таста!", "Суретті бұзып таста!", "Перделерді үзіп таста!", "Шыны сындыр!", "Диванға секіріп шамдарды ұр!", "Баспалдаққа көтеріл!", 
+        "Есікті сындыр!", "Дәретхананы ласта!", "Сабынды сырғыт!", "Кір жуғыш машинаны қос!", "Ваннаны көбікпен толтыр!", "Үйректерді ұр!", "Сүлгіні жерге таста!", "Есікке қарай ұш!", 
+        "Есікті сындыр!", "Төсекке секіріп шамды сындыр!", "Радионы қос!", "Шкафтарды аш!", "Ойыншықтарды жерге таста!", "Жастықты жарып жібер!", "Кітаптарды қиратып таста!", "Терезеден ұш!"};
+    
     private string[] fin = new string[] { };
 
     // Start is called before the first frame update / default language is english
