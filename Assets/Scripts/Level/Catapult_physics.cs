@@ -9,7 +9,6 @@ public class Catapult_physics : MonoBehaviour
 {
     public GameObject ringleader;
     public GameObject RLSpawn;
-    private GameObject newRL;
     public GameObject lossPanel;
     public GameObject winPanel;
     public GameObject[] gnomes;  // List of prefabs for spawning a new gnome
@@ -28,14 +27,15 @@ public class Catapult_physics : MonoBehaviour
     public bool levelLost = false;
     public float thrust;
 
+    private GameObject newRL;
+    private GameObject lastGnome;
+    private GameObject launchButton;
     private int numberOfGnomes;
     private int launchNumber;
     private Rigidbody2D nGnomeRigid;
-    private GameObject lastGnome;
     private AudioSource nGnomeAudio;
     private float timeLaunched = 0f;
     private float timeSlowed = 0f;
-    private GameObject launchButton;
     [SerializeField]
     private Button launchBtn;
     private Animator m_Anim;
@@ -137,6 +137,8 @@ public class Catapult_physics : MonoBehaviour
             }
         }
         int currSceneNumber = Int16.Parse(substr);
+
+        ScoreManager.saveLevelScore();
         
         PlayerPrefs.SetFloat("MusicVolume", SoundManager.ambientVolume);
         PlayerPrefs.SetFloat("fxVolume", SoundManager.fxVolume);
@@ -181,6 +183,7 @@ public class Catapult_physics : MonoBehaviour
             else
             {   
                 yield return new WaitForSeconds(1.0f);
+                ScoreManager.levelScore += numberOfGnomes * 1000;
                 UpdatePlayerPrefs();
                 lossPanel.SetActive(false);
                 winPanel.SetActive(true);

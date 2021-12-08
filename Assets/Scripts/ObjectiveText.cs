@@ -8,10 +8,12 @@ public class ObjectiveText : MonoBehaviour
 {
     public Catapult_physics mainScript;
     private Text objectiveText;
+    private string[] ger = new string[]{"one", "two"};
 
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(ger[1]);
         setObjText("Level_1", "Destroy the fence!");
         setObjText("Level_2", "Destroy the flowers!");
         setObjText("Level_3", "Knock over the grill!");
