@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,12 +8,19 @@ public class ObjectiveText : MonoBehaviour
 {
     public Catapult_physics mainScript;
     private Text objectiveText;
-    private string[] ger = new string[] { "Zerst�re den Zaun!", "Zerst�re die Blumen!", "Wirf den Griller um!", "Zerst�re das Bienennest!", "Erwische die Fr�sche!", "Setz den Garten unter Wasser!", "Zerst�r das Fenster!", "Kletter zum Fenster rauf!",
-        "Setz die K�che unter Wasser!", "Zerbrich die Gl�ser!", "Zerbrich das Honigglas", "�ffne den K�hlschrank", "Zerst�r den Kuchen!", "Wirf den Zucker um!", "Vermassle die Suppe!", "Erreiche die T�rschnalle",
-        "Zerst�r den Fernseher!", "Zebrich den Blumentopf", "Wirf die Uhr runter!", "Wirf das Gem�lde runter", "Zieh die Vorh�nge runter!", "Zerst�r die Vitrine", "Spring auf die Couch und zerst�re die Lampen!", "Kletter die Stufen rauf!",
-        "Zerst�r die T�r!", "Verstopfe die Toilette", "Lass die Seifen runter schlittern!", "Schalte die Waschmaschine an!", "Mach ein Schaumbad!", "Erwische die Enten!", "Wirf das Handtuch runter!", "Flieg durch die T�r!",
-        "Zerst�r die T�r!", "Spring auf das Bett und zerst�re die Lampen!", "Schlat das Radio an!", "�ffne den Kasten!", "Wirf das Spielzeug runter!", "Zerst�r den Polster!", "Wirf die B�cher um!", "Flieg durchs Fenster!"};
+    private string[] ger = new string[] { "Zerstöre den Zaun!", "Zerstöre die Blumen!", "Wirf den Griller um!", "Zerstöre das Bienennest!", "Erwische die Frösche!", "Setz den Garten unter Wasser!", "Zerstör das Fenster!", "Kletter zum Fenster rauf!",
+        "Setz die Küche unter Wasser!", "Zerbrich die Gläser!", "Zerbrich das Honigglas", "Öffne den Kühlschrank", "Zerstör den Kuchen!", "Wirf den Zucker um!", "Vermassle die Suppe!", "Erreiche die Türschnalle",
+        "Zerstör den Fernseher!", "Zebrich den Blumentopf", "Wirf die Uhr runter!", "Wirf das Gemälde runter", "Zieh die Vorhänge runter!", "Zerstör die Vitrine", "Spring auf die Couch und zerstöre die Lampen!", "Kletter die Stufen rauf!",
+        "Zerstör die Tür!", "Verstopfe die Toilette", "Lass die Seifen runter schlittern!", "Schalte die Waschmaschine an!", "Mach ein Schaumbad!", "Erwische die Enten!", "Wirf das Handtuch runter!", "Flieg durch die Tür!",
+        "Zerstör die Tür!", "Spring auf das Bett und zerstöre die Lampen!", "Schlat das Radio an!", "Öffne den Kasten!", "Wirf das Spielzeug runter!", "Zerstör den Polster!", "Wirf die Bücher um!", "Flieg durchs Fenster!"};
 
+    // russian letters not in unicode 
+    private string[] rus = new string[] { "Сломай забор!", "Сломай цветы!", "Опрокинь гриль!", "Разрушь улей!", "Напугай лягушек!", "Затопи лужайку!", "Разбей окно!", "Заберись в окно!", 
+        "Затопи кухню!", "Разбей бутылку!", "Разбей банку в мёдом!", "Открой холодильник!", "Раздави торт!", "Рассыпь сахар!", "Испорть суп!", "Открой дверь!", 
+        "Сломай телевизор!", "Разбей цветочный горшок!", "Сбей часы!", "Сбей картину!", "Сорви шторы!", "Разбей стекло!", "Прыгай на диване и бей лампы!", "Заберись по лестнице!",
+        "Сломай дверь!", "Засори туалет!", "Сдвинь мыло!", "Включи стиральную машину!", "Заполни ванну пеной!", "Бей уточек!", "Урони полотенце!", "Влети в дверь!", 
+        "Сломай дверь!", "Прыгни на кровать и разбей лампу!", "Включи радио!", "Открой шкафы!", "Сбрось игрушки!", "Лопни подушку!", "Сбей книги!", "Вылети в окно!" };
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -61,7 +68,6 @@ public class ObjectiveText : MonoBehaviour
         setObjText("Level_38", "Destroy the pillow!");
         setObjText("Level_39", "Hit the books!");
         setObjText("Level_40", "Fly through the window!");
-
     }
 
     void setObjText(string levelName, string objText)
