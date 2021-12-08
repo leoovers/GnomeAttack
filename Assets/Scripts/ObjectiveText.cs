@@ -20,6 +20,7 @@ public class ObjectiveText : MonoBehaviour
         setObjText("Level_6", "Flood the lawn!");
         setObjText("Level_7", "Break the window!");
         setObjText("Level_8", "Climb to the window!");
+
         setObjText("Level_9", "Flood the kitchen!");
         setObjText("Level_10", "Break the glass!");
         setObjText("Level_11", "Break the vase!");
@@ -28,6 +29,7 @@ public class ObjectiveText : MonoBehaviour
         setObjText("Level_14", "Tip over the sugar bag!");
         setObjText("Level_15", "Mess up the soup!");
         setObjText("Level_16", "Reach the door handle!");
+
         setObjText("Level_17", "Break the tv!");
         setObjText("Level_18", "Break the Flowerpot!");
         setObjText("Level_19", "Hit down the clock!");
@@ -36,6 +38,7 @@ public class ObjectiveText : MonoBehaviour
         setObjText("Level_22", "Destroy the vitrine!");
         setObjText("Level_23", "Bounce on the sofa and hit the lamps!");
         setObjText("Level_24", "Get to the top of the stairs!");
+
         setObjText("Level_25", "Break the door!");
         setObjText("Level_26", "Clog the toilet!");
         setObjText("Level_27", "Slide the soaps!");
@@ -43,6 +46,19 @@ public class ObjectiveText : MonoBehaviour
         setObjText("Level_29", "Soap the bath!");
         setObjText("Level_30", "Hit the ducks!");
         setObjText("Level_31", "Drop the towel!");
+        setObjText("Level_32", "Fly through the door!");
+
+        setObjText("Level_33", "NO LEVEL!");
+
+        setObjText("Level_34", "Destroy the door!");
+        setObjText("Level_35", "Destroy the lamp!");
+        setObjText("Level_36", "Turn on the radio!");
+        setObjText("Level_37", "Open the cupboards!");
+        setObjText("Level_38", "Throw down the toys!");
+        setObjText("Level_39", "Destroy the pillow!");
+        setObjText("Level_40", "Hit the books!");
+        setObjText("Level_41", "Fly through the window!");
+
     }
 
     void setObjText(string levelName, string objText)
