@@ -8,20 +8,29 @@ public class ObjectiveText : MonoBehaviour
 {
     public Catapult_physics mainScript;
     private Text objectiveText;
+
+    // string instructions in german, russian, dutch, finish:
     private string[] ger = new string[] { "Zerstöre den Zaun!", "Zerstöre die Blumen!", "Wirf den Griller um!", "Zerstöre das Bienennest!", "Erwische die Frösche!", "Setz den Garten unter Wasser!", "Zerstör das Fenster!", "Kletter zum Fenster rauf!",
         "Setz die Küche unter Wasser!", "Zerbrich die Gläser!", "Zerbrich das Honigglas", "Öffne den Kühlschrank", "Zerstör den Kuchen!", "Wirf den Zucker um!", "Vermassle die Suppe!", "Erreiche die Türschnalle",
         "Zerstör den Fernseher!", "Zebrich den Blumentopf", "Wirf die Uhr runter!", "Wirf das Gemälde runter", "Zieh die Vorhänge runter!", "Zerstör die Vitrine", "Spring auf die Couch und zerstöre die Lampen!", "Kletter die Stufen rauf!",
         "Zerstör die Tür!", "Verstopfe die Toilette", "Lass die Seifen runter schlittern!", "Schalte die Waschmaschine an!", "Mach ein Schaumbad!", "Erwische die Enten!", "Wirf das Handtuch runter!", "Flieg durch die Tür!",
         "Zerstör die Tür!", "Spring auf das Bett und zerstöre die Lampen!", "Schlat das Radio an!", "Öffne den Kasten!", "Wirf das Spielzeug runter!", "Zerstör den Polster!", "Wirf die Bücher um!", "Flieg durchs Fenster!"};
 
-    // russian letters not in unicode 
     private string[] rus = new string[] { "Сломай забор!", "Сломай цветы!", "Опрокинь гриль!", "Разрушь улей!", "Напугай лягушек!", "Затопи лужайку!", "Разбей окно!", "Заберись в окно!", 
-        "Затопи кухню!", "Разбей бутылку!", "Разбей банку в мёдом!", "Открой холодильник!", "Раздави торт!", "Рассыпь сахар!", "Испорть суп!", "Открой дверь!", 
-        "Сломай телевизор!", "Разбей цветочный горшок!", "Сбей часы!", "Сбей картину!", "Сорви шторы!", "Разбей стекло!", "Прыгай на диване и бей лампы!", "Заберись по лестнице!",
+        "Затопи кухню!", "Разбей бутылку!", "Разбей банку с мёдом!", "Открой холодильник!", "Раздави торт!", "Рассыпь сахар!", "Испорть суп!", "Открой дверь!", 
+        "Сломай телевизор!", "Разбей цветочный горшок!", "Сбей часы!", "Сбей картину!", "Сорви шторы!", "Разбей стекло!", "Прыгай на диване и бей лампы!", "Заберись по лестнице!", 
         "Сломай дверь!", "Засори туалет!", "Сдвинь мыло!", "Включи стиральную машину!", "Заполни ванну пеной!", "Бей уточек!", "Урони полотенце!", "Влети в дверь!", 
         "Сломай дверь!", "Прыгни на кровать и разбей лампу!", "Включи радио!", "Открой шкафы!", "Сбрось игрушки!", "Лопни подушку!", "Сбей книги!", "Вылети в окно!" };
-    
-    // Start is called before the first frame update
+
+    private string[] dut = new string[] {"Vernietig het hek!", "Vernietig de bloemen!","Duw de grill omver!","Vernietig de bijenkorf!", "Pest de kikkers!","Laat de gazon overstromen!", "Breek het raam!", "Klim door het raam!",
+        "Laat de keuken overstromen!", "Breek het glas!", "Breek de honingpot!", "Open de koelkast!", "Maak de cake kapot!", "Duw de zak met suiker omver!", "Verpest de soep!", "Reik naar de deurklink!",
+        "Breek de tv!", "Breek de bloempot!", "Laat de klok vallen!", "Laat het schilderij vallen!", "Laat de gordijnen vallen!", "Vernietig de vitrine!", "Spring in de zetel en raak de lampen!", "Klim de trap op!",
+        "Breek de deur!", "Verstop de wc!", "Glij op de zeep!", "Zet de wasmachine aan!", "Zeep het bad in!", "Raak de eendjes!", "Laat de handdoeken vallen!", "Vlieg door de deur!",
+        "Vernietig de deur!", "Spring op het bed en breek de lamp!", "Zet de radio aan!", "Open de kasten!", "Gooi het speelgoed op de grond!", "Vernietig de kussens!", "Raak de boeken!", "Vlieg door het raam!" };
+
+    private string[] fin = new string[] { };
+
+    // Start is called before the first frame update / default language is english
     void Start()
     {
         setObjText("Level_1", "Destroy the fence!");
