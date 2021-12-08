@@ -9,9 +9,11 @@ public class Fence : MonoBehaviour
     public CameraFollow camScript;
     public GameObject finalCameraPoint;
     private Animator m_Anim;
+    private int hitfence;
 
     void Start()
     {
+        hitfence = 0;
         m_Anim = GetComponent<Animator>();
     }
 
@@ -21,9 +23,13 @@ public class Fence : MonoBehaviour
         {
             print("aitadmg1");
             m_Anim.SetTrigger("Hit");
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
-            mainScript.levelWon = true;
-            StartCoroutine(Win());
+            hitfence++;
+            if(hitfence == 3) {
+                Instantiate(deathEffect, transform.position, Quaternion.identity);
+                
+                StartCoroutine(Win());
+            }
+            
         }
 
     }
