@@ -59,6 +59,7 @@ public class Window : MonoBehaviour
             if (collision.collider.IsTouching(TabTrigger))
             {
                 m_Anim.SetTrigger("HitTab");
+                TabTrigger.enabled = false;
             }
         }
     }
