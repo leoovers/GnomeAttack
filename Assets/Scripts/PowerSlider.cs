@@ -9,6 +9,7 @@ public class PowerSlider : MonoBehaviour
     public Catapult_physics mainScript;
     public float thrust;
     private Slider powerslider;
+    private float timeMultiplier;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,11 @@ public class PowerSlider : MonoBehaviour
     void thrustValueUpdate()
     {
         mainScript.thrust = powerslider.value;
+    }
+
+    void FixedUpdate()
+    {
+       
     }
 
     // Update is called once per frame

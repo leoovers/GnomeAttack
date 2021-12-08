@@ -17,7 +17,7 @@ public class menuButton : MonoBehaviour
 
     void TaskOnClick()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(0);
     }
 
 }
