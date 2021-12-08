@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Glass : MonoBehaviour
 {
-    [SerializeField]
-    int health = 1;
+
+    public float health = 100f;
     [SerializeField]
     UnityEngine.Object destructableRef;
     public Catapult_physics mainScript;
@@ -29,18 +29,13 @@ public class Glass : MonoBehaviour
         SoundManager.PlaySound(glassShatter);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D colInfo)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (colInfo.relativeVelocity.magnitude >= health & colInfo.collider.CompareTag("Player"))
         {
-            
-            health--;
-            if(health <= 0)
-            {
-                ScoreManager.levelScore += 200;
-                playShatter();
-                explode();
-            }
+            ScoreManager.levelScore += 200;
+            playShatter();
+            explode();
         }
     }
 

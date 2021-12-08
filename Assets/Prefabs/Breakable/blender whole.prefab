@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -460616402958635617}
   - component: {fileID: 6331165612200453237}
   - component: {fileID: 1800346148139489380}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: blender whole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 663931839b772bb4994ab7a32c5f271b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1407d72049ced1e4d8169005c6effd1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 15
   destructableRef: {fileID: 7330322739402846677, guid: c89c0c457a1be6f4ea6b60e29ff74995, type: 3}
   mainScript: {fileID: 0}
   finalCameraPoint: {fileID: 0}
@@ -141,7 +141,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 3
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1

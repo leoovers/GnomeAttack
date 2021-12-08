@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -4520625991428979106}
   - component: {fileID: 5237799691300326240}
   - component: {fileID: -3472263410516532051}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,10 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1407d72049ced1e4d8169005c6effd1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 12
   destructableRef: {fileID: 7303471907659104026, guid: ffd43c73c32cb7a4e9c3634ecbc56bf2, type: 3}
   mainScript: {fileID: 0}
   finalCameraPoint: {fileID: 0}
+  glassShatter: {fileID: 0}
 --- !u!50 &5237799691300326240
 Rigidbody2D:
   serializedVersion: 4
