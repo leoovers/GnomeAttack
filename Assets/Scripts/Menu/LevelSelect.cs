@@ -11,7 +11,7 @@ public class LevelSelect : MonoBehaviour
     public GameObject levelHolder;
     public GameObject levelIcon;
     public GameObject thisCanvas;
-    public int numberOfLevels = 32;
+    public int numberOfLevels = 40;
     public Vector2 iconSpacing;
     private Rect panelDimensions;
     private Rect iconDimensions;

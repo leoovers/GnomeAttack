@@ -8,8 +8,18 @@ public class ObjectiveText : MonoBehaviour
 {
     public Catapult_physics mainScript;
     private Text objectiveText;
+    private int numberOfLevels = 40;
+    private Text m_Text;
+    private RectTransform m_RectTransform;
+    private int initFontSize;
 
-    // string instructions in german, russian, dutch, finish:
+    // string instructions in English, German, Russian, Dutch, Finnish:
+    private string[] eng = new string[] { "Destroy the fence!", "Destroy the flowers!", "Knock over the grill!", "Destroy the beehive!", "Bully the frogs!", "Flood the lawn!", "Break the window!", "Climb to the window!",
+        "Flood the kitchen!", "Break the glass!", "Break the honey jar!", "Open the fridge!", "Destroy the cake!", "Tip over the sugar bag!", "Mess up the soup!", "Reach the door handle!", "Break the tv!",
+        "Break the Flowerpot!", "Hit down the clock!", "Hit down the painting!", "Drop the curtains!", "Destroy the vitrine!", "Bounce on the sofa and hit the lamps!", "Get to the top of the stairs!", "Break the door!",
+        "Clog the toilet!", "Slide the soaps!", "Turn on the washing machine!", "Soap the bath!", "Hit the ducks!", "Drop the towel!", "Fly through the door!", "Destroy the door!", "Bounce on the bed and destroy the lamp!",
+        "Turn on the radio!", "Open the cupboards!", "Throw down the toys!", "Destroy the pillow!", "Hit the books!", "Fly through the window!"};
+
     private string[] ger = new string[] { "Zerstöre den Zaun!", "Zerstöre die Blumen!", "Wirf den Griller um!", "Zerstöre das Bienennest!", "Erwische die Frösche!", "Setz den Garten unter Wasser!", "Zerstör das Fenster!", "Kletter zum Fenster rauf!",
         "Setz die Küche unter Wasser!", "Zerbrich die Gläser!", "Zerbrich das Honigglas", "Öffne den Kühlschrank", "Zerstör den Kuchen!", "Wirf den Zucker um!", "Vermassle die Suppe!", "Erreiche die Türschnalle",
         "Zerstör den Fernseher!", "Zebrich den Blumentopf", "Wirf die Uhr runter!", "Wirf das Gemälde runter", "Zieh die Vorhänge runter!", "Zerstör die Vitrine", "Spring auf die Couch und zerstöre die Lampen!", "Kletter die Stufen rauf!",
@@ -39,50 +49,24 @@ public class ObjectiveText : MonoBehaviour
     // Start is called before the first frame update / default language is english
     void Start()
     {
-        setObjText("Level_1", "Destroy the fence!");
-        setObjText("Level_2", "Destroy the flowers!");
-        setObjText("Level_3", "Knock over the grill!");
-        setObjText("Level_4", "Destroy the beehive!");
-        setObjText("Level_5", "Bully the frogs!");
-        setObjText("Level_6", "Flood the lawn!");
-        setObjText("Level_7", "Break the window!");
-        setObjText("Level_8", "Climb to the window!");
+        //Fetch the Text and RectTransform components from the GameObject
+        m_Text = GetComponent<Text>();
+        m_RectTransform = GetComponent<RectTransform>();
+        initFontSize = m_Text.fontSize;
+        StartCoroutine(objTextDisplay());
 
-        setObjText("Level_9", "Flood the kitchen!");
-        setObjText("Level_10", "Break the glass!");
-        setObjText("Level_11", "Break the honey jar!");
-        setObjText("Level_12", "Open the fridge!");
-        setObjText("Level_13", "Destroy the cake!");
-        setObjText("Level_14", "Tip over the sugar bag!");
-        setObjText("Level_15", "Mess up the soup!");
-        setObjText("Level_16", "Reach the door handle!");
-
-        setObjText("Level_17", "Break the tv!");
-        setObjText("Level_18", "Break the Flowerpot!");
-        setObjText("Level_19", "Hit down the clock!");
-        setObjText("Level_20", "Hit down the painting!");
-        setObjText("Level_21", "Drop the curtains!");
-        setObjText("Level_22", "Destroy the vitrine!");
-        setObjText("Level_23", "Bounce on the sofa and hit the lamps!");
-        setObjText("Level_24", "Get to the top of the stairs!");
-
-        setObjText("Level_25", "Break the door!");
-        setObjText("Level_26", "Clog the toilet!");
-        setObjText("Level_27", "Slide the soaps!");
-        setObjText("Level_28", "Turn on the washing machine!");
-        setObjText("Level_29", "Soap the bath!");
-        setObjText("Level_30", "Hit the ducks!");
-        setObjText("Level_31", "Drop the towel!");
-        setObjText("Level_32", "Fly through the door!");
-
-        setObjText("Level_33", "Destroy the door!");
-        setObjText("Level_34", "Bounce on the bed and destroy the lamp!");
-        setObjText("Level_35", "Turn on the radio!");
-        setObjText("Level_36", "Open the cupboards!");
-        setObjText("Level_37", "Throw down the toys!");
-        setObjText("Level_38", "Destroy the pillow!");
-        setObjText("Level_39", "Hit the books!");
-        setObjText("Level_40", "Fly through the window!");
+        if (LanguageManager.langIndex == 0)
+        {
+            callObjText(eng);
+        }
+        if (LanguageManager.langIndex == 1)
+        {
+            callObjText(ger);
+        }
+        if (LanguageManager.langIndex == 2)
+        {
+            callObjText(rus);
+        }
     }
 
     void setObjText(string levelName, string objText)
@@ -98,6 +82,22 @@ public class ObjectiveText : MonoBehaviour
         }
     }
 
+    void callObjText(string[] langStrings)
+    {
+        for (int i = 1; i <= numberOfLevels; i++)
+        {
+            setObjText("Level_" + i.ToString(), langStrings[i - 1]);
+        }
+    }
+
+    void changeFontSize(int size)
+    {
+        m_Text.fontSize = size;
+
+        //Change the RectTransform size to allow larger fonts and sentences
+        m_RectTransform.sizeDelta = new Vector2(m_Text.fontSize * 10, 100);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -105,5 +105,12 @@ public class ObjectiveText : MonoBehaviour
         {
             this.gameObject.SetActive(false);
         }
+    }
+
+    IEnumerator objTextDisplay()
+    {
+        changeFontSize(50);
+        yield return new WaitForSeconds(2.0f);
+        changeFontSize(initFontSize);
     }
 }

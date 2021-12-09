@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class SoundManager
+public class SoundManager
 {
     public static float fxVolume = 0.5F;
     public static float ambientVolume = 0.2F;
