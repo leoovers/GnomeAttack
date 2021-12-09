@@ -5,14 +5,12 @@ using UnityEngine;
 public class HoneyJar : MonoBehaviour
 {
 
-    
+    public Catapult_physics mainScript;
     private Animator m_Anim;
-
 
     // Start is called before the first frame update
     void Start()
     {
-
         m_Anim = GetComponent<Animator>();
     }
 
@@ -22,6 +20,7 @@ public class HoneyJar : MonoBehaviour
         if (m_Anim.GetCurrentAnimatorStateInfo(0).IsTag("explode"))
         {
             Destroy(this.GetComponent<BoxCollider2D>());
+            mainScript.levelWon = true;
         }
 
     }
@@ -29,7 +28,7 @@ public class HoneyJar : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            ScoreManager.levelScore += 100;
+
             m_Anim.SetTrigger("Hit");
             
         }

@@ -8,20 +8,29 @@ public class Frog : MonoBehaviour
     public Catapult_physics mainScript;
     public GameObject finalCameraPoint;
     private Animator m_Anim;
+    public frogJump frog;
 
     // Start is called before the first frame update
     void Start()
     {
         m_Anim = GetComponent<Animator>();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) 
+        
+            
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Player"))
         {
             m_Anim.SetTrigger("Hit");
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             mainScript.objectivesDestroyed++;
+            this.Invoke("die", 2f);
             if (mainScript.objectivesDestroyed == 2)
             {
                 mainScript.levelWon = true;
@@ -29,13 +38,18 @@ public class Frog : MonoBehaviour
             }
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void die()
     {
-        foreach(Collider2D c in GetComponents<CircleCollider2D> ()) 
-        {
-            Destroy(c);
-        }
+        Destroy(this.gameObject);
+    }
+    void Jump()
+    {
+        m_Anim.SetBool("Jump", true);
+        
+    }
+    void NoJump()
+    {
+        m_Anim.SetBool("Jump", false);
     }
 
     // Update is called once per frame

@@ -387,8 +387,8 @@ GameObject:
   - component: {fileID: 8514408872899964167}
   - component: {fileID: 812860236326910343}
   - component: {fileID: 4203353638241654597}
-  - component: {fileID: 6836022974994680920}
   - component: {fileID: -6437830961209007015}
+  - component: {fileID: 3186391874417847033}
   m_Layer: 0
   m_Name: flower orkidea
   m_TagString: Untagged
@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 967223d908bf07b4f90945995bdca68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maskTexture: {fileID: 0}
+  _maskTexture: {fileID: 11400000, guid: 16bf142754640ab4487bb625c30931fd, type: 2}
 --- !u!114 &629438473738422479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,21 +567,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CubismFadeMotionList: {fileID: 0}
---- !u!114 &6836022974994680920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4594408334285613551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bc66fe60388e3d4a9db6071288d3515, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainScript: {fileID: 0}
-  camScript: {fileID: 0}
-  deathEffect: {fileID: 0}
 --- !u!61 &-6437830961209007015
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -608,6 +593,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.19672252, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &3186391874417847033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4594408334285613551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e83ea31f94174489727cdb1cb4a6b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainScript: {fileID: 0}
+  camScript: {fileID: 0}
+  deathEffect: {fileID: 0}
 --- !u!1 &4774049381749232778
 GameObject:
   m_ObjectHideFlags: 0
