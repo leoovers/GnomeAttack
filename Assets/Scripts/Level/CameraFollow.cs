@@ -47,6 +47,7 @@ public class CameraFollow : MonoBehaviour
         ViewDistance("Level_21", 15.0f);
         ViewDistance("Level_23", 15.0f);
         ViewDistance("Level_25", 15.0f);
+        ViewDistance("Level_28", 15.0f);
         ViewDistance("Level_30", 15.0f);
 
         cameraBorder = GameObject.Find("CameraBorder");
