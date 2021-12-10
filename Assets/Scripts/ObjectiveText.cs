@@ -17,7 +17,7 @@ public class ObjectiveText : MonoBehaviour
     private string[] eng = new string[] { "Destroy the fence!", "Destroy the flowers!", "Knock over the grill!", "Destroy the beehive!", "Bully the frogs!", "Flood the lawn!", "Break the window!", "Climb to the window!",
         "Flood the kitchen!", "Break the glass!", "Break the honey jar!", "Open the fridge!", "Destroy the cake!", "Tip over the sugar bag!", "Mess up the soup!", "Reach the door handle!", "Break the tv!",
         "Break the Flowerpot!", "Hit down the clock!", "Hit down the painting!", "Drop the curtains!", "Destroy the vitrine!", "Bounce on the sofa and hit the lamps!", "Get to the top of the stairs!", "Break the door!",
-        "Clog the toilet!", "Slide the soaps!", "Turn on the washing machine!", "Soap the bath!", "Hit the ducks!", "Drop the towel!", "Fly through the door!", "Destroy the door!", "Bounce on the bed and destroy the lamp!",
+        "Clog the toilet!", "Slide the soaps to the floor!", "Turn on the washing machine!", "Soap the bath!", "Hit the ducks!", "Drop the towel!", "Fly through the door!", "Destroy the door!", "Bounce on the bed and destroy the lamp!",
         "Turn on the radio!", "Open the cupboards!", "Throw down the toys!", "Destroy the pillow!", "Hit the books!", "Fly through the window!"};
 
     private string[] ger = new string[] { "Zerstöre den Zaun!", "Zerstöre die Blumen!", "Wirf den Griller um!", "Zerstöre das Bienennest!", "Erwische die Frösche!", "Setz den Garten unter Wasser!", "Zerstör das Fenster!", "Kletter zum Fenster rauf!",
