@@ -9,7 +9,6 @@ public class CameraFollow : MonoBehaviour
 {
     public Catapult_physics mainScript;
     public Transform followTransform;
-    public AudioClip levelMusic;
     public GameObject goal;
     public float xOffset;
     public float yOffset;
@@ -58,8 +57,6 @@ public class CameraFollow : MonoBehaviour
         minValueX = cameraBorder.transform.position.x - cameraBorder.transform.localScale.x / 2;
         maxValueY = cameraBorder.transform.position.y + cameraBorder.transform.localScale.y / 2;
         minValueY = cameraBorder.transform.position.y - cameraBorder.transform.localScale.y / 2;
-
-        SoundManager.PlayOnLoop(levelMusic);
     }
 
     void ViewDistance(string levelName, float ortSize)
