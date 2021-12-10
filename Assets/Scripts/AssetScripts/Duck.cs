@@ -8,7 +8,10 @@ public class Duck : MonoBehaviour
     private Animator m_Anim;
     private BoxCollider2D body;
     private BoxCollider2D head;
-    
+    [SerializeField]
+    UnityEngine.Object SplashRef;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,11 +43,22 @@ public class Duck : MonoBehaviour
                 m_Anim.SetTrigger("HatHit");
                 head.enabled = false;
                 mainScript.objectivesDestroyed++;
+                this.Invoke("splash", 1f);
+                this.Invoke("die", 1.3f);
             }
             if (mainScript.objectivesDestroyed == 3)
             {
                 mainScript.levelWon = true;
             }
         }
+    }
+    private void splash()
+    {
+        GameObject splash = (GameObject)(Instantiate(SplashRef));
+        splash.transform.position = transform.position;
+    }
+    private void die()
+    {
+        Destroy(this.gameObject);
     }
 }
