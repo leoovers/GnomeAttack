@@ -43,7 +43,13 @@ public class ObjectiveText : MonoBehaviour
         "Теледидарды сындыр!", "Гүл құмырасын сындыр!", "Сағатты бұзып таста!", "Суретті бұзып таста!", "Перделерді үзіп таста!", "Шыны сындыр!", "Диванға секіріп шамдарды ұр!", "Баспалдаққа көтеріл!", 
         "Есікті сындыр!", "Дәретхананы ласта!", "Сабынды сырғыт!", "Кір жуғыш машинаны қос!", "Ваннаны көбікпен толтыр!", "Үйректерді ұр!", "Сүлгіні жерге таста!", "Есікке қарай ұш!", 
         "Есікті сындыр!", "Төсекке секіріп шамды сындыр!", "Радионы қос!", "Шкафтарды аш!", "Ойыншықтарды жерге таста!", "Жастықты жарып жібер!", "Кітаптарды қиратып таста!", "Терезеден ұш!"};
-    
+
+    private string[] esp = new string[] {"Rompe la valla!","Rompe las flores!","Tira el grill!", "Rompe el nido de las abejas!","Pilla las ranas!","Inunda el jardín!","Rompe la ventana!","Súbete a la ventana!",
+        "Inunda la cocina!", "Rompe los vasos!", "Rompe el frasco de miel","Abre el frigorífico","Rompe el pastel!","Tira el azucar!","Fastidia la sopa!","Alcanza el tranco de la puerta",
+        "Rompe el televisor!","Rompe el tiesto","Tira el reloj!","TIra el cuadro","Baja la cortina!","Rompe la vitrina","Salta al sofá y rompe las lámparas!","Sube los escalones!",
+        "Rompe la puerta!","Atasca el váter","Deja que los jabones resbalen!","Enchufa la lavadora!","Haz un baño de espuma!","Pilla los patos!","Tira la toalla!","Sal volando por la puerta!",
+        "Rompe la puerta!","Salta a la cama y rompe las lámparas!","Enciende la radio!","Abre el armario!","Tira el juguete!","Rompe el cojín!","Tira los libros!","Sal volando por la ventana!"};
+   
     private string[] fin = new string[] { };
 
     // Start is called before the first frame update / default language is english
@@ -66,6 +72,18 @@ public class ObjectiveText : MonoBehaviour
         if (LanguageManager.langIndex == 2)
         {
             callObjText(rus);
+        }
+        if (LanguageManager.langIndex == 3)
+        {
+            callObjText(dut);
+        }
+        if (LanguageManager.langIndex == 4)
+        {
+            callObjText(kaz);
+        }
+        if (LanguageManager.langIndex == 5)
+        {
+            callObjText(esp);
         }
     }
 
