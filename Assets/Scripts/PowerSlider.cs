@@ -35,7 +35,7 @@ public class PowerSlider : MonoBehaviour
     {
         if (!mainScript.launched)
         {
-            powerslider.value = (Mathf.Cos(Time.time * 2.5f) + 1.25f) * 20;  // Add time multiplier to add slider speed
+            powerslider.value = (Mathf.Cos(Time.time * 2.5f) + 1.75f) * 20;  // Add time multiplier to add slider speed
         }
     }
 }

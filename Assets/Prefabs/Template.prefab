@@ -556,12 +556,24 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6151514848433486147, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151514848433486147, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6151514848604201386, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6151514849204925046, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
       propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151514849204925046, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6151514849562331594, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
@@ -651,6 +663,18 @@ PrefabInstance:
     - target: {fileID: 6151514849562331598, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
       propertyPath: m_Name
       value: In-gameUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151514849577895603, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
+      propertyPath: m_Value
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151514849577895603, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
+      propertyPath: m_MaxValue
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6151514849577895603, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
+      propertyPath: m_MinValue
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6216683167145274678, guid: 18c672c25a48b4e4d922705f39a4f33e, type: 3}
       propertyPath: m_fontAsset
