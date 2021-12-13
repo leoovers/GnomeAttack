@@ -17,14 +17,14 @@ public class ObjectiveText : MonoBehaviour
     private string[] eng = new string[] { "Destroy the fence!", "Destroy the flowers!", "Knock over the grill!", "Destroy the beehive!", "Bully the frogs!", "Flood the lawn!", "Break the window!", "Climb to the window!",
         "Flood the kitchen!", "Break the glass!", "Break the honey jar!", "Open the fridge!", "Destroy the cake!", "Tip over the sugar bag!", "Mess up the soup!", "Reach the door handle!", "Break the tv!",
         "Break the Flowerpot!", "Hit down the clock!", "Hit down the painting!", "Drop the curtains!", "Destroy the vitrine!", "Bounce on the sofa and hit the lamps!", "Get to the top of the stairs!", "Break the door!",
-        "Clog the toilet!", "Slide the soaps to the floor!", "Turn on the washing machine!", "Soap the bath!", "Hit the ducks!", "Drop the towel!", "Fly through the door!", "Destroy the door!", "Bounce on the bed and destroy the lamp!",
-        "Turn on the radio!", "Mess up the wardrobe!", "Throw down the toys!", "Destroy the pillow!", "Hit the books!", "Fly through the window!"};
+        "Clog the toilet!", "Slide the soaps to the floor!", "Turn on the washing machine!", "Soap the bath!", "Hit the ducks!", "Drop the towel!", "Fly through the door!", 
+        "Destroy the door!", "Bounce on the bed and destroy the lamp!", "Turn on the radio!", "Mess up the wardrobe!", "Throw down the toys!", "Destroy the pillow!", "Hit the books!", "Fly through the window!"};
 
     private string[] ger = new string[] { "Zerstöre den Zaun!", "Zerstöre die Blumen!", "Wirf den Griller um!", "Zerstöre das Bienennest!", "Erwische die Frösche!", "Setz den Garten unter Wasser!", "Zerstör das Fenster!", "Kletter zum Fenster rauf!",
         "Setz die Küche unter Wasser!", "Zerbrich die Gläser!", "Zerbrich das Honigglas", "Öffne den Kühlschrank", "Zerstör den Kuchen!", "Wirf den Zucker um!", "Vermassle die Suppe!", "Erreiche die Türschnalle",
-        "Zerstör den Fernseher!", "Zebrich den Blumentopf", "Wirf die Uhr runter!", "Wirf das Gemälde runter", "Zieh die Vorhänge runter!", "Zerstör die Vitrine", "Spring auf die Couch und zerstöre die Lampen!", "Kletter die Stufen rauf!",
+        "Zerstör den Fernseher!", "Zerbrich den Blumentopf", "Wirf die Uhr runter!", "Wirf das Gemälde runter", "Zieh die Vorhänge runter!", "Zerstör die Vitrine", "Spring auf die Couch und zerstöre die Lampen!", "Kletter die Stufen rauf!",
         "Zerstör die Tür!", "Verstopfe die Toilette", "Lass die Seifen runter schlittern!", "Schalte die Waschmaschine an!", "Mach ein Schaumbad!", "Erwische die Enten!", "Wirf das Handtuch runter!", "Flieg durch die Tür!",
-        "Zerstör die Tür!", "Spring auf das Bett und zerstöre die Lampen!", "Schlat das Radio an!", "Öffne den Kasten!", "Wirf das Spielzeug runter!", "Zerstör den Polster!", "Wirf die Bücher um!", "Flieg durchs Fenster!"};
+        "Zerstör die Tür!", "Spring auf das Bett und zerstöre die Lampen!", "Schalt das Radio an!", "Bring die Kleidung durcheinander!", "Wirf das Spielzeug runter!", "Zerstör den Polster!", "Wirf die Bücher um!", "Flieg durchs Fenster!"};
 
     private string[] rus = new string[] { "Сломай забор!", "Сломай цветы!", "Опрокинь гриль!", "Разрушь улей!", "Напугай лягушек!", "Затопи лужайку!", "Разбей окно!", "Заберись в окно!", 
         "Затопи кухню!", "Разбей бутылку!", "Разбей банку с мёдом!", "Открой холодильник!", "Раздави торт!", "Рассыпь сахар!", "Испорть суп!", "Открой дверь!", 
@@ -36,7 +36,7 @@ public class ObjectiveText : MonoBehaviour
         "Laat de keuken overstromen!", "Breek het glas!", "Breek de honingpot!", "Open de koelkast!", "Maak de cake kapot!", "Duw de zak met suiker omver!", "Verpest de soep!", "Reik naar de deurklink!",
         "Breek de tv!", "Breek de bloempot!", "Laat de klok vallen!", "Laat het schilderij vallen!", "Laat de gordijnen vallen!", "Vernietig de vitrine!", "Spring in de zetel en raak de lampen!", "Klim de trap op!",
         "Breek de deur!", "Verstop de wc!", "Glij op de zeep!", "Zet de wasmachine aan!", "Zeep het bad in!", "Raak de eendjes!", "Laat de handdoeken vallen!", "Vlieg door de deur!",
-        "Vernietig de deur!", "Spring op het bed en breek de lamp!", "Zet de radio aan!", "Open de kasten!", "Gooi het speelgoed op de grond!", "Vernietig de kussens!", "Raak de boeken!", "Vlieg door het raam!" };
+        "Vernietig de deur!", "Spring op het bed en breek de lamp!", "Zet de radio aan!", "Gooi de kleren op de grond!", "Gooi het speelgoed op de grond!", "Vernietig de kussens!", "Raak de boeken!", "Vlieg door het raam!" };
     
     private string[] kaz = new string[]{"Қоршауды сындыр!", "Гүлдері сындыр!", "Грильді төңкер!", "Ара ұясын бұзып таста!", "Бақаларды қорқыт!", "Көгалдағы суды бас!", "Терезені сындыр!", "Терезеге кір!", 
         "Ас үйді суға толтыр!", "Бөтелкені сындыр!", "Бал құмыраны сындыр!", "Тоңазытқышты аш!", "Тортты жаншып таста!" , "Кантты шашып таста!", "Сорпаны бұзып таста!", "Есікті аш!", 
