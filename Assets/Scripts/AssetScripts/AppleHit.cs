@@ -17,14 +17,26 @@ public class AppleHit : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        ScoreManager.levelScore += 200;
-        this.Invoke("rigid", 0.8f);
-        m_Anim.SetTrigger("Hit");
+        if(collision.collider.CompareTag("Player"))
+        {
+            ScoreManager.levelScore += 200;
+            this.Invoke("rigid", 0.8f);
+            m_Anim.SetTrigger("Hit");
 
-        
-        Destroy(GetComponent<CircleCollider2D>());
-        
+        }
+        if (collision.collider.CompareTag("apple"))
+        {
+            this.Invoke("rigid", 0.8f);
+            m_Anim.SetTrigger("Hit");
+        }
 
+
+
+        if (collision.collider.CompareTag("Ground"))
+        {
+            Destroy(this.gameObject.GetComponent<Rigidbody2D>());
+
+        }
     }
 
     private void rigid()
