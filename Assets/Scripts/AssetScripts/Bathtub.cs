@@ -24,6 +24,7 @@ public class Bathtub : MonoBehaviour
         if (m_Anim.GetCurrentAnimatorStateInfo(0).IsTag("ree"))
         {
             mainScript.levelWon = true;
+            mainScript.camFollowScript.followTransform = this.transform;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

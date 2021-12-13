@@ -5,9 +5,12 @@ using UnityEngine;
 public class AppleHit : MonoBehaviour
 {
     private Animator m_Anim;
+    private CircleCollider2D first;
     void Start()
     {
         m_Anim = GetComponent<Animator>();
+        var colliders = GetComponents<CircleCollider2D>();
+        first = colliders[1];
     }
 
     // Update is called once per frame
@@ -17,11 +20,12 @@ public class AppleHit : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.CompareTag("Player"))
+        if(collision.collider.CompareTag("Player") & collision.collider.IsTouching(first))
         {
             ScoreManager.levelScore += 200;
             this.Invoke("rigid", 0.8f);
             m_Anim.SetTrigger("Hit");
+            first.enabled = false;
 
         }
         if (collision.collider.CompareTag("apple"))

@@ -528,6 +528,7 @@ GameObject:
   - component: {fileID: 5773087490779989227}
   - component: {fileID: 3717394303374160885}
   - component: {fileID: 9203954647120208217}
+  - component: {fileID: 2415811238673220517}
   m_Layer: 0
   m_Name: applered
   m_TagString: apple
@@ -721,6 +722,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c81d983c5916c304ca0d3ae79324a819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &2415811238673220517
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521675034495958761}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.027513146, y: -0.012698373}
+  serializedVersion: 2
+  m_Radius: 0.19594459
 --- !u!1 &7560544795877644767
 GameObject:
   m_ObjectHideFlags: 0
