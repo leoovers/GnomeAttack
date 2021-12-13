@@ -8,10 +8,10 @@ public class ObjectiveText : MonoBehaviour
 {
     public Catapult_physics mainScript;
     private Text objectiveText;
-    private int numberOfLevels = 40;
     private Text m_Text;
     private RectTransform m_RectTransform;
     private int initFontSize;
+    private int numberOfLevels = 40;
 
     // string instructions in English, German, Russian, Dutch, Finnish:
     private string[] eng = new string[] { "Destroy the fence!", "Destroy the flowers!", "Knock over the grill!", "Destroy the beehive!", "Bully the frogs!", "Flood the lawn!", "Break the window!", "Climb to the window!",
@@ -138,7 +138,7 @@ public class ObjectiveText : MonoBehaviour
     IEnumerator objTextDisplay()
     {
         changeFontSize(50);
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
         changeFontSize(initFontSize);
     }
 }
