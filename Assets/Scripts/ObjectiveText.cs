@@ -18,7 +18,7 @@ public class ObjectiveText : MonoBehaviour
         "Flood the kitchen!", "Break the glass!", "Break the honey jar!", "Open the fridge!", "Destroy the cake!", "Tip over the sugar bag!", "Mess up the soup!", "Reach the door handle!", "Break the tv!",
         "Break the Flowerpot!", "Hit down the clock!", "Hit down the painting!", "Drop the curtains!", "Destroy the vitrine!", "Bounce on the sofa and hit the lamps!", "Get to the top of the stairs!", "Break the door!",
         "Clog the toilet!", "Slide the soaps to the floor!", "Turn on the washing machine!", "Soap the bath!", "Hit the ducks!", "Drop the towel!", "Fly through the door!", "Destroy the door!", "Bounce on the bed and destroy the lamp!",
-        "Turn on the radio!", "Open the cupboards!", "Throw down the toys!", "Destroy the pillow!", "Hit the books!", "Fly through the window!"};
+        "Turn on the radio!", "Mess up the wardrobe!", "Throw down the toys!", "Destroy the pillow!", "Hit the books!", "Fly through the window!"};
 
     private string[] ger = new string[] { "Zerstöre den Zaun!", "Zerstöre die Blumen!", "Wirf den Griller um!", "Zerstöre das Bienennest!", "Erwische die Frösche!", "Setz den Garten unter Wasser!", "Zerstör das Fenster!", "Kletter zum Fenster rauf!",
         "Setz die Küche unter Wasser!", "Zerbrich die Gläser!", "Zerbrich das Honigglas", "Öffne den Kühlschrank", "Zerstör den Kuchen!", "Wirf den Zucker um!", "Vermassle die Suppe!", "Erreiche die Türschnalle",
@@ -49,7 +49,13 @@ public class ObjectiveText : MonoBehaviour
         "Rompe el televisor!","Rompe el tiesto","Tira el reloj!","TIra el cuadro","Baja la cortina!","Rompe la vitrina","Salta al sofá y rompe las lámparas!","Sube los escalones!",
         "Rompe la puerta!","Atasca el váter","Deja que los jabones resbalen!","Enchufa la lavadora!","Haz un baño de espuma!","Pilla los patos!","Tira la toalla!","Sal volando por la puerta!",
         "Rompe la puerta!","Salta a la cama y rompe las lámparas!","Enciende la radio!","Abre el armario!","Tira el juguete!","Rompe el cojín!","Tira los libros!","Sal volando por la ventana!"};
-   
+
+    private string[] fra = new string[] { "Détruis la clôture!", "Détruis les fleurs!", "Renverse le barbecue!", "Détruis le nid d'abeilles!", "Attrappe les grenouilles!", "Inonde le jardin!", "Détruis la fenêtre!", "Grimpe à la fenêtre!",
+        "Indonde la cuisine!", "Casse les verres!", "Casse le verre à miel", "Ouvre le frigo", "Détruis le gâteau!", "Renverse le sucre!", "Bousille la soupe!", "Atteins la poignée",
+        "Détruis la télé!", "Casse le pot de fleurs", "Jette l'horologe!", "Jette le tableau", "Arrache les rideaux!", "Détruis la vitrine", "Saute sur le canapé et détruis les lampes!", "Grimpe les marches!",
+        "Détruis la porte!", "Bouche les toilettes","Laisse glisser les savons!", "Allume la machine à laver!", "Fais un bain de mousse!", "Attrappe les canards!", "Jette la serviette!", "Vole à travers la porte!",
+        "Détruis la porte!", " Saute sur le lit et détruis les lampes!", "Allume la radio!", "Ouvre l'armoire!", "Jette les jouets!", "Détruis l'oreiller!", "Renverse les livres!", "Vole à travers la  fenêtre!"};
+
     private string[] fin = new string[] { };
 
     // Start is called before the first frame update / default language is english
@@ -84,6 +90,10 @@ public class ObjectiveText : MonoBehaviour
         if (LanguageManager.langIndex == 5)
         {
             callObjText(esp);
+        }
+        if (LanguageManager.langIndex == 6)
+        {
+            callObjText(fra);
         }
     }
 
