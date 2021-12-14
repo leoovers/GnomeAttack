@@ -124,6 +124,7 @@ public class ObjectiveText : MonoBehaviour
 
         //Change the RectTransform size to allow larger fonts and sentences
         m_RectTransform.sizeDelta = new Vector2(m_Text.fontSize * 10, 100);
+
     }
 
     // Update is called once per frame
