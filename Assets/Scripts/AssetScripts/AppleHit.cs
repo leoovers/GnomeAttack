@@ -10,7 +10,7 @@ public class AppleHit : MonoBehaviour
     {
         m_Anim = GetComponent<Animator>();
         var colliders = GetComponents<CircleCollider2D>();
-        first = colliders[1];
+        first = colliders[0];
     }
 
     // Update is called once per frame
