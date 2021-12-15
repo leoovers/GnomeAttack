@@ -48,6 +48,7 @@ public class CameraFollow : MonoBehaviour
         ViewDistance("Level_25", 15.0f);
         ViewDistance("Level_28", 15.0f);
         ViewDistance("Level_30", 15.0f);
+        //setOffsetY("Level_1", 6f);
 
         cameraBorder = GameObject.Find("CameraBorder");
         angleSlider = GameObject.Find("AngleSlider");
@@ -71,6 +72,17 @@ public class CameraFollow : MonoBehaviour
         if (currSceneName == levelName)
         {
             mainCamera.orthographicSize = ortSize;
+        }
+    }
+
+    void setOffsetY(string levelName, float offsetY)
+    {
+        Scene currScene = SceneManager.GetActiveScene();
+        string currSceneName = currScene.name;
+
+        if (currSceneName == levelName)
+        {
+            yOffset = offsetY;
         }
     }
 
