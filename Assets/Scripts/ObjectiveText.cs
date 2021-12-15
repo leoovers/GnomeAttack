@@ -56,7 +56,13 @@ public class ObjectiveText : MonoBehaviour
         "Détruis la porte!", "Bouche les toilettes","Laisse glisser les savons!", "Allume la machine à laver!", "Fais un bain de mousse!", "Attrappe les canards!", "Jette la serviette!", "Vole à travers la porte!",
         "Détruis la porte!", " Saute sur le lit et détruis les lampes!", "Allume la radio!", "Ouvre l'armoire!", "Jette les jouets!", "Détruis l'oreiller!", "Renverse les livres!", "Vole à travers la  fenêtre!"};
 
-    private string[] fin = new string[] { };
+    private string[] fin = new string[] {
+        "Tuhoa aita!", "Tuhoa mehiläispesä!","Kaada grilli!", "Tuhoa kukat!", "Kiusaa sammakoita!", "Aiheuta nurmikolle tulva!", "Hajota ikkuna!", "Kiipeä ikkunasta!",
+        "Aiheuta keittiöön tulva!", "Hajota laseja!", "Hajota hunajapurkki!", "Avaa jääkaappi!", "Tuhoa kakku!", "Kaada sokeripaketti!", "Pilaa keitto!", "Yletä ovenkahvaan!",
+        "Hajota tv!", "Hajota kukkaruukku!","Tiputa alas kello!","Tiputa alas maalaus!","Tiputa verhot!","Tuhoa vitriini!","Hyppää sohvalla ja tuhoa lamput!","Kiipeä portaiden päälle!",
+        "Hajota ovi!", "Tuki pytty!","Tiputa saippuat lattialle!","Laita pesukone päälle!","Saippuoi kylpyamme!","Osu ankkoihin!","Tiputa pyyhe!","Lennä oven läpi!",
+        "Hajota ovi!", "Hyppää sängyllä ja hajota lamppu!","Laita radio päälle!","Sekoita vaatekaappi!","Tiputa lelut","Hajota tyyny!","Osu kirjoihin!","Lennä ikkunasta!",
+    };
 
     // Start is called before the first frame update / default language is english
     void Start()
@@ -94,6 +100,10 @@ public class ObjectiveText : MonoBehaviour
         if (LanguageManager.langIndex == 6)
         {
             callObjText(fra);
+        }
+        if (LanguageManager.langIndex == 7)
+        {
+            callObjText(fin);
         }
     }
 
