@@ -12,7 +12,7 @@ public class LangDropDown : MonoBehaviour
     {
         dropDown = GetComponent<Dropdown>();
         dropDown.onValueChanged.AddListener(delegate {dropdownValueChangedHandler(dropDown); });
-        LanguageManager.langIndex = dropDown.value;
+        dropDown.value = LanguageManager.langIndex;
     }
 
     private void dropdownValueChangedHandler(Dropdown target)

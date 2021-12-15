@@ -139,7 +139,10 @@ public class ObjectiveText : MonoBehaviour
     IEnumerator objTextDisplay()
     {
         changeFontSize(50);
+        Vector2 origPos = m_RectTransform.position;
+        m_RectTransform.position = new Vector2(m_RectTransform.position.x, Screen.height / 2);
         yield return new WaitForSeconds(2.0f);
+        m_RectTransform.position = origPos;
         changeFontSize(initFontSize);
     }
 }
