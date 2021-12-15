@@ -179,6 +179,39 @@ public class Catapult_physics : MonoBehaviour
             {
                 levelLost = true;
                 lossPanel.SetActive(true);
+
+                /*if(PlayerPrefs.GetInt("CompletedLevels") < 9)
+                    {
+                        if (PlayerPrefs.GetInt() < 17)
+                        {
+                            if(PlayerPrefs.GetInt() < 25)
+                            {
+                                if(PlayerPrefs.GetInt() < 33)
+                                {
+                                    if(PlayerPrefs.GetInt() < 40)
+                                    {
+
+                                    }
+
+                                } else
+                                {
+
+                                }
+                            } else
+                            {
+
+                            }
+                        } else
+                        {
+
+                        }
+
+                    } else
+                    {
+
+                    }*/
+
+
             }
             else
             {   
