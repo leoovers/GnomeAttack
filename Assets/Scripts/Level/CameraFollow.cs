@@ -44,18 +44,23 @@ public class CameraFollow : MonoBehaviour
         ViewDistance("Level_13", 10.0f);
         ViewDistance("Level_14", 10.0f);
         ViewDistance("Level_15", 15.0f);
-
+        ViewDistance("Level_18", 10.0f);
         ViewDistance("Level_20", 10.0f);
         ViewDistance("Level_21", 15.0f);
         ViewDistance("Level_23", 15.0f);
+        ViewDistance("Level_24", 15.0f);
         ViewDistance("Level_25", 15.0f);
         ViewDistance("Level_28", 15.0f);
         ViewDistance("Level_30", 15.0f);
+        ViewDistance("Level_34", 10.0f);
+
 
         setOffsetY("Level_5", 0f);
         setOffsetY("Level_6", 1f);
         setOffsetY("Level_15", 1f);
         setOffsetY("Level_24", 1f);
+        setOffsetY("Level_34", 1f);
+
 
         cameraBorder = GameObject.Find("CameraBorder");
         angleSlider = GameObject.Find("AngleSlider");
