@@ -46,10 +46,8 @@ public class Door : MonoBehaviour
 			{
 				timerCountDown = 0;
 			}
-			Debug.Log("Countdown not done yet");
 			if (timerCountDown <= 0)
 			{
-				Debug.Log("in block");
 				mainScript.levelWon = true;
 				StartCoroutine(Win());
 				m_Anim.SetTrigger("Hit");
@@ -71,8 +69,8 @@ public class Door : MonoBehaviour
 	IEnumerator Win()
 	{
 		Instantiate(deathEffect, transform.position, Quaternion.identity);
-		yield return new WaitForSeconds(1f);
 		camScript.followTransform = finalCameraPoint.transform;
+		yield return new WaitForSeconds(1f);
 		winPanel.SetActive(true);
 	}
 }
