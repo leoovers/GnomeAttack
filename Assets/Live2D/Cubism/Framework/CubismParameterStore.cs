@@ -19,7 +19,7 @@ namespace Live2D.Cubism.Framework
         /// <summary>
         /// Parameters cache.
         /// </summary>
-        private CubismParameter[] DestinationParameters { get; set; }
+        public CubismParameter[] DestinationParameters { get; set; }
 
         /// <summary>
         /// Parts cache.
