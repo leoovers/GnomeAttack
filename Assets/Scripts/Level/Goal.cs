@@ -11,7 +11,7 @@ public class Goal : MonoBehaviour {
     public CameraFollow camScript;
 	public Catapult_physics mainScript;
 	// How long the player needs to stay at location
-    public float timerCountDown = 3;
+    public float timerCountDown = 1;
     // Is the player currently at location
     private bool isPlayerColliding = false;
 
@@ -69,8 +69,8 @@ public class Goal : MonoBehaviour {
 	IEnumerator Win ()
 	{
 		Instantiate(deathEffect, transform.position, Quaternion.identity);
-		yield return new WaitForSeconds(1f);
 		camScript.followTransform = finalCameraPoint.transform;
+		yield return new WaitForSeconds(1f);
         winPanel.SetActive(true);
     }
 }
