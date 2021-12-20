@@ -7,6 +7,7 @@ public class Pillow : MonoBehaviour
     private Animator m_Anim;
     public Catapult_physics mainScript;
     private int hit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class Pillow : MonoBehaviour
             {
                 Destroy(this.GetComponent<BoxCollider2D>());
                 mainScript.levelWon = true;
+                mainScript.camFollowScript.followTransform = this.transform;
             }
         }
     }

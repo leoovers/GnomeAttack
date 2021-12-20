@@ -18,7 +18,7 @@ public class ObjectiveText : MonoBehaviour
         "Flood the kitchen!", "Break the glass!", "Break the honey jar!", "Open the fridge!", "Destroy the cake!", "Tip over the sugar bag!", "Mess up the soup!", "Reach the door handle!", "Break the tv!",
         "Break the Flowerpot!", "Hit down the clock!", "Hit down the painting!", "Drop the curtains!", "Destroy the vitrine!", "Bounce on the sofa and hit the lamps!", "Get to the top of the stairs!", "Break the door!",
         "Clog the toilet!", "Slide the soaps to the floor!", "Turn on the washing machine!", "Soap the bath!", "Hit the ducks!", "Drop the towel!", "Fly through the door!", 
-        "Destroy the door!", "Bounce on the bed and destroy the lamp!", "Turn on the radio!", "Mess up the wardrobe!", "Throw down the toys!", "Destroy the pillow!", "Hit the books!", "Fly through the window!"};
+        "Open the door!", "Destroy the lamps!", "Turn on the radio!", "Mess up the wardrobe!", "Throw down the toys!", "Destroy the pillow!", "Hit the books!", "Fly through the window!"};
 
     private string[] ger = new string[] { "Zerstöre den Zaun!", "Zerstöre das Bienennest!", "Wirf den Griller um!", "Zerstöre die Blumen!", "Erwische die Frösche!", "Setz den Garten unter Wasser!", "Zerstör das Fenster!", "Kletter zum Fenster rauf!",
         "Setz die Küche unter Wasser!", "Zerbrich die Gläser!", "Zerbrich das Honigglas", "Öffne den Kühlschrank", "Zerstör den Kuchen!", "Wirf den Zucker um!", "Vermassle die Suppe!", "Erreiche die Türschnalle",
