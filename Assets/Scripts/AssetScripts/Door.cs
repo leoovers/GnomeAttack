@@ -5,7 +5,6 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     private Animator m_Anim;
-	public GameObject winPanel;
 	public GameObject deathEffect;
 	public GameObject finalCameraPoint;
 	public CameraFollow camScript;
@@ -49,7 +48,8 @@ public class Door : MonoBehaviour
 			if (timerCountDown <= 0)
 			{
 				mainScript.levelWon = true;
-				StartCoroutine(Win());
+				Instantiate(deathEffect, transform.position, Quaternion.identity);
+				camScript.followTransform = finalCameraPoint.transform;
 				m_Anim.SetTrigger("Hit");
 			}
 
@@ -64,13 +64,5 @@ public class Door : MonoBehaviour
 			isPlayerColliding = false;
 			timerCountDown = 3;
 		}
-	}
-
-	IEnumerator Win()
-	{
-		Instantiate(deathEffect, transform.position, Quaternion.identity);
-		camScript.followTransform = finalCameraPoint.transform;
-		yield return new WaitForSeconds(1f);
-		winPanel.SetActive(true);
 	}
 }

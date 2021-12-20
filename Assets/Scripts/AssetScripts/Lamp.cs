@@ -27,6 +27,7 @@ public class Lamp : MonoBehaviour
             m_Anim.SetTrigger("Hit");
 
             Lampdmg++;
+            ScoreManager.levelScore += 200;
 
             if (Lampdmg == 2)
             {
